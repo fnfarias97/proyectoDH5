@@ -1,0 +1,104 @@
+body{
+    padding: 10px;
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+a{
+    text-decoration-line: none;
+}
+ .logo{
+    height: 25vh;
+ }
+.bg-principal{
+    background-color: #2e3047;
+}
+
+.bg-main{
+    background-color: #707793;
+}
+
+.bg-verdeclaro{
+    background-color: #3d8c95;
+}
+
+.bg-product{
+    background-color: #b8bbc9;
+}
+.bordecito{
+    border-right: 3px solid #2e3047;
+}
+
+.fw-bolder{
+    font-weight: bolder;
+}
+
+.buscador{
+    height: 75px;
+    width: 50%;
+    font-size: 20px;
+}
+
+.changuito{
+    height: 50px;
+    background-color: #9798a3;
+    width: 10%;
+    padding: 10px;
+}
+
+.barra-nav{
+    margin-top: 20px;
+    height: 100px;
+    font-size: 35px;
+    align-items: center;
+
+}
+
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.radius-5{
+    border-radius: 5px;
+}
+
+.radius-10{
+    border-radius: 10px;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mcostados-5{
+    margin: 0px 5px;
+}
+
+.pcostados-20{
+    padding: 5px 20px;
+}
+
+.producto img{
+    width: 50%;
+}
+
+.producto{
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.footer{
+    padding:25px;
+    position: relative;
+    width: 25%;
+    justify-content: space-around;
+    align-items: center;
+}
