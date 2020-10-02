@@ -1,8 +1,12 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
 body{
     padding: 10px;
 }
 
-ul{
+* {
     margin: 0px;
     padding: 0px;
     list-style: none;
@@ -16,10 +20,6 @@ a{
  }
 .bg-principal{
     background-color: #2e3047;
-}
-
-.bg-main{
-    background-color: #707793;
 }
 
 .bg-verdeclaro{
@@ -38,9 +38,10 @@ a{
 }
 
 .buscador{
-    height: 75px;
+    height: 70px;
     width: 50%;
     font-size: 20px;
+    border: 0px;
 }
 
 .changuito{
@@ -55,12 +56,11 @@ a{
     height: 100px;
     font-size: 35px;
     align-items: center;
-
+    justify-content: center;
 }
 
 .d-flex{
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
 }
@@ -85,16 +85,7 @@ a{
     padding: 5px 20px;
 }
 
-.producto img{
-    width: 50%;
-}
 
-.producto{
-    position: relative;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-}
 .footer{
     padding:25px;
     position: relative;

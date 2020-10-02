@@ -1,0 +1,22 @@
+.titulo{
+    padding: 10px;
+    font-size: 24px;
+    color: white;
+}
+
+.p-20{
+    padding: 20px;
+}
+.bg-main{
+    background-color: #707793;
+}
+
+.producto img{
+    width: 100%;
+}
+
+.producto{
+    padding: 10px;
+    font-size: 16px;
+    margin: 3%;
+}
