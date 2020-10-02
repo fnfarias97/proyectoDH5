@@ -29,8 +29,13 @@ a{
 .bg-product{
     background-color: #b8bbc9;
 }
-.bordecito{
+
+nav {
+    padding: 5px;
+}
+header nav a{
     border-right: 3px solid #2e3047;
+    padding-right: 25px;
 }
 
 .fw-bolder{
@@ -56,7 +61,7 @@ a{
     height: 100px;
     font-size: 35px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .d-flex{
