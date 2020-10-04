@@ -1,0 +1,95 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    padding: 10px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+a{
+    text-decoration-line: none;
+}
+ .logo{
+    height: 25vh;
+ }
+.bg-principal{
+    background-color: #2e3047;
+}
+
+.bg-verdeclaro{
+    background-color: #3d8c95;
+}
+
+.bg-product{
+    background-color: #b8bbc9;
+}
+.bordecito{
+    border-right: 3px solid #2e3047;
+}
+
+.fw-bolder{
+    font-weight: bolder;
+}
+
+.buscador{
+    height: 70px;
+    width: 50%;
+    font-size: 20px;
+    border: 0px;
+}
+
+.changuito{
+    height: 50px;
+    background-color: #9798a3;
+    width: 10%;
+    padding: 10px;
+}
+
+.barra-nav{
+    margin-top: 20px;
+    height: 100px;
+    font-size: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.radius-5{
+    border-radius: 5px;
+}
+
+.radius-10{
+    border-radius: 10px;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mcostados-5{
+    margin: 0px 5px;
+}
+
+.pcostados-20{
+    padding: 5px 20px;
+}
+
+
+.footer{
+    padding:25px;
+    position: relative;
+    width: 25%;
+    justify-content: space-around;
+    align-items: center;
+}
