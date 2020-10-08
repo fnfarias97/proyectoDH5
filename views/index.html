@@ -12,18 +12,20 @@
 <body class="bg-principal">
     <header>
         <div class="d-flex">
-            <img class="radius-5 logo"src = 'images/clickplayers-logo.jpg' alt = ''>
+            <a href="/"><img class="radius-5 logo"src = 'images/clickplayers-logo.jpg' alt = ''></a>
             <input type="search" class="radius-10 buscador bg-verdeclaro" placeholder="Buscar producto, marca o vendedor" name="buscador">
             <div class="changuito d-flex radius-5">
                 <a href="productCart"><i class="fas fa-shopping-cart"></i></a>
+                <div><a href="productCart">0</a>
+                </div>
             </div>
         </div>
             <nav class="d-flex barra-nav radius-10 bg-main">
                     
-                        <a href = 'login'>Ingresa</a>
-                        <a href = '/'>Productos</a>
-                        <a href = '/'>Marcas</a>
-                        <a href = '/'>Accesorios</a>
+                        <a href = 'login' class="separador-nav">Ingresa</a>
+                        <a href = 'register' class="separador-nav">Registrate</a>
+                        <a href = '/' class="separador-nav">Marcas</a>
+                        <a href = '/' class="separador-nav">Accesorios</a>
                         <a href = '/'>Descuentos</a>
             </nav>
     </header>
@@ -37,34 +39,34 @@
         </div>
         <section class="d-flex">
             <article>
-                <div class="radius-10 bg-product producto"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
+                <a href="productDetail"><div class="radius-10 bg-product producto"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
                     <div class="van">
                         <i class="fas fa-shuttle-van van"></i>
                     </div>
                     <div>$ 17.770</div>
-                    <div>Kit Procesador AMD RYZEN 5 2600 3.90Ghz</div>
+                    <div>Kit Procesador AMD RYZEN 5 2600 3.90Ghz</div></a>
             </article>
             <article>
-                <div class="radius-10 bg-product producto"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
+                <a href="productDetail"><div class="radius-10 bg-product producto"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
                     <div class="van">
                         <i class="fas fa-shuttle-van van"></i>
                     </div>
-                    <div>$ 17.770</div>
-                    <div>Kit Procesador AMD RYZEN 5 2600 3.90Ghz</div>
+                    <div>$ 100.770</div>
+                    <div>RTX 2080</div></a>
             </article>
             <article>
-                <div class="radius-10 bg-product producto"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
+                <a href="productDetail"><div class="radius-10 bg-product producto"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
                     <div class="van">
                         <i class="fas fa-shuttle-van van"></i>
                     </div>
                     <div>$ 17.770</div>
-                    <div>Kit Procesador AMD RYZEN 5 2600 3.90Ghz</div>
+                    <div>Kit Procesador AMD RYZEN 5 2600 3.90Ghz</div></a>
             </article>
         </section>
-        <div class="titulo d-flex radius-10 bg-product">
-            <a href = '/'>Pagá con tarjeta</a>
-            <a href = '/'>En efectivo</a>
-            <a href = '/'>MercadoPago</a>
+        <div class="separador titulo d-flex radius-10 bg-product">
+            <a href = '/'><i class="fas fa-credit-card footer-images borde"></i>  Pagá con tarjeta</a>
+            <a href = '/'><i class="fas fa-money-bill-wave borde"></i>  En efectivo</a>
+            <a href = '/'><i class="far fa-handshake borde"></i>  MercadoPago</a>
         </div>
 
     </main>
