@@ -32,3 +32,14 @@
     font-size: 16px;
     margin: 3%;
 }
+
+.separador {
+    margin: 0px 10px;
+}
+
+.borde {
+    border-radius: 50%;
+    border: 2px solid #2e3047;
+    padding: 10px;
+    display: inline-block;
+}

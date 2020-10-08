@@ -10,7 +10,7 @@
 <body class="bg-principal">
     <header>
         <div class="d-flex">
-            <img class="radius-5 logo"src = 'images/clickplayers-logo.jpg' alt = ''>
+            <a href="/"><img class="radius-5 logo"src = 'images/clickplayers-logo.jpg' alt = ''></a>
             <input type="search" class="radius-5 buscador bg-verdeclaro" placeholder="Buscar producto, marca o vendedor" name="buscador">
             <div class="changuito d-flex radius-5">
                 <a href="productCart"><i class="fas fa-shopping-cart"></i></a>
@@ -18,10 +18,10 @@
         </div>
         <nav class="d-flex barra-nav radius-10 bg-main">
                     
-            <a href = 'login'>Ingresa</a>
-            <a href = '/'>Productos</a>
-            <a href = '/'>Marcas</a>
-            <a href = '/'>Accesorios</a>
+            <a href = 'login' class="separador-nav">Ingresa</a>
+            <a href = '/' class="separador-nav">Productos</a>
+            <a href = '/' class="separador-nav">Marcas</a>
+            <a href = '/' class="separador-nav">Accesorios</a>
             <a href = '/'>Descuentos</a>
 </nav>
     </header>
@@ -33,25 +33,14 @@
             <div class=" fw-bolder">
                 Lo más buscado
             </div>
-            <nav>            
-                <ul>
-                   <li class="nav-linea">
-                       <a href = 'login'>Ingresa</a>
-                   </li>
-                   <li>
-                       <a href = '/'>Computadoras armadas</a>
-                   </li>
-                   <li>
-                       <a href = '/'>Marcas</a>
-                   </li>
-                   <li>
-                       <a href = '/'>Notebooks</a>
-                   </li>
-                   <li>
-                       <a href = '/'>Periféricos</a>
-                   </li>
-               </ul>
-           </nav>
+            <nav class="d-flex barra-nav radius-10 bg-main">
+                    
+                <a href = 'login' class="separador-nav">Ingresa</a>
+                <a href = 'register' class="separador-nav">Registrate</a>
+                <a href = '/' class="separador-nav">Marcas</a>
+                <a href = '/' class="separador-nav">Accesorios</a>
+                <a href = '/'>Descuentos</a>
+    </nav>
         </article>
         <article  class="fw-bolder">
                 Seguinos en nuestras redes

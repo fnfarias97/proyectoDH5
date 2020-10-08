@@ -16,7 +16,7 @@ a{
     text-decoration-line: none;
 }
  .logo{
-    height: 12vh;
+    height: 20vh;
  }
 .bg-principal{
     background-color: #2e3047;
@@ -32,25 +32,27 @@ a{
 
 nav {
     padding: 5px;
+    margin-bottom: 10px;
 }
-header nav a{
+.separador-nav{
     border-right: 3px solid #2e3047;
-    padding-right: 25px;
+    padding-right: 70px;
 }
 
 .fw-bolder{
     font-weight: bolder;
 }
 
+
 .buscador{
-    height: 30px;
-    width: 50%;
+    height: 40px;
+    width: 60%;
     font-size: 16px;
     border: 0px;
 }
 
 .changuito{
-    height: 25px;
+    height: 30px;
     background-color: #9798a3;
     width: 6%;
     padding: 5px;
@@ -58,8 +60,8 @@ header nav a{
 
 .barra-nav{
     margin-top: 10px;
-    height: 30px;
-    font-size: 20px;
+    height: 50px;
+    font-size: 25px;
     justify-content: space-between;
 }
 
