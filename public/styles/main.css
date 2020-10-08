@@ -1,0 +1,81 @@
+:root {
+    --main-bg-color: #2E3047; 
+    --light-green: #3BBA9C;
+    --dark-grey: #43455C;
+    --white: rgba(255, 255, 255, 0.788);
+    --bg-container: #707793;
+}
+
+* {margin: 0px; padding: 0px; list-style: none;}
+
+body{
+    font-family: 'Roboto', sans-serif;    /* chequear */
+    position: relative;
+    font-size: 12px;
+    color: var(--white);
+    box-sizing: border-box;
+    background-color: var(--main-bg-color);
+}
+
+header {display: flex; flex-wrap: wrap;}
+nav {width: 100%;}
+
+div {width: 100%;}
+a {text-decoration: none;}
+
+footer {
+    background-color: var(--light-green);
+    /* position: absolute;
+    bottom: 10px; */
+    width: 100%;
+}
+
+.footer{
+    padding:25px;
+    position: relative;
+    width: 25%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*------------------------ main classes ------------------------*/
+
+.w-50 {width: 50%;}
+
+.d-flex { display: flex;}
+.fw {flex-wrap: wrap;}
+
+.logo{height: 15vh; }
+
+.buscador{
+    height: 70px;
+    width: 50%;
+    font-size: 20px;
+    border: 0px;
+    background-color: var(--light-green);
+}
+
+.changuito{
+    height: 50px;
+    width: 50px;
+    background-color: #9798a3;
+    padding: 10px;
+}
+
+.barra-nav{
+    margin-top: 20px;
+    height: 100px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--bg-container);
+}
+/*------------------------ Other classes ------------------------*/
+
+.radius-5{border-radius: 5px;}
+.radius-10{border-radius: 10px;}
+.mt-20{margin-top: 20px;}
+.mcostados-5{margin: 0px 5px;}
+.pcostados-20{padding: 5px 20px;}
+
+.fw-bolder{font-weight: bolder;}

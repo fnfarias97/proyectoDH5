@@ -1,0 +1,82 @@
+:root {
+    --main-bg-color: #2E3047; 
+    --light-green: #3BBA9C;
+    --dark-grey: #43455C;
+    --white: rgba(255, 255, 255, 0.788);
+}
+
+header {display: none;}
+footer {display: none;}
+
+main {
+    margin: 20px 0;
+    width: 100%;
+    height: 100vh;
+}
+
+h1 {font-size: 26px; margin: 5px;}
+
+/*------------------------ main classes ------------------------*/
+
+.d-flex { display: flex;}
+/*------------------------ Other classes ------------------------*/
+
+.logo-container {
+    margin-bottom: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo-container img {width: 70%;}
+
+.form-container {
+    position: relative;
+    bottom: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.help {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.help a {
+    color: var(--white);
+    text-align: right;
+}
+
+main input[type="email"], 
+main input[type="password"],
+main button {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border-width: 0px;
+    background-color: var(--white);
+    font-size: 15px;
+}
+
+main button[type="submit"] {
+    color: var(--white);
+    font-weight: bold;
+    background-color: var(--light-green);
+    width: 70%;
+}
+
+@media (min-width: 426px) {
+    .logo-container{display: none;}
+    header {display: flex;}
+    footer {display: flex;}
+
+    main {height: auto;}
+
+    .form-container {width: 340.48px; bottom: 0;}
+}
