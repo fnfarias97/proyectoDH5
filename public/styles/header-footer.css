@@ -103,3 +103,16 @@ nav {
     justify-content: space-around;
     align-items: center;
 }
+
+@media (max-width: 767px){
+    .barra-nav{
+        display: none;
+    }
+    .changuito{
+        display: none;
+    }
+    .buscador{
+        width: 50%;
+        align-items: center;
+    }
+}
