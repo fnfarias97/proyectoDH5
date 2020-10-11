@@ -3,7 +3,7 @@ html {
 }
 
 body{
-    padding: 10px;
+    padding: 20px;
 }
 
 * {
@@ -23,7 +23,7 @@ a{
 }
 
 .bg-verdeclaro{
-    background-color: #3d8c95;
+    background-color:#3BBA9C;
 }
 
 .bg-product{
@@ -32,7 +32,7 @@ a{
 
 nav {
     padding: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .separador-nav{
     border-right: 3px solid #2e3047;
@@ -44,14 +44,14 @@ nav {
 }
 
 .buscador{
-    height: 40px;
+    height: 60px;
     width: 60%;
     font-size: 16px;
     border: 0px;
 }
 
 .changuito{
-    height: 30px;
+    height: 50px;
     background-color: #9798a3;
     width: 6%;
     padding: 5px;
@@ -59,7 +59,7 @@ nav {
 
 .barra-nav{
     margin-top: 10px;
-    height: 50px;
+    height: 70px;
     font-size: 25px;
     justify-content: space-between;
 }
