@@ -3,7 +3,7 @@ html {
 }
 
 body{
-    padding: 10px;
+    padding: 20px;
 }
 
 * {
@@ -23,7 +23,7 @@ a{
 }
 
 .bg-verdeclaro{
-    background-color: #3d8c95;
+    background-color:#3BBA9C;
 }
 
 .bg-product{
@@ -32,7 +32,7 @@ a{
 
 nav {
     padding: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .separador-nav{
     border-right: 3px solid #2e3047;
@@ -43,16 +43,15 @@ nav {
     font-weight: bolder;
 }
 
-
 .buscador{
-    height: 40px;
+    height: 60px;
     width: 60%;
     font-size: 16px;
     border: 0px;
 }
 
 .changuito{
-    height: 30px;
+    height: 50px;
     background-color: #9798a3;
     width: 6%;
     padding: 5px;
@@ -60,7 +59,7 @@ nav {
 
 .barra-nav{
     margin-top: 10px;
-    height: 50px;
+    height: 70px;
     font-size: 25px;
     justify-content: space-between;
 }
@@ -95,6 +94,13 @@ nav {
     padding: 5px 20px;
 }
 
+.menu{
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 
 .footer{
     padding:25px;
@@ -102,4 +108,39 @@ nav {
     width: 25%;
     justify-content: space-around;
     align-items: center;
+}
+
+@media (max-width: 767px){
+    .logo{
+        height: 30vh;
+    }
+    .barra-nav{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    .changuito{
+        display: none;
+    }
+    .buscador{
+        width: 51%;
+        align-items: center;
+    }
+    .burguer{
+        display: block;
+        cursor: pointer;
+        background-color: #3d8c95;
+        color: white;
+        font-size: 40px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .menu:hover .barra-nav{
+        display: block;
+    }
+    .footer{
+        width: 100%;
+        text-align: center;
+    }
 }

@@ -10,19 +10,21 @@
 <body class="bg-principal">
     <header>
         <div class="d-flex">
-            <a href="/"><img class="radius-5 logo"src = 'images/clickplayers-logo.jpg' alt = ''></a>
-            <input type="search" class="radius-5 buscador bg-verdeclaro" placeholder="Buscar producto, marca o vendedor" name="buscador">
+            <a href="/"><img class="radius-5 logo"src = '../images/clickplayers-logo.jpg' alt = ''></a>
+            <input type="search" class="radius-10 buscador bg-verdeclaro" placeholder="Buscar producto, marca o vendedor" name="buscador">
             <div class="changuito d-flex radius-5">
-                <a href="productCart"><i class="fas fa-shopping-cart"></i></a>
+                <a href="carrito"><i class="fas fa-shopping-cart"></i></a>
+                <div><a href="carrito">0</a>
+                </div>
             </div>
         </div>
-        <nav class="d-flex barra-nav radius-10 bg-main">
-                    
-            <a href = 'login' class="separador-nav">Ingresa</a>
-            <a href = '/' class="separador-nav">Productos</a>
-            <a href = '/' class="separador-nav">Marcas</a>
-            <a href = '/' class="separador-nav">Accesorios</a>
-            <a href = '/'>Descuentos</a>
+        <nav class="d-flex barra-nav radius-10 bg-main sombra">
+
+            <a href = '/' class="separador-nav">Home</a>
+            <a href = 'login' class="separador-nav">Ingresar</a>
+            <a href = 'productCart' class="separador-nav">productos</a>
+            <a href = 'register' class="separador-nav">Registro</a>
+            <a href = '/'>contacto</a>
 </nav>
     </header>
     <main>
