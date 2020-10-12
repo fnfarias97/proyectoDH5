@@ -10,7 +10,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
 
 header{
@@ -68,7 +67,7 @@ h1 {font-size: 26px; margin: 5px;}
 .logo-container {
     margin-bottom: 20px;
     justify-content: center;
-    width: 100%;
+    width: 90%;
 }
 
 .logo-container img {width: 70%;}

@@ -15,10 +15,19 @@ body{
     color: var(--white);
     box-sizing: border-box;
     background-color: var(--main-bg-color);
+    padding: 20px;
 }
 
-header {display: flex; flex-wrap: wrap;}
-nav {width: 100%;}
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header nav {
+    padding: 5px;
+    margin-bottom: 20px;
+}
 
 div {width: 100%;}
 a {text-decoration: none;}
@@ -27,7 +36,7 @@ footer {
     background-color: var(--light-green);
     /* position: absolute;
     bottom: 10px; */
-    width: 100%;
+    /* width: 100%; */
 }
 
 .footer{
@@ -48,27 +57,45 @@ footer {
 .logo{height: 15vh; }
 
 .buscador{
-    height: 70px;
-    width: 50%;
-    font-size: 20px;
+    height: 60px;
+    width: 60%;
+    font-size: 16px;
     border: 0px;
     background-color: var(--light-green);
 }
 
 .changuito{
     height: 50px;
-    width: 50px;
+    width: 6%;
     background-color: #9798a3;
-    padding: 10px;
+    padding: 5px;
 }
 
 .barra-nav{
-    margin-top: 20px;
-    height: 100px;
-    font-size: 20px;
+    margin-top: 10px;
+    height: 70px;
+    font-size: 25px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: var(--bg-container);
+}
+
+.separador-nav{
+    border-right: 3px solid #2e3047;
+    padding-right: 70px;
+}
+
+.menu{
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sombra {
+    -webkit-box-shadow: 6px 3px 11px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 3px 11px 0px rgba(0,0,0,0.75);
+    box-shadow: 6px 3px 11px 0px rgba(0,0,0,0.75);
 }
 /*------------------------ Other classes ------------------------*/
 
@@ -77,5 +104,40 @@ footer {
 .mt-20{margin-top: 20px;}
 .mcostados-5{margin: 0px 5px;}
 .pcostados-20{padding: 5px 20px;}
-
+.mtopbottom-10{margin: 10px 0px;}
 .fw-bolder{font-weight: bolder;}
+
+@media (max-width: 767px){
+    .logo{
+        height: 30vh;
+    }
+    .barra-nav{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    .changuito{
+        display: none;
+    }
+    .buscador{
+        width: 51%;
+        align-items: center;
+    }
+    .burguer{
+        display: block;
+        cursor: pointer;
+        background-color: #3d8c95;
+        color: white;
+        font-size: 40px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .menu:hover .barra-nav{
+        display: block;
+    }
+    .footer{
+        width: 100%;
+        text-align: center;
+    }
+}
