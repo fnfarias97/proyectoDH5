@@ -9,11 +9,12 @@
 main {
     margin: 20px 0;
     width: 100%;
-    justify-content: center;    
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 main section {
-    width: 80%;
+    width: auto;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
@@ -89,25 +90,30 @@ article img {
     width: 40%;
 }
 
-.payment-box p {margin-bottom: 5px;}
+.payment-box p {margin-bottom: 10px;}
 .envio-container{display: block;}
 
-
-.cod-pos {justify-content: space-between;}
+.cod-pos {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
 .cod-pos input{
     border-radius: 8px;
     width: 50px;
-
+    padding: 10px 5px;
 }
 
 .payment-box button {
     background-color: var(--main-bg-color);
     color: white;
     border-radius: 8px;
+    padding: 10px 5px;
 }
 
  @media (min-width:500px){
+    .filter-box p {padding: 10px;}
     .cart-container h1 {font-size: 3em;}
     article p {padding: 3%;}
 

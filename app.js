@@ -14,7 +14,7 @@ app.get('/detalle', (req,res) =>{
 	res.sendFile(myFile);
 });
 
-app.get('/carrito', (req,res) =>{
+app.get('/productCart', (req,res) =>{
 	let myFile = path.resolve('./views/productCart.html');
 	res.sendFile(myFile);
 });
@@ -26,6 +26,11 @@ app.get('/register', (req,res) =>{
 
 app.get('/login', (req,res) =>{
 	let myFile = path.resolve('./views/login.html');
+	res.sendFile(myFile);
+});
+
+app.get('/contacto', (req,res) =>{
+	let myFile = path.resolve('./views/contacto.html');
 	res.sendFile(myFile);
 });
 
