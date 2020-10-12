@@ -9,37 +9,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
 <body>
-    <header> 
+    <header>
         <div class="d-flex">
-            <img class="radius-5 logo"src = 'images/clickplayers-logo.jpg' alt = ''>
+            <a href="/"><img class="radius-5 logo"src = '../images/logo-clickplayers.png' alt = ''></a>
             <input type="search" class="radius-10 buscador bg-verdeclaro" placeholder="Buscar producto, marca o vendedor" name="buscador">
-            <div class="changuito d-flex radius-5">
-                <a href="productCart"><i class="fas fa-shopping-cart"></i></a>
+            <div class="changuito d-flex radius-5 sombra">
+                <a href="carrito"><i class="fas fa-shopping-cart"></i></a>
+                <div><a href="carrito">0</a>
+                </div>
             </div>
         </div>
-        <nav>            
-            <ul class="d-flex barra-nav radius-10 bg-main">
-                <li class="nav-linea">
-                    <a href = 'login'>Ingresa</a>
-                </li>
-                <li class="nav-linea">
-                    <a href = '/'>Productos</a>
-                </li>
-                <li class="nav-linea">
-                    <a href = '/'>Marcas</a>
-                </li>
-                <li class="nav-linea">
-                    <a href = '/'>Accesorios</a>
-                </li>
-                <li>
-                    <a href = '/'>Descuentos</a>
-                </li>
-            </ul>
-        </nav>
+        <div class="menu">
+            <i class="fas fa-bars burguer"></i>
+        </div>
+            <nav class="d-flex barra-nav radius-10 bg-main sombra">
+                        <a href = '/' class="separador-nav">Home</a>
+                        <a href = 'login' class="separador-nav">Ingresar</a>
+                        <a href = 'carrito' class="separador-nav">productos</a>
+                        <a href = 'register' class="separador-nav">Registro</a>
+                        <a href = '/'>contacto</a>
+            </nav>
     </header>
     <main class="d-flex">
         <section class="d-flex">
-            <div class="filter-container radius-10 d-flex">
+            <div class="filter-container radius-10 d-flex sombra">
                 <div class="filter-title"><h3>Filtros</h3></div>
                 <div class="filter-box d-flex fw">
                     <p>Filtro 1</p>
@@ -48,7 +41,7 @@
                     <p>Filtro 4</p>
                 </div>
             </div>
-            <div class="cart-container radius-10 d-flex fw">
+            <div class="cart-container radius-10 d-flex fw sombra">
                 <h1>Carrito de Compras</h1>
                 <article>
                     <p>Procesador AMD Ryzen 9 3950X 4.7GHz Turbo AM4</p>
@@ -72,7 +65,7 @@
                 </article>
             </div>
             <div class="payment-container d-flex">
-                <div class="payment-box cart-container radius-10 d-flex fw">
+                <div class="payment-box cart-container radius-10 d-flex fw sombra">
                     <p>Total precio especial: $150.000</p>
                     <p>Precio de lista: $180.000</p>
                     <p>Hasta 12 cuotas sin interés</p>
@@ -84,7 +77,7 @@
                         <button>Calcular Envío</button>
                     </div>
                 </div>
-                <div class="payment-box cart-container radius-10 d-flex">
+                <div class="payment-box cart-container radius-10 d-flex sombra">
                     <button>COMPRAR EN UN PAGO</button>
                     <button>COMPRAR EN CUOTAS</button>
                     <button>SEGUIR COMPRANDO</button>
@@ -92,29 +85,29 @@
             </div>
         </section>
     </main>
-    <footer class="bg-verdeclaro radius-10 mt-20">
+    <footer class="bg-verdeclaro d-flex d-wrap radius-10 mtopbottom-10 sombra">
         <article class="footer">
             <div class=" fw-bolder">
                 Lo más buscado
             </div>
-            <nav>            
+            <nav>
                 <ul>
-                   <li class="nav-linea">
-                       <a href = 'login'>Ingresa</a>
-                   </li>
-                   <li>
-                       <a href = '/'>Computadoras armadas</a>
-                   </li>
-                   <li>
-                       <a href = '/'>Marcas</a>
-                   </li>
-                   <li>
-                       <a href = '/'>Notebooks</a>
-                   </li>
-                   <li>
-                       <a href = '/'>Periféricos</a>
-                   </li>
-               </ul>
+                    <li class="nav-linea">
+                        <a href = 'login'>Ingresa</a>
+                    </li>
+                    <li>
+                        <a href = '/'>Computadoras armadas</a>
+                    </li>
+                    <li>
+                        <a href = '/'>Marcas</a>
+                    </li>
+                    <li>
+                        <a href = '/'>Notebooks</a>
+                    </li>
+                    <li>
+                        <a href = '/'>Periféricos</a>
+                    </li>               
+                </ul>    
            </nav>
         </article>
         <article  class="fw-bolder">
