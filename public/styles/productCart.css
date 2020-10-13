@@ -14,9 +14,8 @@ main {
 }
 
 main section {
-    width: auto;
+    width: 100%;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -28,10 +27,7 @@ main section {
 }
 
 .filter-title {width: auto}
-
-.filter-box {
-    justify-content: space-around;
-}
+.filter-box {justify-content: space-around;}
 
 .filter-box p {
     background-color: var(--bg-container);
@@ -60,9 +56,9 @@ main section {
     text-align: center;
 }
 
-article {
+main article {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 8px 10px 8px 10px;
 }
 
@@ -72,7 +68,6 @@ article p {
     color: black;
     border-radius: 10px;
     padding: 5%;
-    /* margin-right: 3%; */
 }
 
 article img {
@@ -81,9 +76,7 @@ article img {
     border-radius: 10px;
 }
 
-.payment-container {
-    justify-content: space-between;
-}
+.payment-container {justify-content: space-around;}
 
 .payment-box {
     background-color: var(--bg-container);
@@ -115,10 +108,17 @@ article img {
  @media (min-width:500px){
     .filter-box p {padding: 10px;}
     .cart-container h1 {font-size: 3em;}
-    article p {padding: 3%;}
+    main section p {font-size: 16px}
+    article p {
+        padding: 3%;
+        width: 70%;
+    }
+
+    main section {width: 90%;}
 
     main section img {
-        height: 150px;
+        height: 130px;
+        width: 130px;
     }
 
     .payment-box {font-size: 1.5em;}
