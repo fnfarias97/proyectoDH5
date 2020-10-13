@@ -24,7 +24,7 @@ header {
     align-items: center;
     flex-wrap: wrap;
 }
-header nav {
+nav {
     padding: 5px;
     margin-bottom: 20px;
 }
@@ -34,9 +34,8 @@ a {text-decoration: none;}
 
 footer {
     background-color: var(--light-green);
-    /* position: absolute;
-    bottom: 10px; */
-    /* width: 100%; */
+    color: black;
+    font-size: 16px;
 }
 
 .footer{
@@ -53,6 +52,8 @@ footer {
 
 .d-flex { display: flex;}
 .fw {flex-wrap: wrap;}
+
+.ct-ar {align-items: center; justify-content: space-around;}
 
 .logo{height: 15vh; }
 
@@ -75,8 +76,9 @@ footer {
     margin-top: 10px;
     height: 70px;
     font-size: 25px;
+    width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: var(--bg-container);
 }
 
@@ -88,8 +90,7 @@ footer {
 .menu{
     display: none;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .sombra {
@@ -99,6 +100,7 @@ footer {
 }
 /*------------------------ Other classes ------------------------*/
 
+.d-wrap {flex-wrap: wrap;}
 .radius-5{border-radius: 5px;}
 .radius-10{border-radius: 10px;}
 .mt-20{margin-top: 20px;}
@@ -107,19 +109,13 @@ footer {
 .mtopbottom-10{margin: 10px 0px;}
 .fw-bolder{font-weight: bolder;}
 
+#copyright {text-align: center;}
+
 @media (max-width: 767px){
-    .logo{
-        height: 30vh;
-    }
-    .barra-nav{
-        display: none;
-    }
-    .menu{
-        display: block;
-    }
-    .changuito{
-        display: none;
-    }
+    .logo{height: 10vh;}
+    .barra-nav{display: none;}
+    .menu{display: block;}
+    .changuito{display: none;}
     .buscador{
         width: 51%;
         align-items: center;
@@ -129,13 +125,11 @@ footer {
         cursor: pointer;
         background-color: #3d8c95;
         color: white;
-        font-size: 40px;
+        font-size: 30px;
         padding: 10px;
         border-radius: 5px;
     }
-    .menu:hover .barra-nav{
-        display: block;
-    }
+    .menu:hover .barra-nav{display: block;}
     .footer{
         width: 100%;
         text-align: center;

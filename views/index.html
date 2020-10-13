@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clickplayers</title>
+    <title>Click Players</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/header-footer.css">
     <link rel="stylesheet" href="styles/index.css">
@@ -15,8 +15,8 @@
             <a href="/"><img class="radius-5 logo"src = '../images/logo-clickplayers.png' alt = ''></a>
             <input type="search" class="radius-10 buscador bg-verdeclaro" placeholder="Buscar producto, marca o vendedor" name="buscador">
             <div class="changuito d-flex radius-5 sombra">
-                <a href="carrito"><i class="fas fa-shopping-cart"></i></a>
-                <div><a href="carrito">0</a>
+                <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                <div><a href="/productCart">0</a>
                 </div>
             </div>
         </div>
@@ -26,9 +26,9 @@
             <nav class="d-flex barra-nav radius-10 bg-main sombra">
                         <a href = '/' class="separador-nav">Home</a>
                         <a href = 'login' class="separador-nav">Ingresar</a>
-                        <a href = 'carrito' class="separador-nav">productos</a>
-                        <a href = 'register' class="separador-nav">Registro</a>
-                        <a href = '/'>contacto</a>
+                        <a href = '/ProductDetail' class="separador-nav">Productos</a>
+                        <a href = '/register' class="separador-nav">Registro</a>
+                        <a href = '/contacto'>Contacto</a>
             </nav>
     </header>
     <div class="d-flex banner-principal">
@@ -40,7 +40,7 @@
             Nuestros productos más vendidos:
         </div>
         <section class="d-flex">
-            <a href="detalle"><article class="contenedor-producto">
+            <a href="/productDetail"><article class="contenedor-producto">
                 <div class="bg-product producto sombra radius-10"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
                     <div class="van">
                         <i class="fas fa-shuttle-van van"></i>
@@ -49,7 +49,7 @@
                     <div>Kit Procesador AMD RYZEN 5 2600 3.90Ghz</div>
             </article></a>
             <article class="contenedor-producto">
-                <a href="detalle"><div class="bg-product producto sombra radius-10"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
+                <a href="/productDetail"><div class="bg-product producto sombra radius-10"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
                     <div class="van">
                         <i class="fas fa-shuttle-van van"></i>
                     </div>
@@ -57,7 +57,7 @@
                     <div>RTX 2080</div></a>
             </article>
             <article class="contenedor-producto">
-                <a href="detalle"><div class="bg-product producto sombra radius-10"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
+                <a href="/productDetail"><div class="bg-product producto sombra radius-10"><img src ='images/promo-ryzen5-disco.jpg' alt = ""/>
                     <div class="van">
                         <i class="fas fa-shuttle-van van"></i>
                     </div>
@@ -80,7 +80,7 @@
             <nav>
                 <ul>
                     <li class="nav-linea">
-                        <a href = 'login'>Ingresa</a>
+                        <a href = '/login'>Ingresa</a>
                     </li>
                     <li>
                         <a href = '/'>Computadoras armadas</a>

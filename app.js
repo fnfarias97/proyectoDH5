@@ -9,7 +9,7 @@ app.get('/', (req,res) =>{
 	res.sendFile(myFile);
 });
 
-app.get('/detalle', (req,res) =>{
+app.get('/productDetail', (req,res) =>{
 	let myFile = path.resolve('./views/productDetail.html');
 	res.sendFile(myFile);
 });
