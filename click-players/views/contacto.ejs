@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title>Click Players</title>
+  </head>
+  <body>
+    <!--HEADER(NO TOCAR)-->
+    <header>
+      <%- include('partials/header') %>
+    </header>
+    <!--MAIN(NO TOCAR)-->
+    <main>
+      <h1>INFORMACIÓN DE CONTACTO</h1>
+      <h2>Déjanos tus datos y te contactáremos lo mas rápido posible</h2>
+      <form>
+          <p><input type="text" id="name" name="name" placeholder="Nombre"></p>
+          <p><input type="email" id="email" name="email" placeholder="Email"></p>
+          <textarea cols="40" rols="10" placeholder="Escribe tu consulta aquí"></textarea>
+          <p><button type="submit">Enviar</button>
+          <button type="reset">Borrar</button></p>
+      </form>
+    </main>
+    <!--FOOTER(NO TOCAR)-->
+    <footer>
+      <%- include('partials/footer') %>
+    </footer>
+  </body>
+</html>
