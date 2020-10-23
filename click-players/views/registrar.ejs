@@ -3,17 +3,28 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Players</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/registrar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title>Click Players</title>
   </head>
   <body>
+    <!--HEADER(NO TOCAR)-->
     <header>
       <%- include('partials/header') %>
     </header>
+    <!--MAIN(NO TOCAR)-->
     <main>
-
+      <h1>Crea tu cuenta de usuario:</h1>
+      <form>
+        <p><input type="text" id="name" name="name" placeholder="Nombre y apellido"></p>
+        <p><input type="email" id="email" name="email" placeholder="Email"></p>
+        <p><input type="password" id="password" name="password" placeholder="Contrase&ntilde;a"></p>
+        <p><input type="password" id="password" name="password" placeholder="Confirmar contrase&ntilde;a"></p>
+        <p><button type="submit">Registrar</button>
+        <button type="reset">Cancelar</button></p>
+      </form>
     </main>
+    <!--FOOTER(NO TOCAR)-->
     <footer>
       <%- include('partials/footer') %>
     </footer>
