@@ -1,19 +1,8 @@
 let userController = {
-    'ingresar' : function(req, res){
-        res.render('ingresar');
-    },
-    'productos' : function(req, res){
-        res.render('productos');
-    },
-    'detalle' : function(req, res){
-        res.render('detalle');
-    },
-    'registrar' : function(req, res){
-        res.render('registrar');
-    },
-    'contacto' : function(req, res){
-        res.render('contacto');
-    }
+    
+    ingresar : (req, res) => res.render('ingresar', { title: 'Click Players | Ingresa a tu cuenta' }),
+
+    registrar : (req, res) => res.render('registrar', { title: 'Click Players | Registrate' })
 };
 
 module.exports = userController;
