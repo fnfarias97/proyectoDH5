@@ -1,0 +1,138 @@
+ :root {
+  --main-bg-color: #2E3047; 
+  --light-green: #3BBA9C;
+  --dark-grey: #43455C;
+  --white: #b8bbc9;
+  --bg-container: #707793;
+}
+
+/* * {margin: 0px; padding: 0px; list-style: none;} */
+
+body{
+  background-color: var(--main-bg-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+a {text-decoration: none;}
+
+.section-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 0 0 0;
+}
+
+.logo{
+  /* width: 326px;
+  height: 133px; */
+  width: 200px;
+  position: relative;
+  bottom: 15px;
+}
+
+header input{
+  /* width: 675px; */
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 0px;
+  background-color: var(--light-green);
+  font-size: 20px;
+  padding-left: 10px;
+  color: var(--main-bg-color)
+}
+
+::placeholder{
+  color:  var(--main-bg-color);
+}
+
+.carrito-header{
+  width: 200px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  border: 0px;
+  margin-left: 30px;
+  color: var(--main-bg-color);
+  background-color:var(--white);
+}
+
+.carrito-header i{
+  font-size: 40px;
+  padding: 5px;
+  color: var(--main-bg-color);
+}
+
+header nav{
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  /* width: 1230px; */
+  width: auto;
+  background-color: var(--white);
+  border-radius: 5px;
+  border: 0px;
+}
+
+header nav a{
+  color: var(--main-bg-color);
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+}
+
+.burguer{
+  display: block;
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--main-bg-color);
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+footer{
+  color: var(--white);
+  padding-bottom: 5px;
+  padding-top: 2px;
+}
+
+.redes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer i{
+  font-size: 60px;
+  padding: 2px;
+}
+
+footer p{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (min-width: 767px){
+  header nav { display: flex}
+  .menu {display: none}
+}
