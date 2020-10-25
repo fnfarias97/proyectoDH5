@@ -7,10 +7,6 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/regristrar', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
 router.get('/ingresar', userController.ingresar);
 
 router.get('/productos', userController.productos);
