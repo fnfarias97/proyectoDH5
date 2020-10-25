@@ -1,10 +1,11 @@
 :root {
     --main-bg-color: #2E3047; 
     --light-green: #3BBA9C;
+    --dark-green:  #3D8C95;
     --dark-grey: #43455C;
-    --white: rgba(255, 255, 255, 0.788);
+    --white: #b8bbc9;
     --bg-container: #707793;
-}
+}  
 
 main {
     margin: 20px 0;
