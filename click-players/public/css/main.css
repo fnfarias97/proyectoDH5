@@ -73,6 +73,7 @@ header input{
 .carrito-header i{
   font-size: 40px;
   padding: 5px;
+  color: var(--main-bg-color);
 }
 
 header nav{
