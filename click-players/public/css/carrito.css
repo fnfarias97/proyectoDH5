@@ -1,0 +1,133 @@
+:root {
+    --main-bg-color: #2E3047; 
+    --light-green: #3BBA9C;
+    --dark-grey: #43455C;
+    --white: rgba(255, 255, 255, 0.788);
+    --bg-container: #707793;
+}
+
+main {
+    margin: 20px 0;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+main section {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-container {
+    background-color: var(--light-green);
+    padding: 3%;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.filter-title {width: auto}
+.filter-box {justify-content: space-around;}
+
+.filter-box p {
+    background-color: var(--bg-container);
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    height: 25px;
+    padding: 5px;
+}
+
+.filter-box div {width: auto;}
+
+.cart-container {
+    background-color: var(--light-green);
+    padding: 3%;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.cart-container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+
+main article {
+    display: flex;
+    justify-content: space-around;
+    margin: 8px 10px 8px 10px;
+}
+
+article p {
+    width: 60%;
+    background-color: var(--white);
+    color: black;
+    border-radius: 10px;
+    padding: 5%;
+}
+
+article img {
+    width: 25%;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.payment-container {justify-content: space-around;}
+
+.payment-box {
+    background-color: var(--bg-container);
+    width: 40%;
+}
+
+.payment-box p {margin-bottom: 10px;}
+.envio-container{display: block;}
+
+.cod-pos {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cod-pos input{
+    border-radius: 8px;
+    width: 50px;
+    padding: 10px 5px;
+}
+
+.payment-box button {
+    background-color: var(--main-bg-color);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 5px;
+}
+
+ @media (min-width:500px){
+    .filter-box p {padding: 10px;}
+    .cart-container h1 {font-size: 3em;}
+    main section p {font-size: 16px}
+    article p {
+        padding: 3%;
+        width: 70%;
+    }
+
+    main section {width: 90%;}
+
+    main section img {
+        height: 130px;
+        width: 130px;
+    }
+
+    .payment-box {font-size: 1.5em;}
+    .envio-container {display: flex;}
+    .cod-pos {
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .cod-pos * {
+        margin-right: 10px;
+    }
+ }
