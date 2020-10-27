@@ -1,10 +1,11 @@
- :root {
+:root {
   --main-bg-color: #2E3047; 
   --light-green: #3BBA9C;
+  --dark-green:  #3D8C95;
   --dark-grey: #43455C;
   --white: #b8bbc9;
   --bg-container: #707793;
-}
+}  
 
 /* * {margin: 0px; padding: 0px; list-style: none;} */
 
@@ -47,7 +48,7 @@ header input{
   height: 50px;
   border-radius: 5px;
   border: 0px;
-  background-color: var(--light-green);
+  background-color: var(--dark-green);
   font-size: 20px;
   padding-left: 10px;
   color: var(--main-bg-color)
