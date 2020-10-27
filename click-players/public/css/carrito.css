@@ -43,7 +43,7 @@ main article {
     margin: 8px 10px 8px 10px;
 }
 
-article p {
+main article p {
     width: 60%;
     background-color: var(--white);
     color: black;
@@ -51,12 +51,44 @@ article p {
     padding: 5%;
 }
 
-article img {
-    width: 25%;
-    height: 60px;
+main article img {
+    width: 130px;
+    height: 130px;
     border-radius: 10px;
-    margin-left: 20px;
+    margin: 0 20px;
 }
+
+.amounts {
+    flex-direction: row;
+    align-items: center;
+}
+
+.sumar-restar {
+    flex-direction: column;
+    align-items: center;
+}
+
+.amounts button  {
+    margin: 5px 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.amounts p {
+    text-align: center;
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.eliminar {
+    display: none;
+    margin-left: 10px;
+}
+
+/* --------------------------------------------------------------- */
 
 .payment-container {
     flex-direction: column;
@@ -107,6 +139,8 @@ article img {
         height: 130px;
         width: 130px;
     }
+
+    .eliminar{display: block;}
 
     .payment-container {
         flex-direction: row;
