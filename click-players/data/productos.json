@@ -5,7 +5,7 @@
         "precio": 12500,
         "marca": "AMD",
         "descripcion": "Procesador AMD de gama media, socket AM4, de 6 núcleos y 12 hilos a 3.2 Ghz. Excelente para complementar con una placa de video y jugar todo tipo de videojuegos o utilizar aplicaciones de diseño gráfico profesionales.",
-        "avatar": ""
+        "avatar": "ryzen-5.png"
     },
     {   "id": 2,
         "nombre": "ryzen-7-2700x",
@@ -13,7 +13,7 @@
         "precio": 25700,
         "marca": "AMD",
         "descripcion": "Procesador AMD de gama alta, socket AM4, de 8 núcleos y 16 hilos, a 3.2 Ghz. Excelente para complementar con una placa de video y jugar todo tipo de videojuegos o utilizar aplicaciones de diseño gráfico profesionales.",
-        "avatar": ""
+        "avatar": "ryzen-7.png"
     },
     {   "id": 3,
         "name": "core-i3-9100f",
@@ -21,7 +21,7 @@
         "precio": 8500,
         "marca": "Intel",
         "descripción": "Procesador intel de gama media, socket 1151, de 4 núcleos y 4 hilos, a 3.6 Ghz base o 4.2 Ghz en modo turbo. Excelente para complementar con una placa de video y jugar todo tipo de videojuegos.",
-        "avatar": ""
+        "avatar": "core-i3-9100f.png"
     },
     {   "id": 4,
         "name": "core-i7-10700",
@@ -29,7 +29,7 @@
         "precio": 37000,
         "marca": "Intel",
         "descripción": "Procesador intel de gama alta, socket 1200, de 8 núcleos y 16 hilos, a 2.9 Ghz de base o 4.8 Ghz en modo turbo. Excelente para complementar con una placa de video y jugar todo topi de videojuegos o utilizar aplicaciones de diseño gráfico profesionales.",
-        "avatar": ""
+        "avatar": "core-i7-10700.png"
     },
     {   "id": 5,
         "name": "promo-ryzen-5-y-disco",
@@ -37,7 +37,7 @@
         "precio": 15250,
         "marca": "AMD-adata",
         "descripción": "Esta promoción te ofrece un procesador AMD y un disco sólido SSD de 240 Gb de espacio, para sacarle el mayor provecho a este ryzen 5. Excelente para comenzar a armarte una pc, que complementando con una placa de video y las demás partes podría correr todo tipo de videojuegos o utilizar aplicaciones de diseño gráfico profesionales.",
-        "avatar": ""
+        "avatar": "promo-ryzen-5-y-disco.png"
     },
     {   "id": 6,
         "name": "pc-gamer",
@@ -45,7 +45,7 @@
         "precio": 52500,
         "marca": "AMD",
         "descripción": "Computadora con componentes de gama media, excelente para introducirse en el mundo de los videojuegos. Cuenta con un procesador core i3-9100F de 4 núcleo y cuatro hilos a 3.6 Ghz de base y 4.2 Ghz turbo. Con 8 Gb de memoria ram DDR4 a 2666 Ghz en 2 módulos de 4 Gb. Un disco sólido SSD adata de 240 Gb, una fuente certificada de 550 watt y Una placa de video Geforce GTX-1650 super de 4 Gb. Todos estos magníficos componentes dentro de un Gabinete Deepcool MATREXX 55 V3 ADD-RGB 3F Black, con una refrigeración de primer nivel para mantener los componentes funcionando a tope sin altas temperaturas.",
-        "avatar": ""
+        "avatar": "cp-gamer.png"
     },
     {   "id": 7,
         "name": "Geforce-rtx-2080",
@@ -53,7 +53,7 @@
         "precio": 110000,
         "marca": "Nvidia",
         "descripción": "Placa de video de nvidia de la familia RTX, con 11 Gb DDR6 de memoria ram dedicada, con la tecnología Ray Tracing y DLSS 2.0. Complementándolo con cualquier procesador de gama media o alta de última generación corre cualquier videojuegos AAA, con Ray Tracing y hasta en 4K. Además, si el tiempo te parece realmente valioso, entonces podrías ahorrar horas en renderizado de imágenes y videos profesionales.",
-        "avatar": ""
+        "avatar": "rtx-2080.png"
     },
     {   "id": 8,
         "name": "Geforce-rtx-3090",
@@ -61,7 +61,7 @@
         "precio": 210000,
         "marca": "Nvidia",
         "descripción": "Placa de video de nvidia de la familia RTX, la más poderosa de la última generación de RTX (3000), con 24 Gb DDR6X de memoria ram dedicada, con la tecnología Ray Tracing y DLSS 2.0. Complementándolo con cualquier procesador de gama media o alta de última generación corre cualquier videojuegos AAA, con Ray Tracing y hasta en 4K. Además, si el tiempo te parece realmente valioso, entonces podrías ahorrar horas en renderizado de imágenes y videos profesionales.",
-        "avatar": ""
+        "avatar": "rtx-3090.png"
     },
     {   "id": 9,
         "name": "amd-rx-570",
@@ -69,7 +69,7 @@
         "precio": 20000,
         "marca": "AMD",
         "descripción": "Placa de video de amd de entrada a la familia RX, con 8 Gb GDDR5 de memoria ram dedicada. Complementándolo con cualquier procesador de gama media o alta se puede jugar cualquier tipo de videojuego actual. Además, es una buena opción si ocasionalmente necesitas hacer renderizados de imágenes y videos.",
-        "avatar": ""
+        "avatar": "radeon-rx-570.png"
     },
     {   "id": 10,
         "name": "amd-rx-5500-xt",
@@ -77,6 +77,6 @@
         "precio": 33000,
         "marca": "AMD",
         "descripción": "Placa de video de amd de antrada a la familia RX, con 8 Gb GDDR6 de memoria ram dedicada. Complementándolo con cualquier procesador de gama media o alta se puede jugar cualquier tipo de videojuego actual con calidad ultra a altos FPS. Además, sirve para el renderizado de imágenes y videos profesionales.",
-        "avatar": ""
+        "avatar": "rx-5500-xt.png"
     }
 ]
