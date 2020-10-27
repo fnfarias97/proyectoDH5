@@ -23,6 +23,7 @@ header{
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 a {text-decoration: none;}
@@ -135,6 +136,7 @@ footer p{
 
 /*------------------------ Other classes ------------------------*/
 
+.d-flex {display: flex;}
 .w-50 {width: 50%;}
 .d-wrap {flex-wrap: wrap;}
 .fw {flex-wrap: wrap;}

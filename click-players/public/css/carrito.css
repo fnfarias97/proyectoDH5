@@ -7,6 +7,8 @@
     --bg-container: #707793;
 }  
 
+main * {margin: 0px; padding: 0px; list-style: none;} 
+
 main {
     margin: 20px 0;
     width: 100%;
@@ -19,29 +21,6 @@ main section {
     flex-direction: column;
     align-items: center;
 }
-
-.filter-container {
-    background-color: var(--light-green);
-    padding: 3%;
-    margin-bottom: 20px;
-    justify-content: space-between;
-}
-
-.filter-title {width: auto}
-.filter-box {justify-content: space-around;}
-
-.filter-box p {
-    background-color: var(--bg-container);
-    display: flex;
-    white-space: nowrap;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    height: 25px;
-    padding: 5px;
-}
-
-.filter-box div {width: auto;}
 
 .cart-container {
     background-color: var(--light-green);
@@ -60,6 +39,7 @@ main section {
 main article {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin: 8px 10px 8px 10px;
 }
 
@@ -75,28 +55,36 @@ article img {
     width: 25%;
     height: 60px;
     border-radius: 10px;
+    margin-left: 20px;
 }
 
-.payment-container {justify-content: space-around;}
+.payment-container {
+    flex-direction: column;
+    width: 75%;
+}
 
 .payment-box {
     background-color: var(--bg-container);
-    width: 40%;
+    padding: 4%;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .payment-box p {margin-bottom: 10px;}
 .envio-container{display: block;}
 
 .cod-pos {
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .cod-pos input{
     border-radius: 8px;
     width: 50px;
     padding: 10px 5px;
+    margin-right: 10px;
 }
 
 .payment-box button {
@@ -104,25 +92,32 @@ article img {
     color: white;
     border-radius: 8px;
     padding: 10px 5px;
+    margin: 10px 0;
 }
 
- @media (min-width:500px){
-    .filter-box p {padding: 10px;}
+ @media (min-width:767px){
+    .cart-container {width: 70%;}
     .cart-container h1 {font-size: 3em;}
     main section p {font-size: 16px}
     article p {
         padding: 3%;
         width: 70%;
     }
-
-    main section {width: 90%;}
-
     main section img {
         height: 130px;
         width: 130px;
     }
 
-    .payment-box {font-size: 1.5em;}
+    .payment-container {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 75%;
+    }
+    .payment-box {
+        font-size: 1.5em;
+        margin: 0 30px;
+        width: 45%;
+    }
     .envio-container {display: flex;}
     .cod-pos {
         justify-content: flex-start;
