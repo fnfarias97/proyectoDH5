@@ -43,6 +43,8 @@ a {text-decoration: none;}
   bottom: 15px;
 }
 
+header form { width: 100% }
+
 header input{
   /* width: 675px; */
   width: 100%;
