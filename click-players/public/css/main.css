@@ -136,6 +136,16 @@ footer p{
   font-weight: bold;
 }
 
+.d-flex {display: flex;}
+.d-wrap {flex-wrap: wrap;}
+.radius-5{border-radius: 5px;}
+.radius-10{border-radius: 10px;}
+.mt-20{margin-top: 20px;}
+.mcostados-5{margin: 0px 5px;}
+.pcostados-20{padding: 5px 20px;}
+.mtopbottom-10{margin: 10px 0px;}
+.fw-bolder{font-weight: bolder;}
+
 @media (min-width: 767px){
   header nav { display: flex}
   .menu {display: none}
