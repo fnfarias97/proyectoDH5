@@ -83,7 +83,7 @@ header nav{
   flex-direction: row;
   justify-content: space-around;
   /* width: 1230px; */
-  width: auto;
+  width: 100%;
   background-color: var(--white);
   border-radius: 5px;
   border: 0px;
@@ -132,28 +132,6 @@ footer i{
 footer p{
   font-size: 20px;
   font-weight: bold;
-}
-
-/*------------------------ Other classes ------------------------*/
-
-.d-flex {display: flex;}
-.w-50 {width: 50%;}
-.d-wrap {flex-wrap: wrap;}
-.fw {flex-wrap: wrap;}
-.ct-ar {align-items: center; justify-content: space-around;}
-
-.radius-5{border-radius: 5px;}
-.radius-10{border-radius: 10px;}
-.mt-20{margin-top: 20px;}
-.mcostados-5{margin: 0px 5px;}
-.pcostados-20{padding: 5px 20px;}
-.mtopbottom-10{margin: 10px 0px;}
-.fw-bolder{font-weight: bolder;}
-
-.sombra {
-  -webkit-box-shadow: 6px 3px 11px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 6px 3px 11px 0px rgba(0,0,0,0.75);
-  box-shadow: 6px 3px 11px 0px rgba(0,0,0,0.75);
 }
 
 @media (min-width: 767px){

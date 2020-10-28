@@ -5,42 +5,61 @@
         <img class = "radius-10"src ='images/banner-1.jpg' alt = ""/>
     </div>
     <main class="mtopbottom-10 bg-main radius-10 p-20 sombra">
-
         <div class="titulo">
-            Nuestros productos más vendidos:
+            <p>Nuestros productos más vendidos:</p>
         </div>
         <section class="d-flex">
-            <a href="products/detalle/1"><article class="contenedor-producto">
-                <div class="bg-product producto sombra radius-10"><img src ='/images/products/ryzen-5.png' alt = ""/>
+            <article class="contenedor-producto sombra">
+                <div class="producto">
+                    <a href="/products/detalle/1">
+                        <img src ='/images/products/ryzen-5.png' alt = ""/>
+                    </a>
                     <div class="van">
                         <i class="fas fa-shuttle-van van borde"></i>
                     </div>
-                    <div>$ 12.500</div>
-                    <div>Procesador AMD RYZEN 5 1600f 3.20Ghz</div>
-            </article></a>
-            <article class="contenedor-producto">
-                <a href="/products/detalle/10"><div class="bg-product producto sombra radius-10"><img src ='/images/products/rx-5500-xt.png' alt = ""/>
-                    <div class="van">
-                        <i class="fas fa-shuttle-van van borde"></i>
+                    <div>
+                        <p>$ 12.500</p>
+                        <p>Procesador AMD RYZEN 5 1600f 3.20Ghz</p>
                     </div>
-                    <div>$ 33.000</div>
-                    <div>Placa de video AMD RX 5500 XT 8 Gb GDDR6</div></a>
+                </div>
             </article>
-            <article class="contenedor-producto">
-                <a href="/products/detalle/3"><div class="bg-product producto sombra radius-10"><img src ='/images/products/core-i3-9100f.png' alt = ""/>
+            <article class="contenedor-producto sombra">
+                <div class="producto">
+                    <a href="products/detalle/10">
+                        <img src ='/images/products/rx-5500-xt.png' alt = ""/>
+                    </a>
                     <div class="van">
                         <i class="fas fa-shuttle-van van borde"></i>
                     </div>
-                    <div>$ 8.500</div>
-                    <div>Procesador Intel core i3-9100F 4.2 Ghz turbo</div></a>
+                    <div>
+                        <p>$ 33.000</p>
+                        <p>Placa de video AMD RX 5500 XT 8 Gb GDDR6</p>
+                    </div>
+                </div>
+            </article>
+            <article class="contenedor-producto sombra">
+                <div class="producto">
+                    <a href="/products/detalle/3">
+                        <img src ='/images/products/core-i3-9100f.png' alt = ""/>
+                    </a>
+                    <div class="van">
+                        <i class="fas fa-shuttle-van van borde"></i>
+                    </div>
+                    <div>
+                        <p>$ 8.500</p>
+                        <p>Procesador Intel core i3-9100F 4.2 Ghz turbo</p>
+                    </div>
+                </div>
             </article>
         </section>
-        <div class="separador titulo d-flex radius-10 bg-product sombra">
-            <a href = '/'><i class="fas fa-credit-card footer-images borde"></i>  Pagá con tarjeta</a>
-            <a href = '/'><i class="fas fa-money-bill-wave borde"></i>  En efectivo</a>
-            <a href = '/'><i class="far fa-handshake borde"></i>  MercadoPago</a>
-        </div>
-
+        <section class="formas-de-pago">
+            <div class="sombra">
+                <a href = '/'><i class="fas fa-credit-card footer-images borde"></i>Pagá con tarjeta</a>
+                <a href = '/'><i class="far fa-handshake borde"></i>MercadoPago</a>
+                <a href = '/'><i class="far fa-money-bill-alt"></i>En efectivo</a>
+            </div>
+        </section>
     </main>
+
 
     <%- include('partials/footer') %>

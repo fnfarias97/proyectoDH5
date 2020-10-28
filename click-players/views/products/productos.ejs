@@ -2,42 +2,60 @@
     <%- include('../partials/header') %>
 
     <main class="mtopbottom-10 bg-main radius-10 p-20 sombra">
-
         <div class="titulo">
-            Ofertas:
+            <p>OFERTAS:</p>
         </div>
         <section class="d-flex">
-            <a href="/products/detalle/5"><article class="contenedor-producto">
-                <div class="bg-product producto sombra radius-10"><img src ='/images/products/promo-ryzen5-disco.png' alt = ""/>
+            <article class="contenedor-producto sombra">
+                <div class="producto">
+                    <a href="/products/detalle/5">
+                        <img src ='/images/products/promo-ryzen5-disco.png' alt = ""/>
+                    </a>
                     <div class="van">
                         <i class="fas fa-shuttle-van van borde"></i>
                     </div>
-                    <div>$ 17.770</div>
-                    <div>Kit Procesador AMD RYZEN 5 2600 3.90Ghz</div>
-            </article></a>
-            <article class="contenedor-producto">
-                <a href="/products/detalle/7"><div class="bg-product producto sombra radius-10"><img src ='/images/products/rtx-2080.png' alt = ""/>
-                    <div class="van">
-                        <i class="fas fa-shuttle-van van borde"></i>
+                    <div>
+                        <p>$ 17.770</p>
+                        <p>Kit Procesador AMD RYZEN 5 2600 3.90Ghz</p>       
                     </div>
-                    <div>$ 110.770</div>
-                    <div>Placa de video Geforce RTX 2080 11 Gb DDR6</div></a>
+                </div>
             </article>
-            <article class="contenedor-producto">
-                <a href="/products/detalle/6"><div class="bg-product producto sombra radius-10"><img src ='/images/products/pc-gamer.png' alt = ""/>
+            <article class="contenedor-producto sombra">
+                <div class="producto">
+                    <a href="/products/detalle/7">
+                        <img src ='/images/products/rtx-2080.png' alt = ""/>
+                    </a>
                     <div class="van">
                         <i class="fas fa-shuttle-van van borde"></i>
                     </div>
-                    <div>$ 52.500</div>
-                    <div>Computadora gamer de entrada, core i3-9100f, placa da video GTX-1650 super</div></a>
+                    <div>
+                        <p>$ 110.770</p>
+                        <p>Placa de video Geforce RTX 2080 11 Gb DDR6</p>
+                    </div>
+                </div>
+            </article>
+            <article class="contenedor-producto sombra">
+                <div class="producto">
+                    <a href="/products/detalle/6">
+                        <img src ='/images/products/pc-gamer.png' alt = ""/>
+                    </a>
+                    <div class="van">
+                        <i class="fas fa-shuttle-van van borde"></i>
+                    </div>
+                    <div>
+                        <p>$ 52.500</p>
+                        <p>Computadora gamer de entrada, core i3-9100f, placa da video GTX-1650 super</p>
+                    </div>
+                </div>
             </article>
         </section>
-        <div class="separador titulo d-flex radius-10 bg-product sombra">
-            <a href = '/'><i class="fas fa-credit-card footer-images borde"></i>  Pagá con tarjeta</a>
-            <a href = '/'><i class="fas fa-money-bill-wave borde"></i>  En efectivo</a>
-            <a href = '/'><i class="far fa-handshake borde"></i>  MercadoPago</a>
-        </div>
-
+        <section class="formas-de-pago">
+            <div class="sombra">
+                <a href = '/'><i class="fas fa-credit-card footer-images borde"></i>Pagá con tarjeta</a>
+                <a href = '/'><i class="far fa-handshake borde"></i>MercadoPago</a>
+                <a href = '/'><i class="far fa-money-bill-alt"></i>En efectivo</a>
+            </div>
+        </section>
     </main>
 
     <%- include('../partials/footer') %>
