@@ -4,18 +4,41 @@
     <main>
       <h1>Modificar producto:</h1>
       <form>
-        <p><input type="text" id="nombre" name="nombre" placeholder="Nombre: <%= productNombre %>"></p>
-        <p><input type="text" id="categoria" name="name" placeholder="Categoría: <%= productCategoria %>"></p>
-        <p><input type="text" id="descripcion" name="descripcion" placeholder="Descripción: <%= productDescription %>"></p>
-        <p><input type="text" id="marca" name="marca" placeholder="Marca: <%= productMarca %>"></p>
-        <p><input type="text" id="precio" name="precio" placeholder="Precio: $ <%= productPrecio %>"></p>
-        <p><input type="text" id="stock" name="stock" placeholder="Cuánto stock del producto"></p>
+        <p>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" value="<%= producto.nombre %>">
+        </p>
+        <p>
+          <label for="categoria">Categoría:</label>
+          <input type="text" id="categoria" name="name" value="<%= producto.categoria %>">
+        </p>
+        <p>
+          <label for="descripcion">Descripción:</label>
+          <textarea rows="5" id="descripcion" name="descripcion"><%= producto.descripcion %></textarea>
+        </p>
+        <p>
+          <label for="marca">Marca:</label>
+          <input type="text" id="marca" name="marca" value="<%= producto.marca %>">
+        </p>
+        <p>
+          <label for="precio">Precio</label>
+          <input type="text" id="precio" name="precio" value="<%= producto.precio %>">
+        </p>
+        <p>
+          <label for="stock">Stock:</label>
+          <input type="text" id="stock" name="stock" value="<%= producto.stock %>">
+        </p>
         <div class="imagen-editor">
-            <img src ='<%= productImage %>' alt = ""/>
+            <img src ='/images/products/<%= producto.avatar %>' alt = "Imagen del producto"/>
         </div>
-        <p><input type="file" id="imagen" name="imagen"></p>
-        <p><button type="submit">Editar</button>
-        <button type="reset">Cancelar</button></p>
+        <p>
+          <label for="avatar">Cambiá la imágen del producto:</label>
+          <input type="file" id="avatar" name="avatar">
+        </p>
+        <div class="form-buttons">
+          <button type="submit">Editar</button>
+          <button type="reset">Cancelar</button>
+      </div>
       </form>
     </main>
 

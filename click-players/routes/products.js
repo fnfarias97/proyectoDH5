@@ -8,8 +8,8 @@ router.get('/detalle/:id?', productsController.show);
 
 router.get('/carrito', productsController.carrito);
 
-router.get('/agregarProducto', productsController.agregarProducto);
+router.get('/add', productsController.addProduct);
 
-router.get('/editarProducto/:id?', productsController.editarProducto);
+router.get('/edit/:id?', productsController.editProduct);
 
 module.exports = router;

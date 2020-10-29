@@ -3,13 +3,16 @@
 
     <main>
         <article class="articulo">
-                <img src=<%= productImage %>>
+                <img src="/images/products/<%= producto.avatar %>">
         </article>
         <div>
-            <p><%= productNombre %></p>
-            <p>$ <%= productPrecio %></p>
-            <p><%= productDescription %></p>
-            <p><button type="submit">COMPRAR</button>
+            <p><%= producto.nombre %></p>
+            <p>$ <%= producto.precio %></p>
+            <p><%= producto.descripcion %></p>
+            <div>
+                <button type="submit">COMPRAR</button>
+                <a href="../edit/<%= producto.id %>"><button>EDITAR</button></a>
+            </div>
         </div>
     </main>
 
