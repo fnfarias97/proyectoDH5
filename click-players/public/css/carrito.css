@@ -137,23 +137,14 @@ main article img {
     margin: 10px 0;
 }
 
- @media (min-width:767px){
+ @media (min-width:426px){
     .cart-container {width: 100%; box-sizing: border-box;}
     .cart-container h1 {font-size: 3em;}
     main section p {font-size: 16px}
     .prod-info {display: block;}
 
     .eliminar{display: block;}
-
-    .payment-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .payment-box {
-        font-size: 1.5em;
-        /* margin: 0 30px; */
-        width: 40%;
-    }
+    
     .envio-container {display: flex;}
     .cod-pos {
         justify-content: flex-start;
@@ -161,5 +152,18 @@ main article img {
     }
     .cod-pos * {
         margin-right: 10px;
+    }
+ }
+
+ @media (min-width:767px){
+    .payment-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .payment-box {
+        font-size: 1.5em;
+        /* margin: 0 30px; */
+        width: 40%;
     }
  }

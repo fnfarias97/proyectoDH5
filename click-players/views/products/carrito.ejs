@@ -5,67 +5,23 @@
         <section class="d-flex">
             <div class="cart-container radius-10 d-flex fw sombra">
                 <h1>Carrito de Compras</h1>
-                <article>
-                    <p class="prod-info">Procesador AMD Ryzen 9 3950X 4.7GHz Turbo AM4</p>
-                    <img src="/images/products/pc-gamer.png" alt="">
-                    <div class="amounts d-flex">
-                        <div class="sumar-restar d-flex">
-                            <button class="fa fa-plus sumar"></button>
-                            <p>1</p>
-                            <button class="fa fa-minus restar"></button>
+
+                <% for (product of products) { %>
+                    <article>
+                        <p class="prod-info"><%= product.nombre %></p>
+                        <a href="./detalle/<%= product.id %>"><img src="/images/products/<%= product.avatar %>"  alt=""></a>
+                        <div class="amounts d-flex">
+                            <div class="sumar-restar d-flex">
+                                <button class="fa fa-plus sumar"></button>
+                                <p><%= product.stock %></p>     <!-- Actualizar luego con session -->
+                                <button class="fa fa-minus restar"></button>
+                            </div>
+                            <div class="eliminar"><button class="fa fa-trash"></button></div>
                         </div>
-                        <div class="eliminar"><button class="fa fa-trash"></button></div>
-                    </div>
-                </article>
-                <article>
-                    <p class="prod-info">Placa de Video ASUS GeForce RTX 2080Ti 11GB</p>
-                    <img src="/images/products/rtx-2080.png" alt="">
-                    <div class="amounts d-flex">
-                        <div class="sumar-restar d-flex">
-                            <button class="fa fa-plus sumar"></button>
-                            <p>1</p>
-                            <button class="fa fa-minus restar"></button>
-                        </div>
-                        <div class="eliminar"><button class="fa fa-trash"></button></div>
-                    </div>
-                </article>
-                <article>
-                    <p class="prod-info">Procesador AMD Ryzen 9 3950X 4.7GHz Turbo AM4</p>
-                    <img src="/images/products/promo-ryzen5-disco.png" alt="">
-                    <div class="amounts d-flex">
-                        <div class="sumar-restar d-flex">
-                            <button class="fa fa-plus sumar"></button>
-                            <p>1</p>
-                            <button class="fa fa-minus restar"></button>
-                        </div>
-                        <div class="eliminar"><button class="fa fa-trash"></button></div>
-                    </div>
-                </article>
-                <article>
-                    <p class="prod-info">Placa de Video ASUS GeForce RTX 2080Ti 11GB</p>
-                    <img src="/images/products/rtx-2080.png" alt="">
-                    <div class="amounts d-flex">
-                        <div class="sumar-restar d-flex">
-                            <button class="fa fa-plus sumar"></button>
-                            <p>1</p>
-                            <button class="fa fa-minus restar"></button>
-                        </div>
-                        <div class="eliminar"><button class="fa fa-trash"></button></div>
-                    </div>
-                </article>
-                <article>
-                    <p class="prod-info">Procesador AMD Ryzen 9 3950X 4.7GHz Turbo AM4</p>
-                    <img src="/images/products/promo-ryzen5-disco.png" alt="">
-                    <div class="amounts d-flex">
-                        <div class="sumar-restar d-flex">
-                            <button class="fa fa-plus sumar"></button>
-                            <p>1</p>
-                            <button class="fa fa-minus restar"></button>
-                        </div>
-                        <div class="eliminar"><button class="fa fa-trash"></button></div>
-                    </div>
-                </article>
+                    </article>
+                <% } %>
             </div>
+
             <div class="payment-container mt-20 d-flex">
                 <div class="payment-box radius-10 d-flex fw sombra">
                     <p>Total precio especial: $150.000</p>
@@ -79,6 +35,7 @@
                         <button>Calcular Envío</button>
                     </div>
                 </div>
+
                 <div class="payment-box radius-10 d-flex sombra">
                     <button>COMPRAR EN UN PAGO</button>
                     <button>COMPRAR EN CUOTAS</button>

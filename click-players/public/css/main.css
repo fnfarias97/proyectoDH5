@@ -28,6 +28,16 @@ header{
 
 a {text-decoration: none;}
 
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 .section-header{
   display: flex;
   flex-direction: row;
@@ -145,6 +155,12 @@ footer p{
 .pcostados-20{padding: 5px 20px;}
 .mtopbottom-10{margin: 10px 0px;}
 .fw-bolder{font-weight: bolder;}
+
+.sombra {
+  -webkit-box-shadow: 6px 3px 11px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 6px 3px 11px 0px rgba(0,0,0,0.75);
+box-shadow: 6px 3px 11px 0px rgba(0,0,0,0.75);
+}
 
 @media (min-width: 767px){
   header nav { display: flex}
