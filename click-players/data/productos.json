@@ -20,17 +20,17 @@
     {   "id": 3,
         "imagen": "/images/products/core-i3-9100f.png",
         "nombre": "core-i3-9100f",
-        "categoria": "procesador",
+        "categoria": "procesadores",
         "precio": 8500,
-        "marca": "intel",
+        "marca": "Intel",
         "descripcion": "Procesador intel de gama media, socket 1151, de 4 núcleos y 4 hilos, a 3.6 Ghz base o 4.2 Ghz en modo turbo. Excelente para complementar con una placa de video y jugar todo tipo de videojuegos."
     },
     {   "id": 4,
         "imagen": "/images/products/core-i7-10700.png",
         "nombre": "core-i7-10700",
-        "categoria": "procesador",
+        "categoria": "procesadores",
         "precio": 37000,
-        "marca": "intel",
+        "marca": "Intel",
         "descripcion": "Procesador intel de gama alta, socket 1200, de 8 núcleos y 16 hilos, a 2.9 Ghz de base o 4.8 Ghz en modo turbo. Excelente para complementar con una placa de video y jugar todo topi de videojuegos o utilizar aplicaciones de diseño gráfico profesionales."
     },
     {   "id": 5,
@@ -38,7 +38,7 @@
         "nombre": "promo-ryzen-5-y-disco",
         "categoria": "promociones",
         "precio": 15250,
-        "marca": "amd-adata",
+        "marca": "AMD-adata",
         "descripcion": "Esta promoción te ofrece un procesador AMD y un disco sólido SSD de 240 Gb de espacio, para sacarle el mayor provecho a este ryzen 5. Excelente para comenzar a armarte una pc, que complementando con una placa de video y las demás partes podría correr todo tipo de videojuegos o utilizar aplicaciones de diseño gráfico profesionales."
     },
     {   "id": 6,
@@ -46,7 +46,7 @@
         "nombre": "pc-gamer",
         "categoria": "computadoras-armadas",
         "precio": 52500,
-        "marca": "amd",
+        "marca": "AMD",
         "descripcion": "Computadora con componentes de gama media, excelente para introducirse en el mundo de los videojuegos. Cuenta con un procesador core i3-9100F de 4 núcleo y cuatro hilos a 3.6 Ghz de base y 4.2 Ghz turbo. Con 8 Gb de memoria ram DDR4 a 2666 Ghz en 2 módulos de 4 Gb. Un disco sólido SSD adata de 240 Gb, una fuente certificada de 550 watt y Una placa de video Geforce GTX-1650 super de 4 Gb. Todos estos magníficos componentes dentro de un Gabinete Deepcool MATREXX 55 V3 ADD-RGB 3F Black, con una refrigeración de primer nivel para mantener los componentes funcionando a tope sin altas temperaturas."
     },
     {   "id": 7,
@@ -70,7 +70,7 @@
         "nombre": "amd-rx-570",
         "categoria": "placa-de-video",
         "precio": 20000,
-        "marca": "amd",
+        "marca": "AMD",
         "descripcion": "Placa de video de amd de entrada a la familia RX, con 8 Gb GDDR5 de memoria ram dedicada. Complementándolo con cualquier procesador de gama media o alta se puede jugar cualquier tipo de videojuego actual. Además, es una buena opción si ocasionalmente necesitas hacer renderizados de imágenes y videos."
     },
     {   "id": 10,
@@ -78,7 +78,7 @@
         "nombre": "amd-rx-5500-xt",
         "categoria": "placa-de-video",
         "precio": 33000,
-        "marca": "amd",
+        "marca": "AMD",
         "descripcion": "Placa de video de amd de antrada a la familia RX, con 8 Gb GDDR6 de memoria ram dedicada. Complementándolo con cualquier procesador de gama media o alta se puede jugar cualquier tipo de videojuego actual con calidad ultra a altos FPS. Además, sirve para el renderizado de imágenes y videos profesionales."
     }
 ]

@@ -1,0 +1,22 @@
+<%- include('../partials/head') %>
+    <%- include('../partials/header') %>
+
+    <main>
+      <h1>Modificar producto:</h1>
+      <form>
+        <p><input type="text" id="nombre" name="nombre" placeholder="Nombre: <%= productNombre %>"></p>
+        <p><input type="text" id="categoria" name="name" placeholder="Categoría: <%= productCategoria %>"></p>
+        <p><input type="text" id="descripcion" name="descripcion" placeholder="Descripción: <%= productDescription %>"></p>
+        <p><input type="text" id="marca" name="marca" placeholder="Marca: <%= productMarca %>"></p>
+        <p><input type="text" id="precio" name="precio" placeholder="Precio: $ <%= productPrecio %>"></p>
+        <p><input type="text" id="stock" name="stock" placeholder="Cuánto stock del producto"></p>
+        <div class="imagen-editor">
+            <img src ='<%= productImage %>' alt = ""/>
+        </div>
+        <p><input type="file" id="imagen" name="imagen"></p>
+        <p><button type="submit">Editar</button>
+        <button type="reset">Cancelar</button></p>
+      </form>
+    </main>
+
+    <%- include('../partials/footer') %>

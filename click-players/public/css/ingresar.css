@@ -58,3 +58,12 @@ main button{
     margin-right: 10px;
     margin-left: 10px;
 }
+
+.imagen-editor {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 5px;
+}
+.imagen-editor img {
+    border-radius: 5px;;
+}

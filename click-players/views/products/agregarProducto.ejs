@@ -1,0 +1,19 @@
+<%- include('../partials/head') %>
+    <%- include('../partials/header') %>
+
+    <main>
+      <h1>Agrega productos:</h1>
+      <form>
+        <p><input type="text" id="nombre" name="nombre" placeholder="Nombre del producto"></p>
+        <p><input type="text" id="categoria" name="name" placeholder="categoria"></p>
+        <p><input type="text" id="descripcion" name="descripcion" placeholder="Descripción del producto"></p>
+        <p><input type="text" id="marca" name="marca" placeholder="Marca"></p>
+        <p><input type="text" id="precio" name="precio" placeholder="Precio"></p>
+        <p><input type="text" id="stock" name="stock" placeholder="Cuanto stock del producto"></p>
+        <input type="file" id="imagen" name="imagen">
+        <p><button type="submit">Agregar</button>
+        <button type="reset">Cancelar</button></p>
+      </form>
+    </main>
+
+    <%- include('../partials/footer') %>
