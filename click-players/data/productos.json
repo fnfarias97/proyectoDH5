@@ -1,5 +1,6 @@
 [
-    {   "id": 1,
+    {
+        "id": 1,
         "nombre": "Procesador AMD Ryzen 5 1600 Af",
         "categoria": "Procesadores",
         "precio": 12500,
@@ -8,7 +9,8 @@
         "avatar": "ryzen-5.png",
         "stock": 10
     },
-    {   "id": 2,
+    {
+        "id": 2,
         "nombre": "Procesador AMD Ryzen 7 2700x",
         "categoria": "Procesadores",
         "precio": 25700,
@@ -17,7 +19,8 @@
         "avatar": "ryzen-7.png",
         "stock": 10
     },
-    {   "id": 3,
+    {
+        "id": 3,
         "nombre": "Procesador Intel Core i3-9100f",
         "categoria": "Procesadores",
         "precio": 8500,
@@ -26,7 +29,8 @@
         "avatar": "core-i3-9100f.png",
         "stock": 10
     },
-    {   "id": 4,
+    {
+        "id": 4,
         "nombre": "Procesador Intel Core i7-10700",
         "categoria": "Procesadores",
         "precio": 37000,
@@ -35,7 +39,8 @@
         "avatar": "core-i7-10700.png",
         "stock": 10
     },
-    {   "id": 5,
+    {
+        "id": 5,
         "nombre": "Procesador AMD Ryzen 5 + SSD 240Gb",
         "categoria": "Promociones",
         "precio": 15250,
@@ -44,7 +49,8 @@
         "avatar": "promo-ryzen5-disco.png",
         "stock": 10
     },
-    {   "id": 6,
+    {
+        "id": 6,
         "nombre": "PC Gamer Diamond",
         "categoria": "Computadoras Armadas",
         "precio": 52500,
@@ -53,16 +59,18 @@
         "avatar": "pc-gamer.png",
         "stock": 10
     },
-    {   "id": 7,
-        "nombre": "Placa de Video Geforce rtx-2080",
+    {
+        "id": 7,
+        "nombre": "Placa de Video Geforce RTX-2080",
         "categoria": "Placa de Video",
-        "precio": 110000,
-        "marca": "Nvidia",
         "descripcion": "Placa de video de nvidia de la familia RTX, con 11 Gb DDR6 de memoria ram dedicada, con la tecnología Ray Tracing y DLSS 2.0. Complementándolo con cualquier procesador de gama media o alta de última generación corre cualquier videojuegos AAA, con Ray Tracing y hasta en 4K. Además, si el tiempo te parece realmente valioso, entonces podrías ahorrar horas en renderizado de imágenes y videos profesionales.",
-        "avatar": "rtx-2080.png",
-        "stock": 10
+        "marca": "Nvidia",
+        "precio": "110.000",
+        "stock": "10",
+        "avatar": "rtx-2080.png"
     },
-    {   "id": 8,
+    {
+        "id": 8,
         "nombre": "Placa de Video Geforce rtx-3090",
         "categoria": "Placa de Video",
         "precio": 210000,
@@ -71,7 +79,8 @@
         "avatar": "rtx-3090.png",
         "stock": 10
     },
-    {   "id": 9,
+    {
+        "id": 9,
         "nombre": "Placa de Video AMD Rx-570",
         "categoria": "Placa de Video",
         "precio": 20000,
@@ -80,7 +89,8 @@
         "avatar": "radeon-rx-570.png",
         "stock": 10
     },
-    {   "id": 10,
+    {
+        "id": 10,
         "nombre": "Placa de Video AMD Rx-5500-xt",
         "categoria": "Placa de Video",
         "precio": 33000,

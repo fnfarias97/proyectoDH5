@@ -1,4 +1,5 @@
-let products = require ('../data/productos.json');
+const products = require ('../data/productos.json');
+const fs = require('fs')
 
 let productsController = {
     
@@ -42,6 +43,37 @@ let productsController = {
         }
 
         res.status(404).render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', producto : error})
+    },
+
+    update : (req, res, next) => {
+        let productsCopy = [...products]
+        let product = productsCopy.find(e => e.id == req.params.id);
+
+        let avatar = product.avatar
+        if (req.files[0] != undefined) { avatar = req.files[0].filename }
+
+        productsCopy = productsCopy.map( e => {
+            if (e.id == product.id) {
+                e = {
+                    id:product.id,
+                    ...req.body,
+                    avatar: avatar
+                }
+            }
+            return e;
+        });
+
+        fs.writeFileSync('./data/productos.json', JSON.stringify(productsCopy, null, 4));
+        res.redirect('/products');
+    },
+
+    remove : (req, res, next) => {
+        let productsCopy = [...products]
+        let product = productsCopy.find(e => e.id == req.params.id);
+        productsCopy = productsCopy.filter(e => e.id != product.id);
+
+        fs.writeFileSync('./data/productos.json', JSON.stringify(productsCopy, null, 4));
+        res.redirect('/products');
     },
 
     detalle : (req, res) => res.render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle' }),

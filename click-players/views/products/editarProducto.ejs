@@ -3,14 +3,14 @@
 
     <main>
       <h1>Modificar producto:</h1>
-      <form>
+      <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <p>
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" value="<%= producto.nombre %>">
         </p>
         <p>
           <label for="categoria">Categoría:</label>
-          <input type="text" id="categoria" name="name" value="<%= producto.categoria %>">
+          <input type="text" id="categoria" name="categoria" value="<%= producto.categoria %>">
         </p>
         <p>
           <label for="descripcion">Descripción:</label>
@@ -37,8 +37,11 @@
         </p>
         <div class="form-buttons">
           <button type="submit">Editar</button>
-          <button type="reset">Cancelar</button>
-      </div>
+          <a href="/products"><button type="button">Cancelar</button></a>
+        </div>
+      </form>
+      <form action="/products/remove/<%= producto.id %>?_method=DELETE" method="POST">
+        <button type="submit" class="danger">Borrar</button>
       </form>
     </main>
 
