@@ -2,7 +2,10 @@ let products = require ('../data/productos.json');
 
 let productsController = {
     
-    products : (req, res) => res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index' }),
+    products : (req, res) => {
+        let productList = [...products]
+        res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index', products : productList })}
+    ,
     
     show: (req, res) => {
         let producto = products.find((e) => e.id == req.params.id);
