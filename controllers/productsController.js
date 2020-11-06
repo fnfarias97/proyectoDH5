@@ -1,6 +1,9 @@
 const products = require ('../data/productos.json');
 const fs = require('fs')
 
+let numberFormat = n => n.toString().replace( /\B(?=(\d{3})+(?!\d))/g,
+".");
+
 let productsController = {
     
     products : (req, res) => res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index' }),
@@ -28,8 +31,7 @@ let productsController = {
 
     editProduct: (req, res) => {
         let producto = products.find((e) => e.id == req.params.id);
-        producto.precio = producto.precio.toString() . replace( /\B(?=(\d{3})+(?!\d))/g,
-        "." ) ;
+        producto.precio = numberFormat(producto.precio);
 
         if (producto != undefined){
             res.render('products/editarProducto', { title: 'Click Players | Modificar producto', stylesheet: 'forms', producto})
@@ -79,7 +81,9 @@ let productsController = {
     detalle : (req, res) => res.render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle' }),
 
     carrito : (req, res) => {
-        let productsCart = [...products]
+        let productsCart = [...products]           // actualizar con session 
+        productsCart.map(product => product.precio = numberFormat(product.precio));
+
         res.render('products/carrito', { title: 'Click Players | Carrito de productos', stylesheet: 'carrito', products : productsCart})
     }
 }

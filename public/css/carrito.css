@@ -45,20 +45,23 @@ main article {
     margin: 8px 10px 8px 10px;
 }
 
-main article p {
-    width: 60%;
+.text-cont {
     background-color: var(--white);
     color: black;
     border-radius: 10px;
     padding: 5%;
+    box-sizing: border-box;
+    height: 150px;
+}
+
+.prod-p {
+    width: 70%;
+    display: none;
 }
 
 .prod-info {
-    display: none;
-    padding: 2%;
-    box-sizing: border-box;
-    height: 150px;
-    width: 70%;
+    width: 85%;
+    justify-content: space-between;
 }
 
 main article img {
@@ -94,7 +97,7 @@ main article img {
 }
 
 .eliminar {
-    display: none;
+    /* display: none; */
     margin-left: 10px;
 }
 
@@ -141,7 +144,8 @@ main article img {
     .cart-container {width: 100%; box-sizing: border-box;}
     .cart-container h1 {font-size: 3em;}
     main section p {font-size: 16px}
-    .prod-info {display: block;}
+    .prod-p{display: block;}
+    .text-cont {padding: 3%;}
 
     .eliminar{display: block;}
     

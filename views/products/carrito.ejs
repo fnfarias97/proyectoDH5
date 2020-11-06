@@ -4,19 +4,30 @@
     <main class="d-flex">
         <section class="d-flex">
             <div class="cart-container radius-10 d-flex fw sombra">
-                <h1>Carrito de Compras</h1>
-
+                <div class="d-flex">
+                    <h1>Carrito de Compras</h1>
+                    <div class="eliminar"><button class="fa fa-trash"></button></div>
+                </div>
+                
                 <% for (product of products) { %>
                     <article>
-                        <p class="prod-info"><%= product.nombre %></p>
-                        <a href="./detalle/<%= product.id %>"><img src="/images/products/<%= product.avatar %>"  alt=""></a>
-                        <div class="amounts d-flex">
-                            <div class="sumar-restar d-flex">
-                                <button class="fa fa-plus sumar"></button>
-                                <p><%= product.stock %></p>     <!-- Actualizar luego con session -->
-                                <button class="fa fa-minus restar"></button>
+                        <div class="d-flex prod-info">
+                            <div class="text-cont prod-p">
+                                <h3 class="prod-nombre"><%= product.nombre %></h3>
+                                <p class="prod-precio">Precio Unitario: $<%= product.precio %></p>
                             </div>
-                            <div class="eliminar"><button class="fa fa-trash"></button></div>
+                            <a href="./detalle/<%= product.id %>"><img src="/images/products/<%= product.avatar %>"  alt=""></a>
+                        </div>
+                        <div class="d-flex prod-amounts">
+                            <div class="amounts d-flex">
+                                <div class="sumar-restar d-flex">
+                                    <button class="fa fa-plus sumar"></button>
+                                    <p class="text-cont"><%= product.stock %></p>     <!-- Actualizar luego con session -->
+                                    <button class="fa fa-minus restar"></button>
+                                </div>
+                                <div><p class="text-cont">$<%= product.precio * product.stock %></p></div>
+                                <input type="checkbox" name="remove" id="remove">
+                            </div>
                         </div>
                     </article>
                 <% } %>
