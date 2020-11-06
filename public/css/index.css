@@ -23,6 +23,12 @@ main a{
     justify-content: space-around;
 }
 
+.d-flex2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .titulo{
     font-weight: bold;
     padding: 10px;
@@ -63,9 +69,9 @@ main a{
 .contenedor-producto{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     padding: 10px;
-    width: 70%;
+    width: 29%;
     height: 450px;
     font-size: 16px;
     margin-bottom: 20px;

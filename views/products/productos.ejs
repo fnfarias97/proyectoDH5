@@ -7,49 +7,23 @@
         <div class="titulo">
             <p>OFERTAS:</p>
         </div>
-        <section class="d-flex">
-            <article class="contenedor-producto sombra">
-                <div class="producto">
-                    <a href="/products/detalle/5">
-                        <img src ='/images/products/promo-ryzen5-disco.png' alt = ""/>
-                    </a>
-                    <div class="van">
-                        <i class="fas fa-shuttle-van van borde"></i>
+        <section class="d-flex2">
+            <% for (product of products) { %>
+                <article class="contenedor-producto sombra">
+                    <div class="producto">
+                        <a href="/products/detalle/<%= product.id %>">
+                            <img src ='/images/products/<%= product.avatar %>' alt = ""/>
+                        </a>
+                        <div class="van">
+                            <i class="fas fa-shuttle-van van borde"></i>
+                        </div>
+                        <div>
+                            <p>$ <%= product.precio %></p>
+                            <p><%= product.nombre %></p>       
+                        </div>
                     </div>
-                    <div>
-                        <p>$ 17.770</p>
-                        <p>Kit Procesador AMD RYZEN 5 2600 3.90Ghz</p>       
-                    </div>
-                </div>
-            </article>
-            <article class="contenedor-producto sombra">
-                <div class="producto">
-                    <a href="/products/detalle/7">
-                        <img src ='/images/products/rtx-2080.png' alt = ""/>
-                    </a>
-                    <div class="van">
-                        <i class="fas fa-shuttle-van van borde"></i>
-                    </div>
-                    <div>
-                        <p>$ 110.770</p>
-                        <p>Placa de video Geforce RTX 2080 11 Gb DDR6</p>
-                    </div>
-                </div>
-            </article>
-            <article class="contenedor-producto sombra">
-                <div class="producto">
-                    <a href="/products/detalle/6">
-                        <img src ='/images/products/pc-gamer.png' alt = ""/>
-                    </a>
-                    <div class="van">
-                        <i class="fas fa-shuttle-van van borde"></i>
-                    </div>
-                    <div>
-                        <p>$ 52.500</p>
-                        <p>Computadora gamer de entrada, core i3-9100f, placa da video GTX-1650 super</p>
-                    </div>
-                </div>
-            </article>
+                </article>
+                <% } %>
         </section>
         <section class="formas-de-pago">
             <div class="sombra">

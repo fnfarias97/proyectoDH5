@@ -6,8 +6,10 @@ let numberFormat = n => n.toString().replace( /\B(?=(\d{3})+(?!\d))/g,
 
 let productsController = {
     
-    products : (req, res) => res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index' }),
-    
+    products : (req, res) => {
+        let productList = [...products]
+        res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index', products : productList })}
+    ,
     show: (req, res) => {
         let producto = products.find((e) => e.id == req.params.id);
         producto.precio = producto.precio.toString() . replace( /\B(?=(\d{3})+(?!\d))/g,
