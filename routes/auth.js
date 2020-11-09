@@ -4,6 +4,10 @@ const router = express.Router();
 
 router.get('/ingresar', authController.ingresar);
 
+router.post('/ingresar', authController.login);
+
 router.get('/registrar', authController.registrar);
+
+router.post('/registrar', authController.store);
 
 module.exports = router;

@@ -3,9 +3,9 @@
 
     <main>
         <h1>Ingresá a tu cuenta:</h1>
-        <form>
+        <form action="/auth/ingresar" method="POST">
           <p><input type="email" id="email" name="email" placeholder="Email"></p>
-          <p><input type="password" id="password" name="password" placeholder="Contrase&ntilde;a"></p>
+          <p><input type="password" id="password" name="password" placeholder="Contrase&ntilde;a" required></p>
           <p><button class="google">Sign in with<img src="/images/google-logo-1.png"></i></button></p>
           <p><button type="submit">Ingresar</button></p>
         </form>
