@@ -31,6 +31,18 @@ let productsController = {
 
     addProduct: (req, res) => res.render('products/agregarProducto', { title: 'Click Players | Agregar producto', stylesheet: 'forms' }),
 
+    save: (req, res) => {
+        let producto = {
+            id: products [products.length-1].id+1,
+            ...req.body
+        }
+
+        products.push(producto)
+
+        fs.writeFileSync('./data/productos.json', JSON.stringify(products, null, 4));
+        res.redirect('/products');        
+    },
+
     editProduct: (req, res) => {
         let producto = products.find((e) => e.id == req.params.id);
         producto.precio = numberFormat(producto.precio);

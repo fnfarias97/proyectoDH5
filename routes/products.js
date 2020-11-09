@@ -23,6 +23,8 @@ router.get('/carrito', productsController.carrito);
 
 router.get('/add', productsController.addProduct);
 
+router.post('/add', upload.any(), productsController.save);
+
 router.get('/edit/:id', productsController.editProduct);
 
 router.put('/edit/:id', upload.any(), productsController.update);

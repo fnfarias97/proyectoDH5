@@ -3,21 +3,21 @@
         "id": 1,
         "nombre": "Procesador AMD Ryzen 5 1600 Af",
         "categoria": "Procesadores",
-        "precio": 12500,
-        "marca": "AMD",
         "descripcion": "Procesador AMD de gama media, socket AM4, de 6 núcleos y 12 hilos a 3.2 Ghz. Excelente para complementar con una placa de video y jugar todo tipo de videojuegos o utilizar aplicaciones de diseño gráfico profesionales.",
-        "avatar": "ryzen-5.png",
-        "stock": 10
+        "marca": "AMD",
+        "precio": "12.500",
+        "stock": "10",
+        "avatar": "ryzen-5.png"
     },
     {
         "id": 2,
         "nombre": "Procesador AMD Ryzen 7 2700x",
         "categoria": "Procesadores",
-        "precio": 25700,
-        "marca": "AMD",
         "descripcion": "Procesador AMD de gama alta, socket AM4, de 8 núcleos y 16 hilos, a 3.2 Ghz. Excelente para complementar con una placa de video y jugar todo tipo de videojuegos o utilizar aplicaciones de diseño gráfico profesionales.",
-        "avatar": "ryzen-7.png",
-        "stock": 10
+        "marca": "AMD",
+        "precio": "25.700",
+        "stock": "10",
+        "avatar": "ryzen-7.png"
     },
     {
         "id": 3,

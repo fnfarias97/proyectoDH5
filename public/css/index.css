@@ -23,10 +23,8 @@ main a{
     justify-content: space-around;
 }
 
-.d-flex2 {
-    display: flex;
+.flex-wrap {
     flex-wrap: wrap;
-    justify-content: space-around;
 }
 
 .titulo{
