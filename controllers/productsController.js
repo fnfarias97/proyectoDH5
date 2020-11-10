@@ -31,10 +31,11 @@ let productsController = {
 
     addProduct: (req, res) => res.render('products/agregarProducto', { title: 'Click Players | Agregar producto', stylesheet: 'forms' }),
 
-    save: (req, res) => {
+    save: (req, res, next) => {
         let producto = {
             id: products [products.length-1].id+1,
-            ...req.body
+            ...req.body,
+            avatar: req.files[0].filename
         }
 
         products.push(producto)
