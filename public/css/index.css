@@ -14,9 +14,7 @@ main{
     border-radius: 10px;
 }
 
-main a{
-    text-decoration: none;
-}
+main a{ height: 100%; }
 
 .d-flex{
     display: flex;
