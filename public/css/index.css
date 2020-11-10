@@ -85,9 +85,36 @@ main a{
 }
 
 .van {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+.precio-producto{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.van i{
     font-size: 40px;
     color: var(--dark-green);
-    margin-top: 10px;
+    background-color: var(--white);
+    border: var(--dark-grey) solid 5px;
+    border-radius: 50%;
+    padding-right: 6px;
+    padding-left: 9px;
+    padding-top: 14px;
+    padding-bottom: 11px;
+    position: relative;
+    bottom: 40px; left: 0px;
+}
+
+.descripcion-producto{
+    font-size: 20px;
+    margin: 0px;
 }
 
 .contenedor-producto p{
