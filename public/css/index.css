@@ -14,8 +14,6 @@ main{
     border-radius: 10px;
 }
 
-main a{ height: 100%; }
-
 .d-flex{
     display: flex;
     justify-content: space-around;
