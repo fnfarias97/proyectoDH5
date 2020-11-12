@@ -13,7 +13,7 @@
                     <div class="producto">
                         <a href="/products/detalle/<%= product.id %>">
                             <img src ='/images/products/<%= product.avatar %>' alt = ""/>
-                        </a>
+
                         <div class="van">
                             <p class="precio-producto">$ <%= product.precio %></p>
                             <i class="fas fa-shuttle-van van borde"></i>
@@ -21,6 +21,7 @@
                         <div>
                             <p class="descripcion-producto"><%= product.nombre %></p>       
                         </div>
+                        </a>
                     </div>
                 </article>
                 <% } %>
