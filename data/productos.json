@@ -23,11 +23,11 @@
         "id": 3,
         "nombre": "Procesador Intel Core i3-9100f",
         "categoria": "Procesadores",
-        "precio": 8500,
-        "marca": "Intel",
         "descripcion": "Procesador intel de gama media, socket 1151, de 4 núcleos y 4 hilos, a 3.6 Ghz base o 4.2 Ghz en modo turbo. Excelente para complementar con una placa de video y jugar todo tipo de videojuegos.",
-        "avatar": "core-i3-9100f.png",
-        "stock": 10
+        "marca": "Intel",
+        "precio": "8.500",
+        "stock": "100",
+        "avatar": "core-i3-9100f.png"
     },
     {
         "id": 4,
