@@ -16,9 +16,9 @@ let userController = {
         let usuario = users.find(item => item.email == req.body.email && item.contraseña == req.body.password);
 
         if (usuario){
-            res.send("si");
+            res.render('users/home', { title: 'Click Players | Home', stylesheet: 'index', user: req.body.email});
         }else{
-            res.send("no");
+            res.render('users/mensaje', { title: 'Usuario no encontrado', stylesheet: 'index'});
         }
     },
 

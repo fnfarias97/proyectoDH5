@@ -154,6 +154,22 @@ main{
     color: var(--white);
 }
 
+.header-mensaje{
+    margin-top: 20px;
+}
+
+.mensaje{
+    color: var(--white);
+    font-size: 40px;
+    margin: 0px;
+}
+
+.face{
+    color: var(--white);
+    font-size: 200px;
+    margin: 0px;
+}
+
 @media (max-width: 767px){
 .d-flex {
     flex-wrap: wrap;
