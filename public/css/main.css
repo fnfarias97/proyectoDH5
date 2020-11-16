@@ -102,11 +102,6 @@ header nav{
   border: 0px;
 }
 
-header nav:hover {
-  display: block;
-  background-color: var(--dark-green);
-}
-
 header nav a{
   color: var(--main-bg-color);
   font-size: 25px;
@@ -132,6 +127,10 @@ header nav a{
 
 .burguer:hover {
   background-color: var(--dark-green);
+}
+
+.menu:hover nav {
+  display: block;
 }
 
 footer{
