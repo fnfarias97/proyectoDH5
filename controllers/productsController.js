@@ -6,8 +6,9 @@ let numberFormat = n => n.toString().replace( /\B(?=(\d{3})+(?!\d))/g,
 
 let productsController = {
     
-    products : (req, res) => {
-        let productList = [...products]
+    products : (req, res, next) => {
+        let productList = [...products];
+
         res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index', products : productList })}
     ,
     show: (req, res) => {
@@ -31,7 +32,7 @@ let productsController = {
 
     addProduct: (req, res) => res.render('products/agregarProducto', { title: 'Click Players | Agregar producto', stylesheet: 'forms' }),
 
-    save: (req, res, next) => {
+    save: (req, res) => {
         let producto = {
             id: products [products.length-1].id+1,
             ...req.body,
