@@ -102,6 +102,11 @@ header nav{
   border: 0px;
 }
 
+header nav:hover {
+  display: block;
+  background-color: var(--dark-green);
+}
+
 header nav a{
   color: var(--main-bg-color);
   font-size: 25px;
@@ -123,6 +128,10 @@ header nav a{
   font-size: 30px;
   padding: 10px;
   border-radius: 5px;
+}
+
+.burguer:hover {
+  background-color: var(--dark-green);
 }
 
 footer{
