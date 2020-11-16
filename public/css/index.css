@@ -14,10 +14,6 @@ main{
     border-radius: 10px;
 }
 
-main a{
-    text-decoration: none;
-}
-
 .d-flex{
     display: flex;
     justify-content: space-around;
@@ -60,16 +56,14 @@ main a{
 
 .producto img{
     text-align: center;
-    width: 250px;
-    height: 250px;
     border-radius: 10px;
+    width: 85%;
 }
 .contenedor-producto{
     display: flex;
     flex-direction: column;
     align-items: left;
     padding: 10px;
-    width: 29%;
     height: 450px;
     font-size: 16px;
     margin-bottom: 20px;
@@ -85,9 +79,38 @@ main a{
 }
 
 .van {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+.precio-producto{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.van i{
     font-size: 40px;
     color: var(--dark-green);
-    margin-top: 10px;
+    background-color: var(--white);
+    border: var(--dark-grey) solid 5px;
+    border-radius: 50%;
+    padding-right: 6px;
+    padding-left: 9px;
+    padding-top: 14px;
+    padding-bottom: 11px;
+    position: relative;
+    bottom: 40px; left: 0px;
+}
+
+.descripcion-producto{
+    font-size: 20px;
+    margin: 0px;
+    width: 250px;
+    height: 250px;
 }
 
 .contenedor-producto p{
@@ -129,6 +152,22 @@ main a{
 .add-products {
     font-size: 20px;
     color: var(--white);
+}
+
+.header-mensaje{
+    margin-top: 20px;
+}
+
+.mensaje{
+    color: var(--white);
+    font-size: 40px;
+    margin: 0px;
+}
+
+.face{
+    color: var(--white);
+    font-size: 200px;
+    margin: 0px;
 }
 
 @media (max-width: 767px){
