@@ -124,9 +124,15 @@ header nav a{
   padding: 10px;
   border-radius: 5px;
 }
- .burguer:hover {
-   background-color: #DC3545;
- }
+
+.burguer:active {
+  background-color: var(--dark-green);
+}
+
+.menu:hover nav {
+  display: block;
+}
+
 footer{
   color: var(--white);
   padding-bottom: 5px;
