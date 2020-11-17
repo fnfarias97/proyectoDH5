@@ -125,7 +125,7 @@ header nav a{
   border-radius: 5px;
 }
 
-.burguer:hover {
+.burguer:active {
   background-color: var(--dark-green);
 }
 
