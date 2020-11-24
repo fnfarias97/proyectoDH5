@@ -14,8 +14,6 @@ main{
     border-radius: 10px;
 }
 
-main a{ height: 100%; }
-
 .d-flex{
     display: flex;
     justify-content: space-around;
@@ -58,13 +56,13 @@ main a{ height: 100%; }
     width: 150px;
     height: 150px;
     border-radius: 10px;
+    width: 85%;
 }
 .contenedor-producto{
     display: flex;
     flex-direction: column;
     align-items: left;
     padding: 10px;
-    width: 29%;
     height: 450px;
     font-size: 16px;
     margin-bottom: 20px;
@@ -80,17 +78,60 @@ main a{ height: 100%; }
 }
 
 .van {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+.precio-producto{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.van i{
     font-size: 40px;
     color: var(--dark-green);
-    margin-top: 10px;
+    background-color: var(--white);
+    border: var(--dark-grey) solid 5px;
+    border-radius: 50%;
+    padding-right: 6px;
+    padding-left: 9px;
+    padding-top: 14px;
+    padding-bottom: 11px;
+    position: relative;
+    bottom: 40px; left: 0px;
+}
+
+.descripcion-producto{
+    font-size: 20px;
+    margin: 0px;
+    width: 250px;
+    height: 165px;
 }
 
 .contenedor-producto p{
     font-weight: bold;
 }
 
+.boton {
+    align-items: center;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: var(--dark-green);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin:10px;
+}
+
 .formas-de-pago{
     width: 100%;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -129,6 +170,22 @@ main a{ height: 100%; }
 .add-products {
     font-size: 20px;
     color: var(--white);
+}
+
+.header-mensaje{
+    margin-top: 20px;
+}
+
+.mensaje{
+    color: var(--white);
+    font-size: 40px;
+    margin: 0px;
+}
+
+.face{
+    color: var(--white);
+    font-size: 200px;
+    margin: 0px;
 }
 
 @media (min-width: 767px){

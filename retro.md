@@ -1,0 +1,3 @@
+Retrospectiva del sprint-4:
+
+En este sprint-4 trabajamos mas rapido que en los otros porque nos habiamos adelantado en el sprint anterior. Por eso, tomamos en cuenta el feedback de nuestros compañeros e hicimos cambios en base a eso. Tambien empezamos a agregar algunas funciones de login y register para el futuro. Nos reunimos 5 veces por Zoom y nos ayudamos mutuamente compartiendo pantalla. Fue un buen sprint porque trabajamos mucho mas coordinados y le dimos mayor utilidad a las clases de practica.
