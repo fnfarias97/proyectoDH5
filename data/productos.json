@@ -93,7 +93,7 @@
         "id": 10,
         "nombre": "Placa de Video AMD Rx-5500-xt",
         "categoria": "Placa de Video",
-        "precio": 33000,
+        "precio": "33.000",
         "marca": "AMD",
         "descripcion": "Placa de video de amd de antrada a la familia RX, con 8 Gb GDDR6 de memoria ram dedicada. Complementándolo con cualquier procesador de gama media o alta se puede jugar cualquier tipo de videojuego actual con calidad ultra a altos FPS. Además, sirve para el renderizado de imágenes y videos profesionales.",
         "avatar": "rx-5500-xt.png",

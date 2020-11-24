@@ -19,6 +19,7 @@ main a{ height: 100%; }
 .d-flex{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .flex-wrap {
@@ -32,13 +33,9 @@ main a{ height: 100%; }
     color: white;
 }
 
-.titulo p{
-    margin: 0%;
-}
+.titulo p{ margin: 0%; }
 
-.p-20{
-    padding: 20px;
-}
+.p-20{ padding: 20px; }
 
 .bg-main{
     background-color: #707793;
@@ -46,7 +43,7 @@ main a{ height: 100%; }
 
 .banner-principal {
     margin-bottom: 20px;
-    display: block;
+    display: none;
     width: 100%;
     background-size: 100% 100%;
 }
@@ -58,8 +55,8 @@ main a{ height: 100%; }
 
 .producto img{
     text-align: center;
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     border-radius: 10px;
 }
 .contenedor-producto{
@@ -109,19 +106,24 @@ main a{ height: 100%; }
 
 .formas-de-pago a{
     color: var(--main-bg-color);
-    font-size: 30px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     font-weight: bold;
+    text-align: center;
+}
+
+.formas-de-pago p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
 }
 
 .formas-de-pago i{
     color: var(--main-bg-color);
-    font-size: 40px;
+    font-size: 30px;
     padding-right: 5px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .add-products {
@@ -129,9 +131,30 @@ main a{ height: 100%; }
     color: var(--white);
 }
 
-@media (max-width: 767px){
-.d-flex {
-    flex-wrap: wrap;
+@media (min-width: 767px){
+    .banner-principal { display: block; }
+
+    .producto img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .formas-de-pago p { 
+        font-size: 1.5em; 
+        margin: 0;
+    }
+    .formas-de-pago a { 
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .formas-de-pago i {
+        font-size: 40px;
+        padding-bottom: 15px;
+    }
+
+    .d-flex {
+        flex-wrap: nowrap;
     }
 }
 
