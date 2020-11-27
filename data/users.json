@@ -4,5 +4,12 @@
         "nombre": "Axel Emiliano Portillo",
         "email": "portilloaxel9@gmail.com",
         "contraseña": "hola"
+    },
+    {
+        "id": 2,
+        "name": "a",
+        "email": "aaa@lala.com",
+        "password": "1234567",
+        "confirmpassword": "1234567"
     }
 ]
