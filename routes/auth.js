@@ -10,4 +10,6 @@ router.get('/registrar', authController.registrar);
 
 router.post('/registrar', authController.store);
 
+router.get('/perfil', authController.perfil)
+
 module.exports = router;

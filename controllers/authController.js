@@ -38,6 +38,10 @@ let userController = {
 
         res.send(users);
 
+    },
+
+    perfil: (req, res) => {
+        res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil'})
     }
 };
 
