@@ -11,6 +11,20 @@ main{
 
 }
 
+.boton {
+    width: 160px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #2E3047;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 .articulo img{
     width: 320px;
     height: 320;

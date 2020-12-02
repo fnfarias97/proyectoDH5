@@ -17,6 +17,8 @@ let userController = {
         let usuario = users.find(item => item.email == req.body.email && item.password == req.body.password);
 
         if (usuario){
+            req.session.userLogeedIn = usuario;
+            if(req.body.remember != undefined){res.cookie('remember', req.session.userLogeedIn.email, {maxAge: 60000 * 60})}
             res.render('users/home', { title: 'Click Players | Home', stylesheet: 'index', user: req.body.email});
         }else{
             res.render('users/mensaje', { title: 'Usuario no encontrado', stylesheet: 'index'});
@@ -46,6 +48,8 @@ let userController = {
     else {
         res.send('error');
     }
+
+    req.session.userLogeedIn = usuario;
 
     }
 };

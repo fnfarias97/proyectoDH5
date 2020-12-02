@@ -11,5 +11,12 @@
         "email": "aaa@lala.com",
         "password": "1234567",
         "confirmpassword": "1234567"
+    },
+    {
+        "id": 3,
+        "name": "lala",
+        "email": "a@gmail.com",
+        "password": "123456",
+        "confirmpassword": "123456"
     }
 ]
