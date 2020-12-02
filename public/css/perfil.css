@@ -1,0 +1,25 @@
+:root {
+    --main-bg-color: #2E3047; 
+    --light-green: #3BBA9C;
+    --dark-green:  #3D8C95;
+    --dark-grey: #43455C;
+    --white: #b8bbc9;
+    --bg-container: #707793;
+}  
+
+main * {margin: 0px; padding: 0px; list-style: none;} 
+
+main {
+    margin: 20px 0;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: row;
+    background-color: var(--bg-container);
+    padding: 3%;
+    justify-content: space-between;
+}
+
+.perfil-nav {
+    flex-direction: column;
+}

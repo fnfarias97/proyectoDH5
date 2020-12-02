@@ -51,6 +51,10 @@ let userController = {
 
     req.session.userLogeedIn = usuario;
 
+    },
+
+    perfil: (req, res) => {
+        res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil'})
     }
 };
 

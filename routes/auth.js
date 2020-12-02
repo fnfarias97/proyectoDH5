@@ -11,4 +11,6 @@ router.get('/registrar', authController.registrar);
 
 router.post('/registrar', registerValidate, authController.store);
 
+router.get('/perfil', authController.perfil)
+
 module.exports = router;
