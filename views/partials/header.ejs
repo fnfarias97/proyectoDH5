@@ -8,13 +8,24 @@
         <a href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
     </div>
   </section>
+
   <nav class="sombra">
-      <a href='/'>HOME</a>
-      <a href='/auth/ingresar'>INGRESAR</a>
-      <a href='/products'>PRODUCTOS</a>
-      <a href='/auth/registrar'>REGISTRAR</a>
-      <a href='/contacto'>CONTACTO</a>
+      <% if (typeof locals.user == "undefined") { %> 
+          <a href='/'>HOME</a>
+          <a href='/auth/ingresar'>INGRESAR</a>
+          <a href='/products'>PRODUCTOS</a>
+          <a href='/auth/registrar'>REGISTRAR</a>
+          <a href='/contacto'>CONTACTO</a>
+      <% } else { %> 
+          <a href="/auth/perfil">Bienvenido <%=user.first_name %></a>
+          <a href='/products/carrito'>CARRITO</a>
+          <a href='/products'>PRODUCTOS</a>
+          <a href='/contacto'>CONTACTO</a>
+          <a href='/auth/logout'>CERRAR SESION</a>
+      <% } %> 
   </nav>
+
+
   <div class="menu">
     <i class="fas fa-bars burguer sombra"></i>
   </div>

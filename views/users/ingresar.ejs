@@ -3,6 +3,15 @@
 
     <main>
         <h1>Ingresá a tu cuenta de usuario:</h1>
+
+        <% if (typeof errors != "undefined"){ %>
+          <ul>
+            <% for (e of errors) { %>
+              <li><%= e %></li>
+            <% } %> 
+          </ul>
+        <% } %> 
+
         <form action="/auth/ingresar" method="POST">
           <p><input type="email" id="email" name="email" placeholder="Email"></p>
           <p><input type="password" id="password" name="password" placeholder="Contrase&ntilde;a" required></p>

@@ -24,6 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(session({secret:"algo"}));
 
+app.use((req, res, next) => {
+  res.locals.user = req.session.user;
+  next();
+});
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/products', productsRouter);

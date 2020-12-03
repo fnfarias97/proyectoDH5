@@ -1,15 +1,30 @@
 [
     {
         "id": 1,
-        "nombre": "Axel Emiliano Portillo",
+        "first_name": "Axel Emiliano",
+        "last_name": "Portillo",
         "email": "portilloaxel9@gmail.com",
-        "contraseña": "hola"
+        "password": "hola"
     },
     {
         "id": 2,
-        "name": "a",
+        "first_name": "asdasd",
+        "last_name": "asdasd",
         "email": "aaa@lala.com",
-        "password": "1234567",
-        "confirmpassword": "1234567"
+        "password": "1234567"
+    },
+    {
+        "id": 3,
+        "first_name": "asdasd",
+        "last_name": "asdasd",
+        "email": "ejemplo@gmail.com",
+        "password": "$2a$10$L4w1R8Al5iZbM.0wDMlLl.VPad0xjEW24NWDnjVFhf3r.k6rE8/7S"
+    },
+    {
+        "id": 4,
+        "first_name": "cosme",
+        "last_name": "fulanito",
+        "email": "ejemplo@gmail.com",
+        "password": "$2a$10$3Ajl4eK8I2Ozo6i1OBYdP.SDNLxpNX6X45lWVt5O3rg2C.ZzPROa2"
     }
 ]
