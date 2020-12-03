@@ -13,8 +13,8 @@
                     <article>
                         <div class="d-flex prod-info">
                             <div class="text-cont prod-p">
-                                <h3 class="prod-nombre"><%= product.nombre %></h3>
-                                <p class="prod-precio">Precio Unitario: $<%= product.precio %></p>
+                                <h3 class="prod-nombre"><%= product.name %></h3>
+                                <p class="prod-precio">Precio Unitario: $<%= product.price %></p>
                             </div>
                             <a href="./detalle/<%= product.id %>"><img src="/images/products/<%= product.avatar %>"  alt=""></a>
                         </div>
@@ -25,7 +25,7 @@
                                     <p class="text-cont"><%= product.stock %></p>     <!-- Actualizar luego con session -->
                                     <button class="fa fa-minus restar"></button>
                                 </div>
-                                <div><p class="text-cont">$<%= product.precio * product.stock %></p></div>
+                                <div><p class="text-cont">$<%= product.price * product.stock %></p></div>
                                 <input type="checkbox" name="remove" id="remove">
                             </div>
                         </div>

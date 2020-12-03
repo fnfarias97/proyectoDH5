@@ -9,12 +9,15 @@ let productsController = {
     products : (req, res, next) => {
         let productList = [...products];
 
+        if (req.query.name) {
+            productList = products.filter(e => e.name.toLowerCase().includes(req.query.name.toLowerCase()));
+        }
+
         res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index', products : productList })}
     ,
     show: (req, res) => {
         let producto = products.find((e) => e.id == req.params.id);
-        producto.precio = producto.precio.toString() . replace( /\B(?=(\d{3})+(?!\d))/g,
-        "." ) ;
+        producto.price = numberFormat(producto.price);
 
         if (producto != undefined){
             res.render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', producto})
@@ -47,16 +50,16 @@ let productsController = {
 
     editProduct: (req, res) => {
         let producto = products.find((e) => e.id == req.params.id);
-        producto.precio = numberFormat(producto.precio);
+        producto.price = numberFormat(producto.price);
 
         if (producto != undefined){
             res.render('products/editarProducto', { title: 'Click Players | Modificar producto', stylesheet: 'forms', producto})
         }
 
         let error = {
-            nombre: 'Lo sentimos',
-            precio: '0',
-            descripcion: 'El producto no existe',
+            name: 'Lo sentimos',
+            price: '0',
+            description: 'El producto no existe',
             avatar: 'producto-no-encontrado.png'
         }
 
@@ -98,7 +101,7 @@ let productsController = {
 
     carrito : (req, res) => {
         let productsCart = [...products]           // actualizar con session 
-        productsCart.map(product => product.precio = numberFormat(product.precio));
+        productsCart.map(product => product.price = numberFormat(product.price));
 
         res.render('products/carrito', { title: 'Click Players | Carrito de productos', stylesheet: 'carrito', products : productsCart})
     }

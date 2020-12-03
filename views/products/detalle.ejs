@@ -6,9 +6,9 @@
                 <img src="/images/products/<%= producto.avatar %>">
         </article>
         <div>
-            <p><%= producto.nombre %></p>
-            <p>$ <%= producto.precio %></p>
-            <p><%= producto.descripcion %></p>
+            <p><%= producto.name %></p>
+            <p>$ <%= producto.price %></p>
+            <p><%= producto.description %></p>
             <div>
                 <button class= "boton" type="submit">COMPRAR</button>
                 <% if (typeof locals.user != "undefined") { %>

@@ -2,11 +2,14 @@
   <section class="section-header">
     <a href="/"><img class="logo" src="/images/logo-clickplayers.png"></a>
     <form action="/products">
-        <input class="sombra" type="search" id="search" name="nombre" placeholder="Buscar producto, marca o vendedor"/>
+        <input class="sombra" type="search" id="search" name="name" placeholder="Buscar producto, marca o vendedor"/>
     </form>
-    <div class="carrito-header sombra">
-        <a href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
-    </div>
+
+    <% if (typeof locals.user != "undefined") { %> 
+        <div class="carrito-header sombra">
+            <a href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    <% } %> 
   </section>
 
   <nav class="sombra">
@@ -18,7 +21,6 @@
           <a href='/contacto'>CONTACTO</a>
       <% } else { %> 
           <a href="/auth/perfil">Bienvenido <%= locals.user %></a>
-          <a href='/products/carrito'>CARRITO</a>
           <a href='/products'>PRODUCTOS</a>
           <a href='/contacto'>CONTACTO</a>
           <a href='/auth/logout'>CERRAR SESION</a>

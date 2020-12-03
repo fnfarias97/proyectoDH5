@@ -20,7 +20,7 @@ router.get('/', productsController.products);
 
 router.get('/detalle/:id?', productsController.show);
 
-router.get('/carrito', productsController.carrito);
+router.get('/carrito', isLogged, productsController.carrito);
 
 router.get('/add', isLogged, productsController.addProduct);
 
