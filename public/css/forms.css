@@ -20,7 +20,7 @@ main form{
 
 form p {
     display: flex;
-    flex-direction: column;
+   flex-direction: column;
 }
 
 form label {

@@ -8,20 +8,30 @@ var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 let userController = {
     
-    ingresar : (req, res) => res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'ingresar' }),
+    ingresar : (req, res) => {
+        !req.session.user?
+            res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'ingresar' }) : res.redirect('/auth/perfil')
+    },
 
     logout: (req, res) => {
         req.session.destroy();
+        res.clearCookie('remember');
         res.redirect('/');
     },
 
 
-    registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'registrar' }),
+    registrar : (req, res) => {
+        !req.session.user? 
+            res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'registrar' }) : res.redirect('/auth/perfil')
+    },
 
     login : (req, res, next) => {
-        let user = users.find(item => item.email == req.body.email);
+        let user = req.body.email;
 
         req.session.user = user;
+        req.body.remember? res.cookie('remember', req.session.user, {maxAge: 60000 * 60}) : 0;
+
+        console.log(req.cookies.remember);
 
         res.redirect('/');
     },
@@ -39,13 +49,15 @@ let userController = {
 
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 4));
 
-        res.render('users/home', { title: 'Click Players | Home', stylesheet: 'index', user: req.body.first_name});
+        req.session.user = usuario.email;
+
+        res.redirect('/')
 
     },
 
     perfil: (req, res) => {
         req.session.user? 
-            res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil'}) : res.redirect('/'); 
+            res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil'}) : res.redirect('/auth/ingresar'); 
     }
 };
 
