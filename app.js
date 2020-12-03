@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override');
 var session = require ('express-session');
-var rememberMiddleware = require ('./middlewares/rememberMiddleware');
+var {remember} = require ('./middlewares/authMiddleware');
 
 
 var indexRouter = require('./routes/index');
@@ -26,11 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(session({secret:"algo"}));
 
-app.use((req, res, next) => {
-  req.cookies.remember? req.session.user = req.cookies.remember : 0;
-  res.locals.user = req.session.user;
-  next();
-});
+app.use(remember);
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/products', productsRouter);

@@ -46,9 +46,28 @@ const validateRegister = (req, res,next) => {
     res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'registrar', errors });
 }
 
+const isLogged = (req, res, next) => {
+    req.session.user?
+        next () : res.redirect('/auth/ingresar');
+}
+
+const isNotLogged = (req, res, next) => {
+    !req.session.user?
+        next () : res.redirect('/auth/perfil');
+}
+
+const remember = (req, res, next) => {
+    req.cookies.remember? req.session.user = req.cookies.remember : 0;
+    res.locals.user = req.session.user;
+    next();
+}
+
 module.exports =  {
     registerValidations,
     loginValidations,
     validateRegister,
     validateLogin,
+    isLogged,
+    isNotLogged,
+    remember
 }

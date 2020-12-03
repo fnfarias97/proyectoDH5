@@ -1,6 +1,6 @@
 # Click Players
 
-Autores: Ben, Nahuel; Farias, Fernando; Portillo, Axel
+Autores: Ben, Nahuel; Farias, Fernando
 
 Descripción: eCommerce especializado en la venta minorista de Hardware.
 

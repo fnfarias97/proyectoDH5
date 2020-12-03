@@ -11,7 +11,10 @@
             <p><%= producto.descripcion %></p>
             <div>
                 <button class= "boton" type="submit">COMPRAR</button>
-                <a href="../edit/<%= producto.id %>"><button class= "boton">EDITAR</button></a>
+                <% if (typeof locals.user != "undefined") { %>
+                    <a href="../edit/<%= producto.id %>"><button class= "boton">EDITAR</button></a>
+                <% } %>
+                
             </div>
         </div>
     </main>

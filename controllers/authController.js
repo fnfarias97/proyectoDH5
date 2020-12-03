@@ -8,10 +8,7 @@ var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 let userController = {
     
-    ingresar : (req, res) => {
-        !req.session.user?
-            res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'ingresar' }) : res.redirect('/auth/perfil')
-    },
+    ingresar : (req, res) => res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'ingresar' }),
 
     logout: (req, res) => {
         req.session.destroy();
@@ -20,10 +17,7 @@ let userController = {
     },
 
 
-    registrar : (req, res) => {
-        !req.session.user? 
-            res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'registrar' }) : res.redirect('/auth/perfil')
-    },
+    registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'registrar' }),
 
     login : (req, res, next) => {
         let user = req.body.email;
@@ -55,10 +49,7 @@ let userController = {
 
     },
 
-    perfil: (req, res) => {
-        req.session.user? 
-            res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil'}) : res.redirect('/auth/ingresar'); 
-    }
+    perfil: (req, res) => res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil'})
 };
 
 module.exports = userController;
