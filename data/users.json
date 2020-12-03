@@ -33,5 +33,12 @@
         "last_name": "fulanito2",
         "email": "ejemplo3@gmail.com",
         "password": "$2a$10$Yn/nps5uw0iSkv86fUZFzuNbpWk9HRGGJHb8aGwr8x6AAl6KxL8Xi"
+    },
+    {
+        "id": 6,
+        "first_name": "a",
+        "last_name": "b",
+        "email": "ab@gmail.com",
+        "password": "$2a$10$9ez3EBBA94fV3QLSnI0SpuOhMLBzXy2pPTvSe0zdb53IZcCmFdeji"
     }
 ]

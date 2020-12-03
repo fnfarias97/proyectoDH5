@@ -4,6 +4,18 @@
     <main>
       <h1>Modificar producto:</h1>
       <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="m-20">
+          <label for="avatar">Cambiá la imágen del producto:</label>
+          <div class="imagen-editor">
+            <img src ='/images/products/<%= producto.avatar %>' alt = "Imagen del producto"/>
+          </div>
+          <input type="file" id="avatar" name="avatar">
+          <p><label for="descripcion">Descripción:</label></p>
+          <div>
+            <textarea rows="5" id="descripcion" name="descripcion"><%= producto.descripcion %></textarea>
+          </div>
+        </div>
+      <div class="m-20">
         <p>
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" value="<%= producto.nombre %>">
@@ -11,10 +23,6 @@
         <p>
           <label for="categoria">Categoría:</label>
           <input type="text" id="categoria" name="categoria" value="<%= producto.categoria %>">
-        </p>
-        <p>
-          <label for="descripcion">Descripción:</label>
-          <textarea rows="5" id="descripcion" name="descripcion"><%= producto.descripcion %></textarea>
         </p>
         <p>
           <label for="marca">Marca:</label>
@@ -28,21 +36,15 @@
           <label for="stock">Stock:</label>
           <input type="text" id="stock" name="stock" value="<%= producto.stock %>">
         </p>
-        <div class="imagen-editor">
-            <img src ='/images/products/<%= producto.avatar %>' alt = "Imagen del producto"/>
-        </div>
-        <p>
-          <label for="avatar">Cambiá la imágen del producto:</label>
-          <input type="file" id="avatar" name="avatar">
-        </p>
         <div class="form-buttons">
           <button type="submit">Editar</button>
           <a href="/products"><button type="button">Cancelar</button></a>
         </div>
       </form>
       <form action="/products/remove/<%= producto.id %>?_method=DELETE" method="POST">
-        <button type="submit" class="danger">Borrar</button>
+        <p><button type="submit" class="danger">Borrar</button></p>
       </form>
+      </div>
     </main>
 
     <%- include('../partials/footer') %>

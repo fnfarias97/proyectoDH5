@@ -25,7 +25,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(session({secret:"algo"}));
-//app.use(rememberMiddleware);
 
 app.use((req, res, next) => {
   req.cookies.remember? req.session.user = req.cookies.remember : 0;
