@@ -15,4 +15,5 @@ router.post('/registrar', registerValidations(), validateRegister, authControlle
 
 router.get('/perfil', authController.perfil)
 
+
 module.exports = router;

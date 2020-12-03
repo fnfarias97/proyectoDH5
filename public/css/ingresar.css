@@ -105,5 +105,5 @@ main button{
 }
 
 #check:checked + .check-track .check-track_indicator {
-    transform: translateX(24px);
+    transform: translateX(30px);
 }

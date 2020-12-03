@@ -39,6 +39,15 @@
         "first_name": "a",
         "last_name": "b",
         "email": "ab@gmail.com",
-        "password": "$2a$10$9ez3EBBA94fV3QLSnI0SpuOhMLBzXy2pPTvSe0zdb53IZcCmFdeji"
+        "password": "$2a$10$9ez3EBBA94fV3QLSnI0SpuOhMLBzXy2pPTvSe0zdb53IZcCmFdeji",
+        "avatar": "default.png"
+    },
+    {
+        "id": 7,
+        "first_name": "abc",
+        "last_name": "abc",
+        "email": "abc@gmail.com",
+        "password": "$2a$10$LgvAOy90oZVPXwRneq9jFOL87YXmiSjTEEpmLOq.WzMmIVmpNusgy",
+        "avatar": "default.png"
     }
 ]

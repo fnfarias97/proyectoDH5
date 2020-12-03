@@ -1,16 +1,64 @@
 <%- include('../partials/head') %>
     <%- include('../partials/header') %>
     <main class="d-flex radius-10 fw sombra">
-        <section class="d-flex perfil-nav ">
-            <a href="">Mi Cuenta</a>
-            <a href="">Privacidad</a>
-            <a href="">Notificaciones</a>
-            <a href="">Historial de Compras</a>
-            <a href="">Mis tarjetas</a>
-        </section>
         <section>
             <h1>Mi Cuenta</h1>
         </section>
+        <section class="perfil-nav">
+            <div class="imagen-editor w-50">
+                <img src ='/images/users/default.png' alt = "Imagen del usuario"/>
+            <form class="w-40" method="POST" action="/perfil/" enctype="multipart/form-data">
+                <input type="file" id="avatar" name="avatar"><p>Cambia o agrega tu imagen de perfil:</p>
+            </form></div>
+            <div class="bg-white padding m-10 r-10 w-50"><a href="">Mi Cuenta</a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A assumenda architecto aliquid adipisci dolorem voluptatem nostrum laboriosam nulla sit, minima quasi nihil enim? Minus, labore quibusdam praesentium assumenda cupiditate delectus.</p>
+            </div>
+        </section>
+        <section>
+            <div class="bg-white padding m-10 r-10 privacidad">
+                <a href="">Privacidad</a>
+                <div class="w-100 perfil-nav sp-btween bottom-border">Registro de actividad
+                <input type="checkbox" id="check" name="register-activity">
+                <label class="check-track" for="check">
+                  <span class="check-track_indicator"></span>
+                </label></div>
+                <div class="w-100 perfil-nav sp-btween bottom-border">Seguridad doble
+                    <input type="checkbox" id="check2" name="double-security">
+                    <label class="check-track" for="check2">
+                      <span class="check-track_indicator"></span>
+                    </label></div>
+                    <div class="w-100 perfil-nav sp-btween">Recibir alertas sobre inicio de sesión no reconocidos
+                        <input type="checkbox" id="check3" name="alert">
+                        <label class="check-track" for="check3">
+                          <span class="check-track_indicator"></span>
+                        </label></div>
+                </div>
+            <section>
+                <div class="bg-white padding m-10 r-10 privacidad">
+                    <a href="">Notificaciones</a>
+                    <div class="w-100 perfil-nav sp-btween">Recibir Notificaciones
+                    <input type="checkbox" id="check4" name="notifi">
+                    <label class="check-track" for="check4">
+                      <span class="check-track_indicator"></span>
+                    </label></div>
+                </div>
+            </section>
+            <section class="perfil-nav sp-btween">
+                    <div class="bg-white padding r-10 w-40"><a href="">Historial de Compras</a>
+                        <div class="border">
+                            <p class="descripcion-producto">Procesador AMD RYZEN 5 1600f 3.20Ghz</p>
+                            <p class="precio-producto">Precio: $ 12.500</p>     
+                        </div>
+                        <div class="border">
+                            <p class="descripcion-producto">Placa de video AMD RX 5500 XT 8 Gb GDDR6</p>
+                            <p class="precio-producto">Precio: $ 33.000</p>     
+                        </div>
+                    </div>
+                    <div class="bg-white padding r-10 w-40"><a href="">Mis tarjetas</a>
+                        
+                    </div>
+        </section>
+        
     </main>
 
     <%- include('../partials/footer') %>
