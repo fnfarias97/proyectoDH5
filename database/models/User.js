@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
     });
 
     User.associate = (models) => {
-        User.BelongsTo (models.Categories, {
+        User.belongsTo (models.Categories, {
             as: 'Categories',
             foreignKey: 'categories_id'
         })
@@ -39,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'Users_id'
         })
 
-        User.BelongsToMany (models.Products, {
+        User.belongsToMany (models.Products, {
             as: 'Products',
             through: 'favorites',
             foreignKey: 'Users_id',

@@ -29,12 +29,12 @@ module.exports = (sequelize, dataTypes) => {
     });
 
     Product.associate = (models) => {
-        Product.BelongsTo (models.ProductCategories, {
+        Product.belongsTo (models.ProductCategories, {
             as: 'ProductCategories',
             foreignKey: 'productCategories_id'
         })
 
-        Product.BelongsTo (models.Brands, {
+        Product.belongsTo (models.Brands, {
             as: 'Brands',
             foreignKey: 'brand_id'
         })
@@ -44,7 +44,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'Products_id'
         })
 
-        Product.BelongsToMany (models.Users, {
+        Product.belongsToMany (models.Users, {
             as: 'Users',
             through: 'favorites',
             foreignKey: 'Products_id',

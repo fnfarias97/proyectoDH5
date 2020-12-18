@@ -17,12 +17,12 @@ module.exports = (sequelize, dataTypes) => {
     });
 
     Cart.associate = (models) => {
-        Cart.BelongsTo (models.Users, {
+        Cart.belongsTo (models.Users, {
             as: 'Users',
             foreignKey: 'Users_id'
         })
 
-        Cart.BelongsTo (models.Products, {
+        Cart.belongsTo (models.Products, {
             as: 'Products',
             foreignKey: 'Products_id'
         })

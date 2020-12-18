@@ -3,16 +3,16 @@
 
     <main>
         <article class="articulo">
-                <img src="/images/products/<%= producto.avatar %>">
+                <img src="/images/products/<%= product.avatar %>">
         </article>
         <div>
-            <p><%= producto.name %></p>
-            <p>$ <%= producto.price %></p>
-            <p><%= producto.description %></p>
+            <p><%= product.name %></p>
+            <p>$ <%= product.price %></p>
+            <p><%= product.description %></p>
             <div>
                 <button class= "boton" type="submit">COMPRAR</button>
                 <% if (typeof locals.user != "undefined") { %>
-                    <a href="../edit/<%= producto.id %>"><button class= "boton">EDITAR</button></a>
+                    <a href="../edit/<%= product.id %>"><button class= "boton">EDITAR</button></a>
                 <% } %>
                 
             </div>

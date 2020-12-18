@@ -1,4 +1,4 @@
-const products = require ('../data/productos.json');
+let db = require ('../database/models');
 const fs = require('fs')
 
 let numberFormat = n => n.toString().replace( /\B(?=(\d{3})+(?!\d))/g,
@@ -7,22 +7,19 @@ let numberFormat = n => n.toString().replace( /\B(?=(\d{3})+(?!\d))/g,
 let productsController = {
     
     products : (req, res, next) => {
-        let productList = [...products];
-
-        if (req.query.name) {
-            productList = products.filter(e => e.name.toLowerCase().includes(req.query.name.toLowerCase()));
-        }
-
-        res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index', products : productList })}
+            db.Products.findAll()
+            .then (products => {
+                res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index', products : products })
+            })
+    }
     ,
     show: (req, res) => {
-        let producto = products.find((e) => e.id == req.params.id);
-        producto.price = numberFormat(producto.price);
-
-        if (producto != undefined){
-            res.render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', producto})
-        }
-
+        db.Products.findByPk(req.params.id)
+        .then (product => {
+            if (db != undefined){
+                res.render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', product : product})
+            }
+        
         let error = {
             nombre: 'Lo sentimos',
             precio: '0',
@@ -30,7 +27,7 @@ let productsController = {
             avatar: 'producto-no-encontrado.png'
         }
 
-        res.status(404).render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', producto : error})
+        res.status(404).render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', product : error}) }) 
     },
 
     addProduct: (req, res) => res.render('products/agregarProducto', { title: 'Click Players | Agregar producto', stylesheet: 'forms' }),
