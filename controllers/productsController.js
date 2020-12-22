@@ -1,5 +1,5 @@
 let db = require ('../database/models');
-const fs = require('fs')
+// const fs = require('fs')
 
 let numberFormat = n => n.toString().replace( /\B(?=(\d{3})+(?!\d))/g,
 ".");
@@ -30,37 +30,42 @@ let productsController = {
         res.status(404).render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', product : error}) }) 
     },
 
-    addProduct: (req, res) => res.render('products/agregarProducto', { title: 'Click Players | Agregar producto', stylesheet: 'forms' }),
+    addProduct: (req, res) => {
+        db.ProductCategories.findAll()
+            .then(result => {
+                let categories = result
+                db.Brands.findAll()
+                    .then(brands => res.render('products/agregarProducto', { title: 'Click Players | Agregar producto', stylesheet: 'forms', categories, brands })
+                )
+            })
+        
+    },
 
     save: (req, res) => {
         let producto = {
-            id: products [products.length-1].id+1,
             ...req.body,
             avatar: req.files[0].filename
         }
 
-        products.push(producto)
-
-        fs.writeFileSync('./data/productos.json', JSON.stringify(products, null, 4));
+        db.Products.create(producto)
         res.redirect('/products');        
     },
 
     editProduct: (req, res) => {
-        let producto = products.find((e) => e.id == req.params.id);
-        producto.price = numberFormat(producto.price);
+        db.Products.findOne({
+            where: {id: req.params.id},
+            include: [{model: db.Brands, as: 'Brands'}, {model: db.ProductCategories, as: 'ProductCategories'}]
+        })
+            .then(producto => {
+                producto.price = numberFormat(producto.price);
 
-        if (producto != undefined){
-            res.render('products/editarProducto', { title: 'Click Players | Modificar producto', stylesheet: 'forms', producto})
-        }
-
-        let error = {
-            name: 'Lo sentimos',
-            price: '0',
-            description: 'El producto no existe',
-            avatar: 'producto-no-encontrado.png'
-        }
-
-        res.status(404).render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', producto : error})
+                console.log(producto.Brands);
+                res.render('products/editarProducto', { title: 'Click Players | Modificar producto', stylesheet: 'forms', producto})
+            })
+            .catch(err => {
+                // res.status(404).render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle'})
+                res.status(404).send('Id not found')
+            })
     },
 
     update : (req, res, next) => {

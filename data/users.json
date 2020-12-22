@@ -49,5 +49,12 @@
         "email": "abc@gmail.com",
         "password": "$2a$10$LgvAOy90oZVPXwRneq9jFOL87YXmiSjTEEpmLOq.WzMmIVmpNusgy",
         "avatar": "default.png"
+    },
+    {
+        "id": 8,
+        "first_name": "asd",
+        "last_name": "asdasd",
+        "email": "asd@gmail.com",
+        "password": "$2a$10$4b6uDyvd7FvT6jIkcNnKE.vWfXMRfJLnS9Rxb2ZUExs6uNF8fWChm"
     }
 ]

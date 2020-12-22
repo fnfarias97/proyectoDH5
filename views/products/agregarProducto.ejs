@@ -5,9 +5,25 @@
         <div class="div-add-product"><h1>Agrega productos:</h1>
         <form method="POST" action="/products/add" enctype="multipart/form-data">
             <p><label>Nombre:</label><input type="text" id="name" name="name" placeholder="Nombre del producto"></p>
-            <p><label>Categoría:</label><input type="text" id="category" name="category" placeholder="Categoria"></p>
+            <p>
+                <label>Categoría:</label>
+                <!-- <input type="text" id="category" name="category" placeholder="Categoria"> -->
+                <select name="productCategories_id" id="category">
+                    <% for (let category of categories){ %> 
+                        <option value="<%= category.id %>"><%= category.name %></option>
+                    <% } %> 
+                </select>
+            </p>
             <p><label>Descripción:</label><input type="text" id="description" name="description" placeholder="Descripción del producto"></p>
-            <p><label>Marca:</label><input type="text" id="brand" name="brand" placeholder="Marca"></p>
+            <p>
+                <label>Marca:</label>
+                <!-- <input type="text" id="brand" name="brand" placeholder="Marca"> -->
+                <select name="brand_id" id="brand">
+                    <% for (let brand of brands){ %> 
+                        <option value="<%= brand.id %>"><%= brand.name %></option>
+                    <% } %> 
+                </select>
+            </p>
             <p><label>Precio:</label><input type="text" id="price" name="price" placeholder="Precio"></p>
             <p><label>Stock:</label><input type="text" id="stock" name="stock" placeholder="Stock"></p>
             <p><label>Imagen:</label><input type="file" id="avatar" name="avatar"></p>
