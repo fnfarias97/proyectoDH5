@@ -1,4 +1,5 @@
 const fs = require('fs');
+let db = require ('../database/models');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
@@ -39,9 +40,7 @@ let userController = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10)
         }
-        users.push(usuario);
-
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 4));
+        db.Users.create(usuario)
 
         req.session.user = usuario.email;
 

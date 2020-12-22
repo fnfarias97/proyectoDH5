@@ -69,33 +69,16 @@ let productsController = {
     },
 
     update : (req, res, next) => {
-        let productsCopy = [...products]
-        let product = productsCopy.find(e => e.id == req.params.id);
+        let producto = {
+            ...req.body,
+            avatar: req.files[0].filename
+        }
 
-        let avatar = product.avatar
-        if (req.files[0] != undefined) { avatar = req.files[0].filename }
-
-        productsCopy = productsCopy.map( e => {
-            if (e.id == product.id) {
-                e = {
-                    id:product.id,
-                    ...req.body,
-                    avatar: avatar
-                }
-            }
-            return e;
-        });
-
-        fs.writeFileSync('./data/productos.json', JSON.stringify(productsCopy, null, 4));
-        res.redirect('/products');
-    },
+        db.Products.update(producto, {where: {id: req.params.id}})
+        res.redirect('/products/detalle/' + req.params.id)},
 
     remove : (req, res, next) => {
-        let productsCopy = [...products]
-        let product = productsCopy.find(e => e.id == req.params.id);
-        productsCopy = productsCopy.filter(e => e.id != product.id);
-
-        fs.writeFileSync('./data/productos.json', JSON.stringify(productsCopy, null, 4));
+        db.Products.destroy ({where: {id: req.params.id}})
         res.redirect('/products');
     },
 

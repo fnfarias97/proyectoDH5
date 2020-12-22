@@ -116,3 +116,14 @@ main button{
     margin-top: 20px;
     align-items: center;
 }
+
+main select {
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 25px;
+    padding-left: 10px;
+    margin: 0px 15px;
+    background-color: var(--white);
+    color: var(--main-bg-color);
+}
