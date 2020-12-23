@@ -34,14 +34,13 @@ let userController = {
     store : (req, res) => {
 
         let usuario = {
-                id: users[users.length - 1].id + 1,
                 first_name: req.body.first_name,
-                last_name: req.body.last_name,
+                second_name: req.body.last_name,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10)
         }
+        
         db.Users.create(usuario)
-
         req.session.user = usuario.email;
 
         res.redirect('/')

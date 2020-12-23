@@ -2,7 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const {check, validationResult, body} = require ('express-validator');
 const bcrypt = require('bcryptjs');
-
+let db = require ('../database/models');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -17,10 +17,14 @@ const registerValidations = () => {
 
 const loginValidations = () => {
     return [
-        body('email').custom(value => users.find(item => item.email == value))
+        body('email').custom(req => {
+            db.Users.findOne({where: {
+            email: req.body.email 
+            }}).then(response => next())
+        })
             .withMessage('Usuario no encontrado'),
             
-        body('password').custom((value, {req}) => bcrypt.compareSync(value, users.find(item => item.email == req.body.email).password))
+        body('password').custom((value, {req}) => bcrypt.compareSync(value, db.Users.findOne({where: {email: req.body.email }}).password))
             .withMessage('La contraseña no coincide')
     ]
 }

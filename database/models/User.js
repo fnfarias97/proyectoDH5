@@ -29,10 +29,10 @@ module.exports = (sequelize, dataTypes) => {
     });
 
     User.associate = (models) => {
-        User.belongsTo (models.Categories, {
+        /*User.belongsTo (models.Categories, {
             as: 'Categories',
             foreignKey: 'categories_id'
-        })
+        })*/
 
         User.hasMany (models.Sales, {
             as: 'Sales',
