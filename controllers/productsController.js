@@ -1,4 +1,6 @@
 let db = require ('../database/models');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 // const fs = require('fs')
 
 let numberFormat = n => n.toString().replace( /\B(?=(\d{3})+(?!\d))/g,
@@ -11,8 +13,8 @@ let productsController = {
             .then (products => {
                 res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index', products : products })
             })
-    }
-    ,
+    },
+
     show: (req, res) => {
         db.Products.findByPk(req.params.id)
         .then (product => {
@@ -59,7 +61,6 @@ let productsController = {
             .then(producto => {
                 producto.price = numberFormat(producto.price);
 
-                console.log(producto.Brands);
                 res.render('products/editarProducto', { title: 'Click Players | Modificar producto', stylesheet: 'forms', producto})
             })
             .catch(err => {
@@ -69,13 +70,12 @@ let productsController = {
     },
 
     update : (req, res, next) => {
-        let producto = {
-            ...req.body,
-            avatar: req.files[0].filename
-        }
-
+        let producto = {...req.body}
+        req.files[0] != undefined ? producto.avatar = req.files[0].filename : 0;
+        
         db.Products.update(producto, {where: {id: req.params.id}})
-        res.redirect('/products/detalle/' + req.params.id)},
+        res.redirect('/products/detalle/' + req.params.id)
+    },
 
     remove : (req, res, next) => {
         db.Products.destroy ({where: {id: req.params.id}})
@@ -84,11 +84,38 @@ let productsController = {
 
     detalle : (req, res) => res.render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle' }),
 
-    carrito : (req, res) => {
-        let productsCart = [...products]           // actualizar con session 
-        productsCart.map(product => product.price = numberFormat(product.price));
+    carrito : (req, res, next) => {
+        // let productsCart = [...products]           // actualizar con session 
+        // productsCart.map(product => product.price = numberFormat(product.price));
+        req.session.cart == undefined? req.session.cart = [] : 0;
 
-        res.render('products/carrito', { title: 'Click Players | Carrito de productos', stylesheet: 'carrito', products : productsCart})
+        db.Products.findAll({
+            where: {
+                id : {
+                    [Op.in]: req.session.cart
+                }
+            }
+        }).then(productsCart => {
+            productsCart.map(i => i.price = numberFormat(i.price))
+
+            res.render('products/carrito', { title: 'Click Players | Carrito de productos', stylesheet: 'carrito', products : productsCart})
+        })
+    },
+
+    addToCart: (req, res, next) => {
+        req.session.cart == undefined? req.session.cart = [] : 0;
+
+        req.session.cart.push(req.params.id)
+
+        res.redirect('/products/carrito')
+    },
+
+    rmFromCart: (req, res, next) => {
+        newCart = req.session.cart.filter(i => i != req.params.id)
+
+        req.session.cart = newCart
+
+        res.redirect('/products/carrito')
     }
 }
 

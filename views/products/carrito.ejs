@@ -6,7 +6,6 @@
             <div class="cart-container radius-10 d-flex fw sombra">
                 <div class="d-flex">
                     <h1>Carrito de Compras</h1>
-                    <div class="eliminar"><button class="fa fa-trash"></button></div>
                 </div>
                 
                 <% for (product of products) { %>
@@ -26,7 +25,10 @@
                                     <button class="fa fa-minus restar"></button>
                                 </div>
                                 <div><p class="text-cont">$<%= product.price * product.stock %></p></div>
-                                <input type="checkbox" name="remove" id="remove">
+                                <!-- <input type="checkbox" name="remove" id="remove"> -->
+                                <form method="POST" action="/products/cart/rm/<%= product.id %>">
+                                    <div class="eliminar"><button class="fa fa-trash" type="submit"></button></div>
+                                </form>
                             </div>
                         </div>
                     </article>
