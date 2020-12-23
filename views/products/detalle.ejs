@@ -10,7 +10,9 @@
             <p>$ <%= product.price %></p>
             <p><%= product.description %></p>
             <div>
-                <button class= "boton" type="submit">COMPRAR</button>
+                <form method="POST" action="/products/cart/add/<%= product.id %>">
+                    <button class="boton" type="submit">COMPRAR</button>
+                </form>
                 <% if (typeof locals.user != "undefined") { %>
                     <a href="../edit/<%= product.id %>"><button class= "boton">EDITAR</button></a>
                 <% } %>

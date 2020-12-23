@@ -26,7 +26,7 @@ let userController = {
         req.session.user = user;
         req.body.remember? res.cookie('remember', req.session.user, {maxAge: 60000 * 60}) : 0;
 
-        console.log(req.cookies.remember);
+        // console.log(req.cookies.remember);
 
         res.redirect('/');
     },
