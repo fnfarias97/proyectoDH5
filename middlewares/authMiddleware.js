@@ -20,11 +20,12 @@ const loginValidations = () => {
         body('email').custom(req => {
             db.Users.findOne({where: {
             email: req.body.email 
-            }}).then(response => next())
+            }}).then(response => response)
         })
             .withMessage('Usuario no encontrado'),
             
-        body('password').custom((value, {req}) => bcrypt.compareSync(value, db.Users.findOne({where: {email: req.body.email }}).password))
+        body('password').custom((value, {req}) => bcrypt.compareSync(value, db.Users.findOne({where: {email: req.body.email }})
+        .then (response => response)))
             .withMessage('La contraseña no coincide')
     ]
 }
