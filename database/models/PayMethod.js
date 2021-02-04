@@ -3,12 +3,12 @@ module.exports = (sequelize, dataTypes) => {
     
     const PayMethod = sequelize.define(alias, {
         id: {
-            auntoIncrement: true,
+            autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
         type: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.STRING
         }
     }, {
@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
     PayMethod.associate = (models) => {
         PayMethod.hasMany (models.Sales, {
             as: 'Sales',
-            foreignKey: 'PayMethods_id'
+            foreignKey: 'Pay_methods_id'
         })
     }
 

@@ -7,15 +7,15 @@ VALUE (1, 'AMD'), (2, 'Intel'),(3, 'Nvidia'),(4, 'Asus'),(5, 'Msi'),(6, 'Lenovo'
 (18, 'G. Skill'), (19, 'Corsair'), (20, 'Xpg'), (21, 'Cooler Master'), (22, 'Evga'), (23, 'Thermaltake'),
 (24, 'Gigabyte'), (25, 'ASRock'), (26, 'Biostar'), (27, 'Aorus');
 
-INSERT INTO productCategories (id, name)
+INSERT INTO product_categories (id, name)
 VALUE (1, 'Procesadores'), (2, 'Placas de video'),(3, 'Memorias Ram'),(4, 'Discos de almacenamiento'),
 (5, 'Fuentes de alimentación'), (6, 'Placas madre'),(7, 'Gabinetes'),(8, 'Notebooks'),(9, 'Pcs armadas'),(10, 'Periféricos'),
 (11, 'Mouses'), (12, 'Teclados'), (13, 'Monitores'), (14, 'Auriculares'), (15, 'Combos');
 
-INSERT INTO payMethods (id, type)
+INSERT INTO pay_methods (id, type)
 VALUE (1, 'Efectivo'), (2, 'Débito'),(3, 'Crédito'),(4, 'MercadoPago');
 
-INSERT INTO products (id, name, price, avatar, description, productCategories_id, brand_id, stock)
+INSERT INTO products (id, name, price, avatar, description, product_categories_id, brand_id, stock)
 VALUE (1, 'Procesador AMD Ryzen 5 1600 Af', 14500, 'ryzen-5.png', 'Procesador AMD de gama media, socket AM4, de 6 núcleos y 12 hilos a 3.2 Ghz. Excelente para complementar con una placa de video y jugar todo tipo de  videojuegos o utilizar aplicaciones de diseño gráfico profesionales.', 1, 1, 10),
 (2, 'Procesador AMD Ryzen 7 2700x', 35700, 'ryzen-7.png', 'Procesador AMD de gama alta, socket AM4, de 8 núcleos y 16 hilos, a 3.2 Ghz. Excelente para complementar con una placa de video y jugar todo tipo de videojuegos o utilizar aplicaciones de diseño gráfico profesionales.', 1, 1, 10),
 (3, 'Procesador Intel Core i3-9100f', 10500, 'core-i3-9100f.png', 'Procesador intel de gama media, socket 1151, de 4 núcleos y 4 hilos, a 3.6 Ghz base o 4.2 Ghz en modo turbo. Excelente para complementar con una placa de video y jugar todo tipo de videojuegos.', 1, 2, 10),

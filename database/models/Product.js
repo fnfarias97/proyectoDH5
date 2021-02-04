@@ -3,28 +3,28 @@ module.exports = (sequelize, dataTypes) => {
     
     const Product = sequelize.define(alias, {
         id: {
-            auntoIncrement: true,
+            autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
         name: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.STRING
         },
         price: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.DECIMAL
         },
         avatar: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.STRING
         },
         description: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.STRING
         },
         stock: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.INTEGER
         }
     }, {
@@ -33,9 +33,9 @@ module.exports = (sequelize, dataTypes) => {
     });
 
     Product.associate = (models) => {
-        Product.belongsTo (models.ProductCategories, {
-            as: 'ProductCategories',
-            foreignKey: 'productCategories_id'
+        Product.belongsTo (models.Product_categories, {
+            as: 'Product_categories',
+            foreignKey: 'product_categories_id'
         })
 
         Product.belongsTo (models.Brands, {

@@ -3,12 +3,12 @@ module.exports = (sequelize, dataTypes) => {
     
     const Brand = sequelize.define(alias, {
         id: {
-            auntoIncrement: true,
+            autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
         name: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.STRING
         }
     }, {

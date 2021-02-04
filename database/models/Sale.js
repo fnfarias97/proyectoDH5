@@ -3,12 +3,12 @@ module.exports = (sequelize, dataTypes) => {
     
     const Sale = sequelize.define(alias, {
         id: {
-            auntoIncrement: true,
+            autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
         total: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.DECIMAL
         }
     }, {

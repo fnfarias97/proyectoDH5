@@ -31,7 +31,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `clickPlayers`.`productCategories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `clickPlayers`.`productCategories` (
+CREATE TABLE IF NOT EXISTS `clickPlayers`.`product_categories` (
   `id` INT NOT NULL,
   `name` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
@@ -57,15 +57,15 @@ CREATE TABLE IF NOT EXISTS `clickPlayers`.`products` (
   `price` DOUBLE NOT NULL,
   `avatar` TINYTEXT NOT NULL,
   `description` TEXT(1000) NOT NULL,
-  `productCategories_id` INT NOT NULL,
+  `product_categories_id` INT NOT NULL,
   `brand_id` INT NOT NULL,
   `stock` INT NOT NULL,
-  PRIMARY KEY (`id`, `productCategories_id`, `brand_id`),
-  INDEX `fk_products_productCategories1_idx` (`productCategories_id` ASC),
+  PRIMARY KEY (`id`, `product_categories_id`, `brand_id`),
+  INDEX `fk_products_product_categories1_idx` (`product_categories_id` ASC),
   INDEX `fk_products_brand1_idx` (`brand_id` ASC),
   CONSTRAINT `fk_products_productCategories1`
-    FOREIGN KEY (`productCategories_id`)
-    REFERENCES `clickPlayers`.`productCategories` (`id`)
+    FOREIGN KEY (`product_categories_id`)
+    REFERENCES `clickPlayers`.`product_categories` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_products_brand1`
@@ -79,7 +79,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `clickPlayers`.`payMethods`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `clickPlayers`.`payMethods` (
+CREATE TABLE IF NOT EXISTS `clickPlayers`.`pay_methods` (
   `id` INT NOT NULL,
   `type` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
@@ -93,12 +93,12 @@ CREATE TABLE IF NOT EXISTS `clickPlayers`.`sales` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `Users_id` INT UNSIGNED NOT NULL,
   `Products_id` INT UNSIGNED NOT NULL,
-  `payMethods_id` INT NOT NULL,
+  `pay_methods_id` INT NOT NULL,
   `total` DECIMAL NOT NULL,
-  PRIMARY KEY (`id`, `Users_id`, `Products_id`, `payMethods_id`),
+  PRIMARY KEY (`id`, `Users_id`, `Products_id`, `pay_methods_id`),
   INDEX `fk_Usuarios_has_Cursos_Cursos1_idx` (`Products_id` ASC),
   INDEX `fk_Usuarios_has_Cursos_Usuarios1_idx` (`Users_id` ASC),
-  INDEX `fk_sales_payMethods1_idx` (`payMethods_id` ASC),
+  INDEX `fk_sales_pay_methods1_idx` (`pay_methods_id` ASC),
   CONSTRAINT `fk_Usuarios_has_Cursos_Usuarios1`
     FOREIGN KEY (`Users_id`)
     REFERENCES `clickPlayers`.`users` (`id`)
@@ -109,9 +109,9 @@ CREATE TABLE IF NOT EXISTS `clickPlayers`.`sales` (
     REFERENCES `clickPlayers`.`products` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_sales_payMethods1`
-    FOREIGN KEY (`payMethods_id`)
-    REFERENCES `clickPlayers`.`payMethods` (`id`)
+  CONSTRAINT `fk_sales_pay_methods1`
+    FOREIGN KEY (`pay_methods_id`)
+    REFERENCES `clickPlayers`.`pay_methods` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

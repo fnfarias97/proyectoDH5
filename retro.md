@@ -1,3 +1,3 @@
 Retrospectiva del sprint-5:
 
-En este sprint-7 no pudimos ocuparnos de manera óptima, ya que anduvimos ocupados con asuntos personales. se modificaron las validaciones, sin conseguir resultados eficientes. Tuvimos dificultades para hacer funcionar adecuadamente la validación en el login. Si bien no pudimos cumplir con el plazo del sprint.-7, vamos a optimizar las validaciones junto con los objetivos del sprint-8.
+En este sprint-7 no pudimos ocuparnos de manera óptima, ya que anduvimos ocupados con asuntos personales. se modificaron las validaciones, sin conseguir resultados eficientes. Tuvimos dificultades para hacer funcionar adecuadamente la validación en el login. Si bien no pudimos cumplir con el plazo del sprint-7, vamos a optimizar las validaciones junto con los objetivos del sprint-8.

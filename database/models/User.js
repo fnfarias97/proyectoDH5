@@ -3,27 +3,27 @@ module.exports = (sequelize, dataTypes) => {
     
     const User = sequelize.define(alias, {
         id: {
-            auntoIncrement: true,
+            autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
         first_name: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.STRING
         },
         second_name: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.STRING
         },
         email: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.STRING
         },
         password: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.STRING
         }, privileges: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.STRING
         }
     }, {

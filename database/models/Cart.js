@@ -3,12 +3,12 @@ module.exports = (sequelize, dataTypes) => {
     
     const Cart = sequelize.define(alias, {
         id: {
-            auntoIncrement: true,
+            autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
         quantity: {
-            allownull: false,
+            allowNull: false,
             type: dataTypes.INTEGER
         }
     }, {

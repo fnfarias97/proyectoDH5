@@ -33,7 +33,7 @@ let productsController = {
     },
 
     addProduct: (req, res) => {
-        db.ProductCategories.findAll()
+        db.Product_categories.findAll()
             .then(result => {
                 let categories = result
                 db.Brands.findAll()
@@ -56,7 +56,7 @@ let productsController = {
     editProduct: (req, res) => {
         db.Products.findOne({
             where: {id: req.params.id},
-            include: [{model: db.Brands, as: 'Brands'}, {model: db.ProductCategories, as: 'ProductCategories'}]
+            include: [{model: db.Brands, as: 'Brands'}, {model: db.Product_categories, as: 'Product_categories'}]
         })
             .then(producto => {
                 producto.price = numberFormat(producto.price);
@@ -64,7 +64,7 @@ let productsController = {
                 res.render('products/editarProducto', { title: 'Click Players | Modificar producto', stylesheet: 'forms', producto})
             })
             .catch(err => {
-                // res.status(404).render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle'})
+                //res.status(404).render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle' })
                 res.status(404).send('Id not found')
             })
     },
