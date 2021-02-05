@@ -39,7 +39,6 @@ let userController = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10)
         }
-        
         db.Users.create(usuario)
         req.session.user = usuario.email;
 

@@ -7,7 +7,7 @@
     --bg-container: #707793;
 }  
 
-li {
+.error {
     list-style: none;
     color:var(--light-green);
     border: solid;
@@ -46,4 +46,5 @@ main button{
     color: white;
     margin-right: 10px;
     margin-left: 10px;
+    cursor: pointer;
 }

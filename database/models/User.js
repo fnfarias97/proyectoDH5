@@ -24,7 +24,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         }, privileges: {
             allowNull: false,
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            defaultValue: 'client'
         }
     }, {
         tableName : "users",
