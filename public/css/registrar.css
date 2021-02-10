@@ -7,7 +7,7 @@
     --bg-container: #707793;
 }  
 
-.error {
+li {
     list-style: none;
     color:var(--light-green);
     border: solid;

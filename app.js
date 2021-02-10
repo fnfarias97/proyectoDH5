@@ -11,6 +11,8 @@ var {remember} = require ('./middlewares/authMiddleware');
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
 var productsRouter = require('./routes/products');
+var apiAuthRouter = require('./routes/api/apiAuth');
+var apiProductsRouter = require('./routes/api/apiProducts');
 
 var app = express();
 
@@ -30,6 +32,8 @@ app.use(remember);
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/products', productsRouter);
+app.use('/api/users', apiAuthRouter);
+app.use('/api/products', apiProductsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
