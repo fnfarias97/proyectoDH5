@@ -22,14 +22,16 @@ let productsController = {
                 res.render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', product : product})
             }
         
-        let error = {
-            nombre: 'Lo sentimos',
-            precio: '0',
-            descripcion: 'El producto no existe',
-            avatar: 'producto-no-encontrado.png'
-        }
 
-        res.status(404).render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', product : error}) }) 
+            let error = {
+                nombre: 'Lo sentimos',
+                precio: '0',
+                descripcion: 'El producto no existe',
+                avatar: 'producto-no-encontrado.png'
+            }
+
+            })
+        .catch(err => res.status(404).render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', product : error}) )
     },
 
     addProduct: (req, res) => {

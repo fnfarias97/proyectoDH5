@@ -7,27 +7,30 @@ let apiController = {
 
 usersList: (req, res, next) => {
     db.Users.findAll()
-    .then (response => {
-        res.send(response)})
+    .then (response => res.json(response))
     
-.catch(res.send('error'))},
+    .catch(res.status(404))
+},
 
-usersProfile: (req, res) => db.Users.findOne({where: {first_name: req.body.first_name}}).then(res => res.json(res)),
+usersProfile: (req, res, next) => {
+    db.Users.findByPk(req.params.id)
+    .then(response => res.json(response))
+    .catch(res.status(404))
+
+},
 
 productsList : (req, res, next) => {
     db.Products.findAll()
-    .then (products => res.json(products))},
+    .then (products => res.json(products))
+},
 
-    productDetail: (req, res) => {
-        db.Products.findByPk(req.params.id)
-        .then (product => {
-            if (db != undefined){
-                res.json(product)
-            }})
+productDetail: (req, res, next) => {
+    db.Products.findByPk(req.params.id)
+    .then (product => res.json(product))
 
-        .catch(res.send('error'))
+    .catch(res.status(404))
         
-    },
+}
 };
 
 module.exports = apiController;
