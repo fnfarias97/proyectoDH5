@@ -6,14 +6,14 @@ const bcrypt = require('bcryptjs');
 let apiController = {
 
 usersList: (req, res, next) => {
-    db.Users.findAll()
+    db.Users.findAll({ attributes: { exclude: ['password', "privileges"] }})
     .then (response => res.json(response))
     
     .catch(res.status(404))
 },
 
 usersProfile: (req, res, next) => {
-    db.Users.findByPk(req.params.id)
+    db.Users.findByPk(req.params.id, { attributes: { exclude: ['password', "privileges"] }})
     .then(response => res.json(response))
     .catch(res.status(404))
 
