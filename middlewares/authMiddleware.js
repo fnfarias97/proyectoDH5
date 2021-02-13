@@ -4,29 +4,36 @@ const {check, validationResult, body} = require ('express-validator');
 const bcrypt = require('bcryptjs');
 let db = require ('../database/models');
 //const { user } = require("../database/models");
-//const usersFilePath = path.join(__dirname, '../data/users.json');
-//let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const registerValidations = () => {
     return [
-        check('email')
-        .isEmail()
-        .withMessage('El email debe tener un formato válido'),
-        body('email')
-        .custom((value, {req}) => {
-            
+        check('first_name').not().isEmpty().withMessage('El nombre es obligatorio'),
+
+        check('first_name').isLength({ min: 2}).withMessage('El nombre debe tener al menos 2 caracteres'),
+
+        body('first_name').trim().escape(),
+
+        check('last_name').not().isEmpty().withMessage('El apellido es obligatorio'),
+
+        body('last_name').trim().escape(),
+
+        check('email').not().isEmpty().withMessage('El email es obligatorio'),
+
+        check('email').isEmail().withMessage('El email debe tener un formato válido'),
+        
+        body('email').custom((value, {req}) => {
            return db.Users.count({ where: { email: value } })
             .then(count => {
                 console.log("count " + count )
                if(count > 0) return Promise.reject("Usuario ya existente")
-                      });
-        })       
-        ,
-        check('password')
-        .isLength({min:6})
-        .withMessage('La contraseña debe tener al menos 6 caracteres'),
-        body('confirmpassword')
-        .custom((value, {req}) => value == req.body.password)
+            });
+        }),
+
+        check('password').not().isEmpty().withMessage('La contraseña es obligatoria'),
+
+        check('password').isLength({min:8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
+        
+        body('confirmpassword').custom((value, {req}) => value == req.body.password)
         .withMessage('La confirmación debe ser igual a la contraseña')
     ]
 }
@@ -34,8 +41,11 @@ const registerValidations = () => {
  const loginValidations = () => {
      
     return [
-        body('email')
-        .custom((value, { req }) => {
+        check('email').not().isEmpty().withMessage('El email es obligatorio'),
+
+        check('email').isEmail().withMessage('El email debe tener formato válido'),
+
+        body('email').custom((value, { req }) => {
             return db.Users.findOne({
               where: {
                 email: value,
@@ -51,14 +61,6 @@ const registerValidations = () => {
               }
             });
           })
-           /* .withMessage('Usuario no encontrado'),
-            
-       /*  body('password').custom((value) => { 
-            console.log("value: " + value + " req " + mail);
-            bcrypt.compareSync(value, db.Users.findOne({where: {email: req.body.email }})
-        
-        .then (response => response))})
-            .withMessage('La contraseña no coincide') */
     ]
 }
 
