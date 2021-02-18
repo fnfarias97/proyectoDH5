@@ -9,10 +9,17 @@ let numberFormat = n => n.toString().replace( /\B(?=(\d{3})+(?!\d))/g,
 let productsController = {
     
     products : (req, res, next) => {
+        if (req.query.name) {
+            db.Products.findAll({where: {name: { [Op.like] : '%' + req.query.name + '%'}}})
+            .then (products => {
+                res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index', products : products })
+            })
+        } else {
             db.Products.findAll()
             .then (products => {
                 res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index', products : products })
             })
+        }
     },
 
     show: (req, res) => {
@@ -45,7 +52,7 @@ let productsController = {
         
     },
 
-    save: (req, res) => {
+    save: (req, res, next) => {
         let producto = {
             ...req.body,
             avatar: req.files[0].filename
