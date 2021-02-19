@@ -32,9 +32,14 @@ main form{
     flex-wrap: wrap;
 }
 
-form p {
+div.field {
     display: flex;
-   flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+div.field p {
+    text-align: left;
 }
 
 form label {
@@ -115,6 +120,12 @@ main button{
 .form-buttons {
     margin-top: 20px;
     align-items: center;
+}
+
+.error {
+    color: rgba(255, 0, 0, 0.75);
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 main select {

@@ -3,80 +3,98 @@
 
     <main>
         <div class="div-add-product"><h1>Agrega productos:</h1>
-
-        <% if (typeof errors != "undefined"){ %>
-            <ul>
-                <% for (e of errors) { %>
-                <li><%= e %></li>
-                <% } %> 
-            </ul>
-        <% } %> 
         
         <form method="POST" action="/products/add" enctype="multipart/form-data">
-            <p>
+            <div class="field">
                 <label>Nombre:</label>
+
+                <% if (typeof errors != "undefined") { %>
+                    <% if (typeof errors.name != "undefined") { %>
+                        <p class="error"><%= errors.name.msg %></p>
+                    <% } %>
+                <% } %>
                 <input type="text" id="name" name="name" placeholder="Nombre del producto" 
-                <% if (typeof product != "undefined"){ %>
-                    value="<%= product.name %>"
+                <% if (typeof productFilled != "undefined"){ %>
+                    value="<%= productFilled.name %>"
                 <% } %> 
                 >
-            </p>
-            <p>
+            </div>
+            <div class="field">
                 <label>Categoría:</label>
                 <select name="product_categories_id" id="category">
                     <% for (let category of categories){ %> 
                         <option value="<%= category.id %>"
-                            <% if (typeof product != "undefined"){ %>
-                                <% if (category.id == product.product_categories_id) { %>
+                            <% if (typeof productFilled != "undefined"){ %>
+                                <% if (category.id == productFilled.product_categories_id) { %>
                                     selected
                                 <% } %> 
                             <% } %> 
                         ><%= category.name %></option>
                     <% } %> 
                 </select>
-            </p>
-            <p>
+            </div>
+            <div class="field">
                 <label>Descripción:</label>
+                <% if (typeof errors != "undefined") { %>
+                    <% if (typeof errors.description != "undefined") { %>
+                        <p class="error"><%= errors.description.msg %></p>
+                    <% } %>
+                <% } %>
                 <input type="text" id="description" name="description" placeholder="Descripción del producto"
-                <% if (typeof product != "undefined"){ %>
-                    value="<%= product.description %>"
+                <% if (typeof productFilled != "undefined"){ %>
+                    value="<%= productFilled.description %>"
                 <% } %>
                 >
-            </p>
-            <p>
+            </div>
+            <div class="field">
                 <label>Marca:</label>
                 <select name="brand_id" id="brand">
                     <% for (let brand of brands){ %> 
                         <option value="<%= brand.id %>"
-                            <% if (typeof product != "undefined"){ %>
-                                <% if (brand.id == product.brand_id) { %>
+                            <% if (typeof productFilled != "undefined"){ %>
+                                <% if (brand.id == productFilled.brand_id) { %>
                                     selected
                                 <% } %> 
                             <% } %>
                         ><%= brand.name %></option>
                     <% } %> 
                 </select>
-            </p>
-            <p>
+            </div>
+            <div class="field">
                 <label>Precio:</label>
+                <% if (typeof errors != "undefined") { %>
+                    <% if (typeof errors.price != "undefined") { %>
+                        <p class="error"><%= errors.price.msg %></p>
+                    <% } %>
+                <% } %>
                 <input type="text" id="price" name="price" placeholder="Precio"
-                <% if (typeof product != "undefined"){ %>
-                    value="<%= product.price %>"
+                <% if (typeof productFilled != "undefined"){ %>
+                    value="<%= productFilled.price %>"
                 <% } %>
                 >
-            </p>
-            <p>
+            </div>
+            <div class="field">
                 <label>Stock:</label>
+                <% if (typeof errors != "undefined") { %>
+                    <% if (typeof errors.stock != "undefined") { %>
+                        <p class="error"><%= errors.stock.msg %></p>
+                    <% } %>
+                <% } %>
                 <input type="text" id="stock" name="stock" placeholder="Stock"
-                <% if (typeof product != "undefined"){ %>
-                    value="<%= product.stock %>"
+                <% if (typeof productFilled != "undefined"){ %>
+                    value="<%= productFilled.stock %>"
                 <% } %>
                 >
-            </p>
-            <p>
+            </div>
+            <div class="field">
                 <label>Imagen:</label>
+                <% if (typeof errors != "undefined") { %>
+                    <% if (typeof errors.avatar != "undefined") { %>
+                        <p class="error"><%= errors.avatar.msg %></p>
+                    <% } %>
+                <% } %>
                 <input type="file" id="avatar" name="avatar">
-            </p>
+            </div>
             <div class="form-buttons">
                 <button type="submit">Agregar</button>
                 <button type="reset">Cancelar</button>

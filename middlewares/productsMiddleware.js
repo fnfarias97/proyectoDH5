@@ -33,13 +33,14 @@ const validateProduct = (req, res, next) => {
     if (errors.isEmpty()) {
         return next()
     }
-    errors = errors.errors.map(e => e.msg)
+
+    errors = errors.mapped()
 
     db.Product_categories.findAll()
     .then(result => {
         let categories = result
         db.Brands.findAll()
-            .then(brands => res.render('products/agregarProducto', { title: 'Click Players | Agregar producto', stylesheet: 'forms', categories, brands, errors, product: alreadyCompleted })
+            .then(brands => res.render('products/agregarProducto', { title: 'Click Players | Agregar producto', stylesheet: 'forms', categories, brands, errors, productFilled: alreadyCompleted })
         )
     })
 }
