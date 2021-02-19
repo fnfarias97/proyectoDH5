@@ -3,6 +3,15 @@
 
     <main>
         <div class="div-add-product"><h1>Agrega productos:</h1>
+
+        <% if (typeof errors != "undefined"){ %>
+            <ul>
+                <% for (e of errors) { %>
+                <li><%= e %></li>
+                <% } %> 
+            </ul>
+        <% } %> 
+        
         <form method="POST" action="/products/add" enctype="multipart/form-data">
             <p><label>Nombre:</label><input type="text" id="name" name="name" placeholder="Nombre del producto"></p>
             <p>

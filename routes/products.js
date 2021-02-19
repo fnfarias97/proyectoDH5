@@ -3,6 +3,7 @@ const productsController = require('../controllers/productsController');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path')
+const {productsMiddleware, validateProduct} = require('../middlewares/productsMiddleware')
 const {isLogged} = require('../middlewares/authMiddleware')
 
 var storage = multer.diskStorage({
@@ -13,7 +14,8 @@ var storage = multer.diskStorage({
       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
   })
-   
+
+
 var upload = multer({ storage: storage })
 
 router.get('/', productsController.products);
@@ -28,7 +30,7 @@ router.post('/cart/rm/:id', productsController.rmFromCart)
 
 router.get('/add', isLogged, productsController.addProduct);
 
-router.post('/add', upload.any(), productsController.save);
+router.post('/add', upload.any(), productsMiddleware(), validateProduct , productsController.save);
 
 router.get('/edit/:id', isLogged, productsController.editProduct);
 
