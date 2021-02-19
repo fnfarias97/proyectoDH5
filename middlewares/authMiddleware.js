@@ -70,9 +70,9 @@ const validateLogin = (req, res, next) => {
     if (errors.isEmpty()) {
         return next()
     }
-    errors = errors.errors.map(e => e.msg)
+    errors = errors.mapped()
 
-    res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'forms', errors: errors });
+    res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'forms', errors });
 }
 
 const validateRegister = (req, res,next) => {
