@@ -7,34 +7,34 @@ let db = require ('../database/models');
 
 const registerValidations = () => {
     return [
-        check('first_name').not().isEmpty().withMessage('El nombre es obligatorio'),
+      check('first_name')
+          .not().isEmpty().withMessage('El nombre es obligatorio')
+          .isLength({ min: 2}).withMessage('El nombre debe tener al menos 2 caracteres'),
 
-        check('first_name').isLength({ min: 2}).withMessage('El nombre debe tener al menos 2 caracteres'),
+      body('first_name').trim().escape(),
 
-        body('first_name').trim().escape(),
+      check('last_name').not().isEmpty().withMessage('El apellido es obligatorio'),
 
-        check('last_name').not().isEmpty().withMessage('El apellido es obligatorio'),
+      body('last_name').trim().escape(),
 
-        body('last_name').trim().escape(),
+      check('email')
+          .not().isEmpty().withMessage('El email es obligatorio')
+          .isEmail().withMessage('El email debe tener un formato válido'),
+      
+      body('email').custom((value, {req}) => {
+          return db.Users.count({ where: { email: value } })
+          .then(count => {
+              console.log("count " + count )
+              if(count > 0) return Promise.reject("Usuario ya existente")
+          });
+      }),
 
-        check('email').not().isEmpty().withMessage('El email es obligatorio'),
-
-        check('email').isEmail().withMessage('El email debe tener un formato válido'),
-        
-        body('email').custom((value, {req}) => {
-           return db.Users.count({ where: { email: value } })
-            .then(count => {
-                console.log("count " + count )
-               if(count > 0) return Promise.reject("Usuario ya existente")
-            });
-        }),
-
-        check('password').not().isEmpty().withMessage('La contraseña es obligatoria'),
-
-        check('password').isLength({min:8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
-        
-        body('confirmpassword').custom((value, {req}) => value == req.body.password)
-        .withMessage('La confirmación debe ser igual a la contraseña')
+      check('password')
+          .not().isEmpty().withMessage('La contraseña es obligatoria')
+          .isLength({min:8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
+      
+      body('confirmpassword').custom((value, {req}) => value == req.body.password)
+      .withMessage('La confirmación debe ser igual a la contraseña')
     ]
 }
 
@@ -72,17 +72,20 @@ const validateLogin = (req, res, next) => {
     }
     errors = errors.errors.map(e => e.msg)
 
-    res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'ingresar', errors: errors });
+    res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'forms', errors: errors });
 }
 
 const validateRegister = (req, res,next) => {
     let errors = validationResult(req);
+    let userFilled = {...req.body}
+    userFilled.password = ''
+    userFilled.confirmpassword = ''
 
     if (errors.isEmpty()) {
         return next()
     }
-    errors = errors.errors.map(e => e.msg)
-    res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'registrar', errors });
+    errors = errors.mapped()
+    res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms', errors, userFilled });
 }
 
 const isLogged = (req, res, next) => {

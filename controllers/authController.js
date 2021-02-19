@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 
 let userController = {
     
-    ingresar : (req, res) => res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'ingresar' }),
+    ingresar : (req, res) => res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'forms' }),
 
     logout: (req, res) => {
         req.session.destroy();
@@ -18,7 +18,7 @@ let userController = {
     },
 
 
-    registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'registrar' }),
+    registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms' }),
 
     login : (req, res, next) => {
         let user = req.body.email;

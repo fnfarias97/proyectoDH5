@@ -4,22 +4,70 @@
     <main>
       <h1>Crea tu cuenta de usuario:</h1>
 
-      <% if (typeof errors != "undefined"){ %>
-        <ul>
-          <% for (e of errors) { %>
-            <li><%= e %></li>
-          <% } %> 
-        </ul>
-      <% } %> 
-
       <form action="/auth/registrar" method="POST">
-        <p><input type="text" id="first_name" name="first_name" placeholder="Nombre" required></p>
-        <p><input type="text" id="last_name" name="last_name" placeholder="Apellido" required></p>
-        <p><input type="email" id="email" name="email" placeholder="Email" required></p>
-        <p><input type="password" id="password" name="password" placeholder="Contrase&ntilde;a" required></p>
-        <p><input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirmar contrase&ntilde;a" required></p>
-        <p><button type="submit">Registrar</button>
-        <button type="reset">Cancelar</button></p>
+
+        <div class="field">
+            <% if (typeof errors != "undefined") { %>
+                <% if (typeof errors.first_name != "undefined") { %>
+                    <p class="error"><%= errors.first_name.msg %></p>
+                <% } %>
+            <% } %>
+            <input type="text" id="first_name" name="first_name" placeholder="Nombre" 
+            <% if (typeof userFilled != "undefined"){ %>
+              value="<%= userFilled.first_name %>"
+            <% } %> 
+            >
+        </div>
+
+        <div class="field">
+            <% if (typeof errors != "undefined") { %>
+                <% if (typeof errors.last_name != "undefined") { %>
+                    <p class="error"><%= errors.last_name.msg %></p>
+                <% } %>
+            <% } %>
+            <input type="text" id="last_name" name="last_name" placeholder="Apellido" 
+            <% if (typeof userFilled != "undefined"){ %>
+              value="<%= userFilled.last_name %>"
+            <% } %>
+            >
+        </div>
+
+        <div class="field">
+            <% if (typeof errors != "undefined") { %>
+                <% if (typeof errors.email != "undefined") { %>
+                    <p class="error"><%= errors.email.msg %></p>
+                <% } %>
+            <% } %>
+            <input type="email" id="email" name="email" placeholder="Email" 
+            <% if (typeof userFilled != "undefined"){ %>
+              value="<%= userFilled.email %>"
+            <% } %>
+            >
+        </div>
+
+        <div class="field">
+            <% if (typeof errors != "undefined") { %>
+                <% if (typeof errors.password != "undefined") { %>
+                    <p class="error"><%= errors.password.msg %></p>
+                <% } %>
+            <% } %>
+            <input type="password" id="password" name="password" placeholder="Contrase&ntilde;a" >
+        </div>
+
+        <div class="field">
+            <% if (typeof errors != "undefined") { %>
+                <% if (typeof errors.confirmpassword != "undefined") { %>
+                    <p class="error"><%= errors.confirmpassword.msg %></p>
+                <% } %>
+            <% } %>
+            <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirmar contrase&ntilde;a" >
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit">Registrar</button>
+          <button type="reset">Cancelar</button>
+        </div>
+        
       </form>
     </main>
 
