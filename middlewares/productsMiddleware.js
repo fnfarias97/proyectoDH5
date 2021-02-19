@@ -12,6 +12,10 @@ const productsMiddleware = () => {
 
         check('description').isLength({min: 20}).withMessage('La descripción debe tener al menos 20 caracteres'),
 
+        check('price').isFloat().withMessage('El precio tiene que ser un número'),
+
+        check('stock').isInt().withMessage('El stock tiene que ser un número entero'),
+
         body('avatar').custom((value, {req}) => {
             if (typeof req.files[0] != "undefined") {
                 return true
@@ -23,18 +27,19 @@ const productsMiddleware = () => {
 }
 
 const validateProduct = (req, res, next) => {
-    console.log(req.files[0]);
     let errors = validationResult(req);
+    let alreadyCompleted = { ...req.body }
 
     if (errors.isEmpty()) {
         return next()
     }
     errors = errors.errors.map(e => e.msg)
+
     db.Product_categories.findAll()
     .then(result => {
         let categories = result
         db.Brands.findAll()
-            .then(brands => res.render('products/agregarProducto', { title: 'Click Players | Agregar producto', stylesheet: 'forms', categories, brands, errors })
+            .then(brands => res.render('products/agregarProducto', { title: 'Click Players | Agregar producto', stylesheet: 'forms', categories, brands, errors, product: alreadyCompleted })
         )
     })
 }

@@ -1,10 +1,10 @@
 const fs = require('fs');
 let db = require ('../database/models');
-const path = require('path');
+// const path = require('path');
 const bcrypt = require('bcryptjs');
 
-const usersFilePath = path.join(__dirname, '../data/users.json');
-var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+// const usersFilePath = path.join(__dirname, '../data/users.json');
+// var users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 
 let userController = {
