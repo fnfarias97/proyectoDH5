@@ -15,13 +15,15 @@ const formatter = new Intl.NumberFormat('es-AR', {
 let productsController = {
     
     products : (req, res, next) => {
-        let configs = {}
+        let queryConfig = {}
         if (req.query.name) {
-            configs = {where: {name: { [Op.like] : '%' + req.query.name + '%'}}}
+            queryConfig = {where: {name: { [Op.like] : '%' + req.query.name + '%'}}}
         }
 
-        db.Products.findAll(configs)
+        db.Products.findAll(queryConfig)
         .then (products => {
+            products.map(i => i.price = formatter.format(i.price))
+
             res.render('products/productos', { title: 'Click Players | Productos', stylesheet: 'index', products : products })
         })
 
@@ -30,10 +32,9 @@ let productsController = {
     show: (req, res) => {
         db.Products.findByPk(req.params.id)
         .then (product => {
-            if (db != undefined){
-                res.render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', product : product})
-            }
-        
+            product.price = formatter.format(product.price)
+
+            res.render('products/detalle', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', product : product})
 
             let error = {
                 nombre: 'Lo sentimos',
