@@ -52,6 +52,13 @@ main article {
     padding: 5%;
     box-sizing: border-box;
     height: 150px;
+    width: auto;
+}
+
+.amounts .subtotal {
+    width: 120px;
+    text-align: right;
+    padding-right: 5px;
 }
 
 .prod-p {
@@ -89,11 +96,11 @@ main article img {
 }
 
 .amounts p {
-    text-align: center;
     border: 1px solid black;
     width: 30px;
     height: 30px;
     border-radius: 5px;
+    text-align: center;
 }
 
 .eliminar {
@@ -132,12 +139,17 @@ main article img {
     margin-right: 10px;
 }
 
+.payment-box a {
+    width: 100%;
+}
+
 .payment-box button {
     background-color: var(--main-bg-color);
     color: white;
     border-radius: 8px;
     padding: 10px 5px;
     margin: 10px 0;
+    width: 100%;
 }
 
  @media (min-width:426px){

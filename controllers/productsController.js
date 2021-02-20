@@ -6,6 +6,12 @@ const Op = Sequelize.Op;
 let numberFormat = n => n.toString().replace( /\B(?=(\d{3})+(?!\d))/g,
 ".");
 
+const formatter = new Intl.NumberFormat('es-AR', {
+    style: 'currency',
+    currency: 'ARS',
+    minimumFractionDigits: 2
+  })
+
 let productsController = {
     
     products : (req, res, next) => {
@@ -96,30 +102,63 @@ let productsController = {
         // let productsCart = [...products]           // actualizar con session 
         // productsCart.map(product => product.price = numberFormat(product.price));
         req.session.cart == undefined? req.session.cart = [] : 0;
-
+        let cartIds = req.session.cart.map(i => i.id) 
+        
         db.Products.findAll({
             where: {
                 id : {
-                    [Op.in]: req.session.cart
+                    [Op.in]: cartIds
                 }
             }
         }).then(productsCart => {
-            productsCart.map(i => i.price = numberFormat(i.price))
+            productsCart.map(i => {
+                let cartItem = req.session.cart.find(x => x.id == i.id)
 
-            res.render('products/carrito', { title: 'Click Players | Carrito de productos', stylesheet: 'carrito', products : productsCart})
+                
+                i.qty = cartItem.qty
+                i.subt = i.qty * i.price
+                i.subtotal = formatter.format(i.subt)
+                i.price = formatter.format(i.price)
+            })
+        
+            let total = productsCart.reduce((a,b) => a + b.subt, 0)
+            total = formatter.format(total)
+
+            res.render('products/carrito', { title: 'Click Players | Carrito de productos', stylesheet: 'carrito', products : productsCart, total})
         })
     },
 
     addToCart: (req, res, next) => {
         req.session.cart == undefined? req.session.cart = [] : 0;
-
-        req.session.cart.push(req.params.id)
+        let cartItem = req.session.cart.find(x => x.id == req.params.id)
+        
+        if (typeof cartItem == "undefined"){
+            req.session.cart.push({
+                id: req.params.id,
+                qty: 1
+            })
+        } else {
+            let foundIndex = req.session.cart.findIndex(x => x.id == req.params.id)
+            req.session.cart[foundIndex].qty ++
+        }
 
         res.redirect('/products/carrito')
     },
 
+    subsFromCart: (req, res, next) => {
+        let foundIndex = req.session.cart.findIndex(x => x.id == req.params.id)
+
+        if(req.session.cart[foundIndex].qty == 1){
+            res.redirect(307,'/products/cart/rm/' + req.params.id)
+        } else {
+            req.session.cart[foundIndex].qty --
+
+            res.redirect('/products/carrito')
+        }
+    },
+
     rmFromCart: (req, res, next) => {
-        newCart = req.session.cart.filter(i => i != req.params.id)
+        newCart = req.session.cart.filter(i => i.id != req.params.id)
 
         req.session.cart = newCart
 

@@ -26,6 +26,8 @@ router.get('/carrito', productsController.carrito);
 
 router.post('/cart/add/:id', productsController.addToCart)
 
+router.post('/cart/subs/:id', productsController.subsFromCart)
+
 router.post('/cart/rm/:id', productsController.rmFromCart)
 
 router.get('/add', isLogged, productsController.addProduct);

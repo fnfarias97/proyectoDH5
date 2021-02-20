@@ -3,28 +3,40 @@
 
     <main class="d-flex">
         <section class="d-flex">
+
             <div class="cart-container radius-10 d-flex fw sombra">
                 <div class="d-flex">
                     <h1>Carrito de Compras</h1>
                 </div>
                 
+                <% if (products.length === 0) { %>
+                    <h2>Aún no agregaste nada al carrito de compras!</h2>
+                <% } %> 
+
                 <% for (product of products) { %>
                     <article>
                         <div class="d-flex prod-info">
                             <div class="text-cont prod-p">
                                 <h3 class="prod-nombre"><%= product.name %></h3>
-                                <p class="prod-precio">Precio Unitario: $<%= product.price %></p>
+                                <p class="prod-precio">Precio Unitario: <%= product.price %></p>
                             </div>
                             <a href="./detalle/<%= product.id %>"><img src="/images/products/<%= product.avatar %>"  alt=""></a>
                         </div>
                         <div class="d-flex prod-amounts">
                             <div class="amounts d-flex">
                                 <div class="sumar-restar d-flex">
-                                    <button class="fa fa-plus sumar"></button>
-                                    <p class="text-cont"><%= product.stock %></p>     <!-- Actualizar luego con session -->
-                                    <button class="fa fa-minus restar"></button>
+
+                                    <form method="POST" action="/products/cart/add/<%= product.id %>">
+                                        <button class="fa fa-plus sumar"></button>
+                                    </form>
+
+                                    <p class="text-cont"><%= product.qty %></p>     <!-- Actualizar luego con session -->
+                                    
+                                    <form method="POST" action="/products/cart/subs/<%= product.id %>">
+                                        <button class="fa fa-minus restar"></button>
+                                    </form>
                                 </div>
-                                <div><p class="text-cont">$<%= product.price * product.stock %></p></div>
+                                <div><p class="text-cont subtotal"><%= product.subtotal %></p></div>
                                 <!-- <input type="checkbox" name="remove" id="remove"> -->
                                 <form method="POST" action="/products/cart/rm/<%= product.id %>">
                                     <div class="eliminar"><button class="fa fa-trash" type="submit"></button></div>
@@ -35,29 +47,32 @@
                 <% } %>
             </div>
 
+            <% if (products.length > 0) { %>
+                <div class="payment-container mt-20 d-flex">
 
-            <div class="payment-container mt-20 d-flex">
-
-                <div class="payment-box radius-10 d-flex fw sombra">
-                    <p>Total precio especial: $150.000</p>
-                    <p>Precio de lista: $180.000</p>
-                    <p>Hasta 12 cuotas sin interés</p>
-                    <div class="envio-container">
-                        <div class="cod-pos d-flex">
-                            <input id="cod-pos" name="cod-pos" type="text">
-                            <label for="cod-pos">Código Postal</label>
+                    <div class="payment-box radius-10 d-flex fw sombra">
+                        <p>Total contado: <%= total %> </p>
+                        <p>Hasta 12 cuotas sin interés</p>
+                        <div class="envio-container">
+                            <div class="cod-pos d-flex">
+                                <input id="cod-pos" name="cod-pos" type="text">
+                                <label for="cod-pos">Código Postal</label>
+                            </div>
+                            <div>
+                                <button>Calcular Envío</button>
+                            </div>
                         </div>
-                        <button>Calcular Envío</button>
                     </div>
-                </div>
+    
+                    <div class="payment-box radius-10 d-flex sombra">
 
-                <div class="payment-box radius-10 d-flex sombra">
-                    <button>COMPRAR EN UN PAGO</button>
-                    <button>COMPRAR EN CUOTAS</button>
-                    <button>SEGUIR COMPRANDO</button>
+                        <button>IR A PAGAR</button>
+                        <a href="/products"><button>SEGUIR COMPRANDO</button></a>
+                    </div>
+                    
                 </div>
-                
-            </div>
+            <% } %> 
+            
         </section>
     </main>
 
