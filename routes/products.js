@@ -3,13 +3,9 @@ const productsController = require('../controllers/productsController');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path')
-<<<<<<< HEAD
 const {productsMiddleware, validateProduct} = require('../middlewares/productsMiddleware')
 const {isLogged} = require('../middlewares/authMiddleware')
-=======
-const {isLogged} = require('../middlewares/authMiddleware');
 const {adminValidate} = require('../middlewares/authMiddleware');
->>>>>>> b700a52... edit adminValidate
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
