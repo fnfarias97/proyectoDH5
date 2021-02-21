@@ -129,6 +129,40 @@ let productsController = {
         })
     },
 
+    client: (req,res, next) => {
+        if (req.query.name) {
+            db.Products.findAll({where: {name: { [Op.like] : '%' + req.query.name + '%'}}})
+            .then (products => {
+                res.render('products/products', { title: 'Click Players | Productos', stylesheet: 'index', products : products })
+            })
+        } else {
+            db.Products.findAll()
+            .then (products => {
+                res.render('products/products', { title: 'Click Players | Productos', stylesheet: 'index', products : products })
+            })
+        }
+
+    },
+    clientDetail: (req, res) => {
+        db.Products.findByPk(req.params.id)
+        .then (product => {
+            if (db != undefined){
+                res.render('products/detail', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', product : product})
+            }
+        
+
+            let error = {
+                nombre: 'Lo sentimos',
+                precio: '0',
+                descripcion: 'El producto no existe',
+                avatar: 'producto-no-encontrado.png'
+            }
+
+            })
+        .catch(err => res.status(404).render('products/detail', { title: 'Click Players | Detalle del producto', stylesheet: 'detalle', product : error}) )
+    },
+
+
     addToCart: (req, res, next) => {
         req.session.cart == undefined? req.session.cart = [] : 0;
         let cartItem = req.session.cart.find(x => x.id == req.params.id)

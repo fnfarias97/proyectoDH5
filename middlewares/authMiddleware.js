@@ -59,6 +59,10 @@ const registerValidations = () => {
               } else {
                 return Promise.reject('Usuario no encontrado');
               }
+              
+              var userP = user.privileges;
+              console.log(userP)
+              module.exports = {userP}
             });
           })
     ]
@@ -98,6 +102,11 @@ const isNotLogged = (req, res, next) => {
         next () : res.redirect('/auth/perfil');
 }
 
+const adminValidate = (req,res,next) => {
+    req.session.user == 'admin@gmail.com'?
+    next() : res.redirect('/products/client')
+}
+
 const remember = (req, res, next) => {
     req.cookies.remember? req.session.user = req.cookies.remember : 0;
     res.locals.user = req.session.user;
@@ -111,5 +120,6 @@ module.exports =  {
     validateLogin,
     isLogged,
     isNotLogged,
+    adminValidate,
     remember
 }
