@@ -5,7 +5,6 @@ const multer = require('multer');
 const path = require('path')
 const {productsMiddleware, validateProduct} = require('../middlewares/productsMiddleware')
 const {isLogged} = require('../middlewares/authMiddleware')
-const {adminValidate} = require('../middlewares/authMiddleware');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -19,13 +18,9 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
-router.get('/', adminValidate, productsController.products);
+router.get('/', productsController.products);
 
-router.get('/detalle/:id?', adminValidate, productsController.detalle);
-
-router.get('/client', productsController.client);
-
-router.get('/client/detalle/:id?', productsController.clientDetail);
+router.get('/detalle/:id', productsController.show);
 
 router.get('/carrito', productsController.carrito);
 
