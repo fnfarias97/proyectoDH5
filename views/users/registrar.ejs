@@ -4,14 +4,6 @@
     <main>
       <h1>Crea tu cuenta de usuario:</h1>
 
-      <% if (typeof errors != "undefined"){ %>
-        <ul>
-          <% for (e of errors) { %>
-            <li class="error"><%= e %></li>
-          <% } %> 
-        </ul>
-      <% } %> 
-
       <form action="/auth/registrar" method="POST">
 
         <div class="field">

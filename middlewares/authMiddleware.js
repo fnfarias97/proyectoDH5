@@ -99,7 +99,6 @@ const isNotLogged = (req, res, next) => {
         next () : res.redirect('/auth/perfil');
 }
 
-
 const remember = (req, res, next) => {
     req.cookies.remember? req.session.user = req.cookies.remember : 0;
     res.locals.user = req.session.user;
