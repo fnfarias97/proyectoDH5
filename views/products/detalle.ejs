@@ -13,7 +13,7 @@
                 <form method="POST" action="/products/cart/add/<%= product.id %>">
                     <button class="boton" type="submit">COMPRAR</button>
                 </form>
-                <% if (typeof locals.user != "undefined") { %>
+                <% if (typeof locals.user != "undefined" && locals.user == "admin@gmail.com") { %>
                     <a href="../edit/<%= product.id %>"><button class= "boton">EDITAR</button></a>
                 <% } %>
                 

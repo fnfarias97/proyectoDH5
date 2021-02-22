@@ -59,6 +59,7 @@ const registerValidations = () => {
               } else {
                 return Promise.reject('Usuario no encontrado');
               }
+              
             });
           })
     ]

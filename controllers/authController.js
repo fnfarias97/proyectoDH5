@@ -46,7 +46,8 @@ let userController = {
 
     },
 
-    perfil: (req, res) => res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil'})
+    perfil: (req, res) => res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil'}),
+
 };
 
 module.exports = userController;
