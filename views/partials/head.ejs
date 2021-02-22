@@ -5,12 +5,20 @@
     <% if (typeof stylesheet == 'string' && stylesheet) { %>
       <link rel="stylesheet" href="/css/<%= stylesheet %>.css">
     <% } else if (typeof stylesheet == 'array' && stylesheet) {
-      for (e in stylesheet) {%>
+      for (e in stylesheet) { %>
       <link rel="stylesheet" href="/css/<%= e %>.css">
     <% }} %>
 
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <% if (typeof scripts == "string") { %>
+        <script src="/js/<%= scripts %>.js"></script>
+    <% } else if (typeof scripts == 'array') { 
+      for (e in scripts) { %>
+        <script src="/js/<%= e %>.js"></script>
+    <% }} %> 
+    
     <title><%= title %></title>
   </head>
   <body>

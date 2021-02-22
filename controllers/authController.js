@@ -18,7 +18,7 @@ let userController = {
     },
 
 
-    registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms' }),
+    registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms', scripts: 'forms'}),
 
     login : (req, res, next) => {
         let user = req.body.email;
