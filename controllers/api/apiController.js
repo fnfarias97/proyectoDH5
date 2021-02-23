@@ -60,7 +60,7 @@ let apiController = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10)
         }).then(result => {
-            req.session.user = req.body.email;
+            req.session.user = {email: req.body.email, admin: false};
             res.status(201).end('')
         }).catch(err => res.json(err))
     },

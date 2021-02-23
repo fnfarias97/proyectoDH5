@@ -22,7 +22,7 @@ let userController = {
 
     login : (req, res, next) => {
         let user = {email: req.body.email};
-        result.privileges == 'admin'? user.admin = true : user.admin = false;
+        res.privileges == 'admin'? user.admin = true : user.admin = false;
         req.session.user = user;
         req.body.remember? res.cookie('remember', req.session.user, {maxAge: 60000 * 60}) : 0;
 
@@ -47,6 +47,38 @@ let userController = {
     },
 
     perfil: (req, res) => res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil'}),
+
+
+    showProfile: (req, res) => {
+        db.Users.findOne({
+            where: {email: req.session.email}
+            
+        })
+        .then (user => {
+
+            res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil', user : user})
+        })
+    },
+
+    editProfile: (req, res) => {
+        db.Users.findOne({
+            where: {email: req.session.user.email}
+            
+        })
+            .then(user => {
+
+                res.render('users/perfil', {title: 'Click Players | Mi Perfil', stylesheet: 'perfil', user : user})
+            })
+
+    },
+
+    update : (req, res, next) => {
+        let user = {...req.body}
+        req.files[0] != undefined ? user.avatar = req.files[0].filename : 0;
+        
+        db.Users.update(user, {where: {email: req.session.user.email}})
+        res.redirect('/')
+    }
 
 };
 
