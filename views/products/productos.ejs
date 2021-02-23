@@ -2,7 +2,7 @@
     <%- include('../partials/header') %>
 
     <!--  if (typeof locals.user  != "undefined") { %>  -->
-    <% if (locals.user.admin) { %> 
+    <% if (typeof locals.user != "undefined" && locals.user.admin) { %> 
         <div class="add-products">
             <a href="/products/add"><p>Agregá más productos</p></a>
         </div>

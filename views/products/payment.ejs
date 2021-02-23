@@ -1,0 +1,52 @@
+<%- include('../partials/head') %>
+    <%- include('../partials/header') %>
+
+    <main class="d-flex">
+        <section class="d-flex">
+
+            <div class="cart-container radius-10 d-flex fw sombra">
+                <div class="d-flex">
+                    <h1>Métodos de Pago</h1>
+                </div>
+                
+                <% if (products.length === 0) { %>
+                    <h2>Aún no agregaste nada al carrito de compras!</h2>
+                <% } %> 
+
+
+                    <article>
+                        <section class="formas-de-pago">
+                            <div class="d-flex">
+                                <a href = '/'><i class="fas fa-credit-card footer-images borde"></i>Pagá con tarjeta</a>
+                                <a href = '/'><i class="far fa-handshake borde"></i>MercadoPago</a>
+                                <a href = '/'><i class="far fa-money-bill-alt"></i>En efectivo</a>
+                            </div>
+                        </section>
+                    </article>
+
+            </div>
+
+            <% if (products.length > 0) { %>
+                <div class="payment-container mt-20 d-flex">
+
+                    <div class="payment-box radius-10 d-flex fw sombra">
+                        <h3>Total contado: <%= total %> </h3>
+                        <p>Hasta 12 cuotas sin interés</p>
+                        <!-- <div class="envio-container">
+                            <div class="cod-pos d-flex">
+                                <input id="cod-pos" name="cod-pos" type="text">
+                                <label for="cod-pos">Código Postal</label>
+                            </div>
+                            <div>
+                                <button>Calcular Envío</button>
+                            </div>
+                        </div> -->
+                    </div>
+                    
+                </div>
+            <% } %> 
+            
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %>
