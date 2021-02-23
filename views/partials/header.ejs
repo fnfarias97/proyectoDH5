@@ -18,7 +18,7 @@
           <a href='/auth/registrar'>REGISTRAR</a>
           <a href='/contacto'>CONTACTO</a>
       <% } else { %> 
-          <a href="/auth/perfil">Bienvenido <%= locals.user %></a>
+          <a href="/auth/perfil">Bienvenido <%= locals.user.email %></a>
           <a href='/products'>PRODUCTOS</a>
           <a href='/contacto'>CONTACTO</a>
           <a href='/auth/logout'>CERRAR SESION</a>

@@ -72,10 +72,13 @@ let apiController = {
             email: req.body.email
         }}).then(result => {
             if (bcrypt.compareSync(req.body.password, result.password)) {
-                let user = req.body.email;
+                let user = {email: req.body.email};
+
+                result.privileges == 'admin'? user.admin = true : user.admin = false;
 
                 req.session.user = user;
                 req.body.remember? res.cookie('remember', req.session.user, {maxAge: 60000 * 60}) : 0;
+
                 res.status(200).end('')
             } else {
                 res.status(400).end('')

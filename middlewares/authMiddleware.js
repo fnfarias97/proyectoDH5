@@ -99,6 +99,11 @@ const isNotLogged = (req, res, next) => {
         next () : res.redirect('/auth/perfil');
 }
 
+const isAdmin = (req, res, next) => {
+    req.session.user.admin?
+        next () : res.redirect('/')
+}
+
 const remember = (req, res, next) => {
     req.cookies.remember? req.session.user = req.cookies.remember : 0;
     res.locals.user = req.session.user;
@@ -112,5 +117,6 @@ module.exports =  {
     validateLogin,
     isLogged,
     isNotLogged,
+    isAdmin,
     remember
 }

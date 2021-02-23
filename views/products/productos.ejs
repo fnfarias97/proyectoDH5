@@ -1,10 +1,11 @@
 <%- include('../partials/head') %>
     <%- include('../partials/header') %>
 
-    <% if (typeof locals.user  != "undefined" && locals.user == "admin@gmail.com") { %> 
-    <div class="add-products">
-        <a href="/products/add"><p>Agregá más productos</p></a>
-    </div>
+    <!--  if (typeof locals.user  != "undefined") { %>  -->
+    <% if (locals.user.admin) { %> 
+        <div class="add-products">
+            <a href="/products/add"><p>Agregá más productos</p></a>
+        </div>
     <% } %>
     
     <main class="mtopbottom-10 bg-main radius-10 p-20 sombra">

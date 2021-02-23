@@ -4,7 +4,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path')
 const {productsMiddleware, validateProduct} = require('../middlewares/productsMiddleware')
-const {isLogged} = require('../middlewares/authMiddleware')
+const {isLogged, isAdmin} = require('../middlewares/authMiddleware')
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -32,11 +32,11 @@ router.post('/cart/subs/:id', productsController.subsFromCart)
 
 router.post('/cart/rm/:id', productsController.rmFromCart)
 
-router.get('/add', isLogged, productsController.addProduct);
+router.get('/add', isAdmin, productsController.addProduct);
 
 router.post('/add', upload.any(), productsMiddleware(), validateProduct , productsController.save);
 
-router.get('/edit/:id', isLogged, productsController.editProduct);
+router.get('/edit/:id', isAdmin, productsController.editProduct);
 
 router.put('/edit/:id', upload.any(), productsController.update);
 

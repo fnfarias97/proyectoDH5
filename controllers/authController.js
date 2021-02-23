@@ -21,8 +21,8 @@ let userController = {
     registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms', scripts: ['https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js','register']}),
 
     login : (req, res, next) => {
-        let user = req.body.email;
-
+        let user = {email: req.body.email};
+        result.privileges == 'admin'? user.admin = true : user.admin = false;
         req.session.user = user;
         req.body.remember? res.cookie('remember', req.session.user, {maxAge: 60000 * 60}) : 0;
 
