@@ -26,6 +26,12 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             type: dataTypes.STRING,
             defaultValue: 'client'
+        },  avatar: {
+            type: dataTypes.STRING,
+            defaultValue: 'default.png'
+        },  description: {
+            type: dataTypes.STRING,
+            defaultValue: 'Descripción del usuario'
         }
     }, {
         tableName : "users",
