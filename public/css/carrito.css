@@ -152,7 +152,47 @@ main article img {
     width: 100%;
 }
 
- @media (min-width:426px){
+.formas-de-pago{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.formas-de-pago div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 20px;
+}
+
+.formas-de-pago a{
+    color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+}
+
+.formas-de-pago p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.formas-de-pago i{
+    color: var(--main-bg-color);
+    font-size: 30px;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+
+@media (min-width:426px){
     .cart-container {width: 100%; box-sizing: border-box;}
     .cart-container h1 {font-size: 3em;}
     main section p {font-size: 16px}
@@ -160,7 +200,7 @@ main article img {
     .text-cont {padding: 3%;}
 
     .eliminar{display: block;}
-    
+
     .envio-container {display: flex;}
     .cod-pos {
         justify-content: flex-start;
@@ -169,17 +209,17 @@ main article img {
     .cod-pos * {
         margin-right: 10px;
     }
- }
+}
 
- @media (min-width:767px){
+@media (min-width:767px){
     .payment-container {
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .payment-box {
         font-size: 1.5em;
         /* margin: 0 30px; */
         width: 40%;
     }
- }
+}

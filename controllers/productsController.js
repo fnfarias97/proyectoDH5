@@ -164,6 +164,35 @@ let productsController = {
         req.session.cart = newCart
 
         res.redirect('/products/carrito')
+    },
+
+    payment: (req, res, next) => {
+        req.session.cart == undefined? req.session.cart = [] : 0;
+        let cartIds = req.session.cart.map(i => i.id) 
+        
+        db.Products.findAll({
+            where: {
+                id : {
+                    [Op.in]: cartIds
+                }
+            }
+        }).then(productsCart => {
+            productsCart.map(i => {
+                let cartItem = req.session.cart.find(x => x.id == i.id)
+
+                
+                i.qty = cartItem.qty
+                i.subt = i.qty * i.price
+                i.subtotal = formatter.format(i.subt)
+                i.price = formatter.format(i.price)
+            })
+        
+            let total = productsCart.reduce((a,b) => a + b.subt, 0)
+            total = formatter.format(total)
+
+            res.render('products/payment', { title: 'Click Players | Métodos de pago', stylesheet: 'carrito', products : productsCart, total})
+        })
+        .catch(err => res.send(err))
     }
 }
 

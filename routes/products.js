@@ -24,6 +24,8 @@ router.get('/detalle/:id', productsController.show);
 
 router.get('/carrito', productsController.carrito);
 
+router.get('/payment', productsController.payment)
+
 router.post('/cart/add/:id', productsController.addToCart)
 
 router.post('/cart/subs/:id', productsController.subsFromCart)
