@@ -18,7 +18,7 @@ let userController = {
     },
 
 
-    registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms', scripts: 'forms'}),
+    registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms', scripts: ['https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js','forms']}),
 
     login : (req, res, next) => {
         let user = req.body.email;

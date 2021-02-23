@@ -13,11 +13,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
     <% if (typeof scripts == "string") { %>
-        <script src="/js/<%= scripts %>.js"></script>
-    <% } else if (typeof scripts == 'array') { 
-      for (e in scripts) { %>
-        <script src="/js/<%= e %>.js"></script>
-    <% }} %> 
+        <script src="/js/<%= scripts %>.js" defer></script>
+    <% } else if (typeof scripts != "undefined" && typeof scripts.length == "number") { 
+      for (let i = 0; i < scripts.length; i++) { 
+        if (scripts[i].includes('https')){ %>
+      <script src="<%= scripts[i] %>"></script>
+    <% } else {  %>
+      <script src="/js/<%= scripts[i] %>.js" defer></script>
+    <% }}} %> 
     
     <title><%= title %></title>
   </head>

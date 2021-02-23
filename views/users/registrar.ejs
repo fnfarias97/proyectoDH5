@@ -12,6 +12,7 @@
                     <p class="error"><%= errors.first_name.msg %></p>
                 <% } %>
             <% } %>
+                    <p class="error" id="first_name_error"></p>
             <input type="text" id="first_name" name="first_name" placeholder="Nombre" 
             <% if (typeof userFilled != "undefined"){ %>
               value="<%= userFilled.first_name %>"
@@ -25,6 +26,7 @@
                     <p class="error"><%= errors.last_name.msg %></p>
                 <% } %>
             <% } %>
+            <p class="error" id="last_name_error"></p>
             <input type="text" id="last_name" name="last_name" placeholder="Apellido" 
             <% if (typeof userFilled != "undefined"){ %>
               value="<%= userFilled.last_name %>"
@@ -38,6 +40,7 @@
                     <p class="error"><%= errors.email.msg %></p>
                 <% } %>
             <% } %>
+            <p class="error" id="email_error"></p>
             <input type="email" id="email" name="email" placeholder="Email" 
             <% if (typeof userFilled != "undefined"){ %>
               value="<%= userFilled.email %>"
@@ -51,6 +54,7 @@
                     <p class="error"><%= errors.password.msg %></p>
                 <% } %>
             <% } %>
+            <p class="error" id="password_error"></p>
             <input type="password" id="password" name="password" placeholder="Contrase&ntilde;a" >
         </div>
 
@@ -60,12 +64,13 @@
                     <p class="error"><%= errors.confirmpassword.msg %></p>
                 <% } %>
             <% } %>
+            <p class="error" id="confirmpassword_error"></p>
             <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirmar contrase&ntilde;a" >
         </div>
 
         <div class="form-buttons">
           <button type="submit">Registrar</button>
-          <button type="reset">Cancelar</button>
+          <button type="reset" id="reset-button">Cancelar</button>
         </div>
         
       </form>

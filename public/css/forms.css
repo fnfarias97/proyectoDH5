@@ -171,3 +171,6 @@ main select {
 #check:checked + .check-track .check-track_indicator {
     transform: translateX(30px);
 }
+
+.success { border: 2px solid green}
+.err {border: 2px solid red}
