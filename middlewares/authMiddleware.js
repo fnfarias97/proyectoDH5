@@ -73,7 +73,7 @@ const validateLogin = (req, res, next) => {
     }
     errors = errors.mapped()
 
-    res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'forms', errors });
+    res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'forms', errors, scripts: ['https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js','login'] });
 }
 
 const validateRegister = (req, res,next) => {
@@ -86,7 +86,7 @@ const validateRegister = (req, res,next) => {
         return next()
     }
     errors = errors.mapped()
-    res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms', errors, userFilled });
+    res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms', errors, userFilled, scripts: ['https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js','register'] });
 }
 
 const isLogged = (req, res, next) => {

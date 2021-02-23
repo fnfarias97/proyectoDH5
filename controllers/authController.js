@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 
 let userController = {
     
-    ingresar : (req, res) => res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'forms' }),
+    ingresar : (req, res) => res.render('users/ingresar', { title: 'Click Players | Ingresa a tu cuenta', stylesheet: 'forms', scripts: ['https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js','login'] }),
 
     logout: (req, res) => {
         req.session.destroy();
@@ -18,7 +18,7 @@ let userController = {
     },
 
 
-    registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms', scripts: ['https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js','forms']}),
+    registrar : (req, res) => res.render('users/registrar', { title: 'Click Players | Registrate', stylesheet: 'forms', scripts: ['https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js','register']}),
 
     login : (req, res, next) => {
         let user = req.body.email;
