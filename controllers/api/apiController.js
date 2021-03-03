@@ -6,26 +6,63 @@ const bcrypt = require('bcryptjs');
 let apiController = {
 
     usersList: (req, res) => {
-        db.Users.findAll({attributes : {exclude: ['password', 'privileges']}})
-        .then (response => {
-        res.json(response)})
+        db.Users.findAll({attributes : {exclude: ['password', 'privileges', 'avatar', 'description']}},{include: {association: 'privileges'}})
+        .then (users => {
+                for (let i = 0; i < users.length; i++){
+                    users[i].setDataValue('endpoint', 'http://localhost:3000/api/users/' + users[i].id)
+                }
+            res.json({
+            meta: {
+                status: 200,
+                count: users.length,
+                url: "api/users"
+                },
+            data: users})})
         
-    .catch(res.status(404))},
+        .catch(res.status(404))},
 
     usersProfile: (req, res) => db.Users.findByPk(req.params.id, {attributes : {exclude: ['password', 'privileges']}})
-    .then(response => res.json(response))
+    .then(users => {
+        for (let i = 0; i < users.length; i++){
+            users[i].setDataValue('image', 'http://localhost:3000/api/users/' + users[i].avatar)
+            }
+        res.json({
+        meta: {
+            status: 200,
+            url: "http://localhost:3000/api/users/" + req.params.id
+            },
+        data: users})})
+
     .catch(res.status(404)),
 
     productsList : (req, res) => {
-        db.Products.findAll()
-        .then (products => res.json(products))
+        db.Products.findAll({include: [{association: 'Product_categories'}, {association: 'Brands'}]})
+        .then (products => {
+            for (let i = 0; i < products.length; i++){
+                products[i].setDataValue('endpoint', 'http://localhost:3000/api/products/' + products[i].id )
+                products[i].setDataValue('categories', [products[i].Brands, products[i].Product_categories])
+                products[i].setDataValue('image', products[i].avatar)
+            }
+            res.json({
+            meta: {
+                status: 200,
+                count: products.length,
+                url: "api/products"
+                },
+            data: products})})
     },
 
     productDetail: (req, res) => {
         db.Products.findByPk(req.params.id)
         .then (product => {
             
-                res.json(product)
+                res.json({
+                    meta: {
+                        status: 200,
+                        url: "http://localhost:3000/api/products/" + req.params.id,
+                        image: product.avatar,
+                        },
+                    data: product})
             })
 
         .catch(res.status(404))
